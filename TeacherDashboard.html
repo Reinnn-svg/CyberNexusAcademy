@@ -1,0 +1,1504 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Teacher Dashboard | Cyber Nexus Academy</title>
+
+    <link rel="stylesheet" href="CSS/TeacherDashboard.css" />
+    <link rel="stylesheet" href="CSS/sidenav.css" />
+    <link rel="stylesheet" href="CSS/dashboard-theme.css" />
+
+    <script src="JAVA/elms-data.js"></script>
+  </head>
+
+  <body id="top">
+    <header class="topbar">
+      <a class="brand" href="LandingPage.html">
+        <img src="Vid,Aud,Pic/LOGOACADEMY.png" alt="Cyber Nexus Academy Logo" />
+
+        <span>
+          <strong> CYBER NEXUS </strong>
+
+          <small> ACADEMY </small>
+        </span>
+      </a>
+
+      <nav id="sideNav" aria-label="Main menu">
+        <a
+          href="LandingPage.html"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/HomeIconn.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Home
+        </a>
+
+        <a href="#top" style="display: flex; align-items: center; gap: 8px">
+          <img
+            src="Assets/assets/icons/OverviewIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Overview
+        </a>
+
+        <a
+          href="#announce"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/AnnouncementIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Announce to Students
+        </a>
+
+        <a
+          href="#admin-announcements"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/AdminIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Admin Announcements
+        </a>
+
+        <a
+          href="#my-subjects"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/SubjectIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          My Subjects &amp; Sections
+        </a>
+
+        <a href="#grades" style="display: flex; align-items: center; gap: 8px">
+          <img
+            src="Assets/assets/icons/GradeIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Student Grades
+        </a>
+        <a
+          href="#create-activity"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/ActivityIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Create Activity
+        </a>
+        <a
+          href="#create-quiz"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/QuizIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Create Quiz
+        </a>
+        <a
+          href="#student-answers"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/AnswersIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Student Answers
+        </a>
+        <a
+          href="#teacherProfile"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/PasswordIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Profile &amp; Password
+        </a>
+        <a
+          href="Logout.html"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/LogoutIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Log Out
+        </a>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <section class="roleBanner">
+        <p>FACULTY PORTAL</p>
+
+        <h1 id="welcome">Teacher Dashboard</h1>
+
+        <div>
+          Manage assigned subjects, sections, students, grades, learning tasks,
+          and quizzes.
+        </div>
+      </section>
+
+      <section class="panel" id="announce">
+        <div class="panelHeader">
+          <div>
+            <p>TEACHER COMMUNICATION</p>
+            <h2>Announce to My Students</h2>
+          </div>
+        </div>
+
+        <form id="teacherAnnouncementForm" class="formGrid">
+          <select id="announcementAssignment" required></select>
+          <input
+            id="teacherAnnouncementTitle"
+            placeholder="Announcement title"
+            required
+          />
+          <textarea
+            id="teacherAnnouncementMessage"
+            placeholder="Write an announcement for your students"
+            required
+          ></textarea>
+          <button type="submit">SEND TO STUDENTS</button>
+        </form>
+      </section>
+
+      <section class="panel" id="admin-announcements">
+        <div class="panelHeader">
+          <div>
+            <p>SCHOOL ANNOUNCEMENTS</p>
+
+            <h2>From Admin</h2>
+          </div>
+        </div>
+
+        <div id="announcementList"></div>
+      </section>
+
+      <section class="filterBar">
+        <label>
+          School Year
+
+          <select id="schoolYear"></select>
+        </label>
+
+        <label>
+          Semester
+
+          <select id="semester"></select>
+        </label>
+      </section>
+
+      <section class="stats">
+        <article>
+          <span> SUBJECTS </span>
+
+          <strong id="subjectCount"> 0 </strong>
+        </article>
+
+        <article>
+          <span> SECTIONS </span>
+
+          <strong id="sectionCount"> 0 </strong>
+        </article>
+
+        <article>
+          <span> STUDENTS </span>
+
+          <strong id="studentCount"> 0 </strong>
+        </article>
+
+        <article>
+          <span> PENDING WORK </span>
+
+          <strong id="pendingCount"> 0 </strong>
+        </article>
+      </section>
+
+      <section class="panel" id="my-subjects">
+        <div class="panelHeader">
+          <div>
+            <p>TEACHING LOAD</p>
+
+            <h2>My Subjects, Sections and Rooms</h2>
+          </div>
+        </div>
+
+        <div id="assignmentCards" class="cardsGrid"></div>
+      </section>
+
+      <section class="panel" id="grades">
+        <div class="panelHeader">
+          <div>
+            <p>GRADEBOOK</p>
+
+            <h2>Grades for My Students</h2>
+          </div>
+        </div>
+
+        <select id="assignmentSelect"></select>
+
+        <p class="panelNote">
+          Enter the Prelim, Midterm, Pre-Final and Finals grades (0–100). The
+          <strong>Final Grade</strong> is filled in automatically with the
+          average, and you can edit it before saving.
+        </p>
+
+        <div class="tableWrap gradeTable">
+          <table>
+            <thead>
+              <tr>
+                <th>Student</th>
+
+                <th>Prelim</th>
+
+                <th>Midterm</th>
+
+                <th>Pre-Final</th>
+
+                <th>Finals</th>
+
+                <th>Final Grade</th>
+
+                <th>Comment</th>
+
+                <th>History</th>
+
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody id="studentRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel" id="create-activity">
+        <div class="panelHeader">
+          <div>
+            <p>LEARNING CONTENT</p>
+
+            <h2>Create Activity</h2>
+          </div>
+        </div>
+
+        <form id="activityForm" class="formGrid">
+          <select id="activitySubject" required></select>
+
+          <input id="activityTitle" placeholder="Activity title" required />
+
+          <input id="activityDue" type="date" required />
+
+          <textarea
+            id="activityDescription"
+            placeholder="Instructions or question"
+          ></textarea>
+
+          <button>CREATE ACTIVITY</button>
+        </form>
+      </section>
+
+      <section class="panel" id="create-quiz">
+        <div class="panelHeader">
+          <div>
+            <p>ASSESSMENT</p>
+
+            <h2>Create Quiz</h2>
+          </div>
+        </div>
+
+        <form id="quizForm" class="formGrid">
+          <select id="quizSubject" required></select>
+
+          <input id="quizTitle" placeholder="Quiz title" required />
+
+          <input id="quizDue" type="date" required />
+
+          <div class="questionBuilder">
+            <div class="questionHead">
+              <strong> Questions </strong>
+
+              <button type="button" id="addQuestion">+ ADD QUESTION</button>
+            </div>
+
+            <div id="questions"></div>
+          </div>
+
+          <button>CREATE QUIZ</button>
+        </form>
+      </section>
+
+      <section class="panel" id="student-answers">
+        <div class="panelHeader">
+          <div>
+            <p>SUBMISSIONS</p>
+
+            <h2>Student Answers</h2>
+          </div>
+        </div>
+
+        <div id="submissionList"></div>
+      </section>
+
+      <section class="panel" id="teacherProfile">
+        <div class="panelHeader">
+          <div>
+            <p>ACCOUNT</p>
+
+            <h2>Profile and Password</h2>
+          </div>
+        </div>
+
+        <div class="profileBox">
+          <div>
+            <strong id="teacherProfileName"></strong>
+
+            <span id="teacherProfileEmail"></span>
+
+            <span> Teacher Account </span>
+          </div>
+
+          <form id="teacherPasswordForm">
+            <div class="passwordField">
+              <input
+                id="teacherOldPassword"
+                type="password"
+                placeholder="Current password"
+                required
+              />
+
+              <button
+                type="button"
+                class="passwordToggle"
+                data-target="teacherOldPassword"
+                aria-label="Show current password"
+              >
+                👁
+              </button>
+            </div>
+
+            <div class="passwordField">
+              <input
+                id="teacherNewPassword"
+                type="password"
+                placeholder="New password"
+                required
+              />
+
+              <button
+                type="button"
+                class="passwordToggle"
+                data-target="teacherNewPassword"
+                aria-label="Show new password"
+              >
+                👁
+              </button>
+            </div>
+
+            <div class="passwordField">
+              <input
+                id="teacherConfirmPassword"
+                type="password"
+                placeholder="Confirm new password"
+                required
+              />
+
+              <button
+                type="button"
+                class="passwordToggle"
+                data-target="teacherConfirmPassword"
+                aria-label="Show confirm password"
+              >
+                👁
+              </button>
+            </div>
+
+            <button type="submit">CHANGE PASSWORD</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      var user = ELMS.protect("teacher");
+
+      if (user) {
+        document.getElementById("welcome").textContent =
+          "Welcome, " + user.fullName;
+
+        var sy = document.getElementById("schoolYear");
+
+        var sem = document.getElementById("semester");
+
+        sy.innerHTML = ELMS.optionYears(user.schoolYear || "2026-2027");
+
+        sem.innerHTML = ELMS.optionSemesters(user.semester || "1st Semester");
+
+        var questionCount = 0;
+
+        function addQuestion(data) {
+          questionCount++;
+
+          var id = questionCount;
+
+          var div = document.createElement("div");
+
+          div.className = "questionItem";
+
+          div.dataset.id = id;
+
+          div.innerHTML = `
+                    <div class="questionTop">
+                        <strong>
+                            Question ${id}
+                        </strong>
+
+                        <button
+                            type="button"
+                            class="removeQuestion"
+                        >
+                            REMOVE
+                        </button>
+                    </div>
+
+                    <input
+                        class="qText"
+                        placeholder="Question"
+                        required
+                    >
+
+                    <select class="qType">
+
+                        <option value="short">
+                            Short Answer
+                        </option>
+
+                        <option value="multiple">
+                            Multiple Choice
+                        </option>
+
+                    </select>
+
+                    <input
+                        class="qChoices"
+                        placeholder="Choices separated by commas"
+                    >
+
+                    <input
+                        class="qAnswer"
+                        placeholder="Correct answer"
+                        required
+                    >
+                `;
+
+          document.getElementById("questions").appendChild(div);
+
+          div.querySelector(".removeQuestion").onclick = function () {
+            div.remove();
+          };
+
+          if (data) {
+            div.querySelector(".qText").value = data.question || "";
+
+            div.querySelector(".qType").value = data.type || "short";
+
+            div.querySelector(".qChoices").value = (data.choices || []).join(
+              ", ",
+            );
+
+            div.querySelector(".qAnswer").value = data.answer || "";
+          }
+        }
+
+        addQuestion();
+
+        document.getElementById("addQuestion").onclick = function () {
+          addQuestion();
+        };
+
+        function currentAssignments() {
+          return ELMS.assignments().filter(function (a) {
+            return (
+              a.teacherEmail === user.email &&
+              a.schoolYear === sy.value &&
+              a.semester === sem.value
+            );
+          });
+        }
+
+        function render() {
+          var assignments = currentAssignments();
+
+          var users = ELMS.get("users");
+
+          document.getElementById("subjectCount").textContent = new Set(
+            assignments.map(function (a) {
+              return a.subjectId;
+            }),
+          ).size;
+
+          document.getElementById("sectionCount").textContent =
+            assignments.length;
+
+          var students = users.filter(function (u) {
+            return (
+              u.role === "student" &&
+              u.enrollmentStatus === "Officially Enrolled" &&
+              assignments.some(function (a) {
+                return (
+                  a.section === u.section &&
+                  a.yearLevel === u.yearLevel &&
+                  a.schoolYear === u.schoolYear
+                );
+              })
+            );
+          });
+
+          document.getElementById("studentCount").textContent = students.length;
+
+          var subs = ELMS.get("submissions").filter(function (s) {
+            return s.teacherEmail === user.email && s.status !== "Graded";
+          });
+
+          document.getElementById("pendingCount").textContent = subs.length;
+
+          document.getElementById("assignmentCards").innerHTML =
+            assignments
+              .map(function (a) {
+                var s = ELMS.subject(a.subjectId);
+
+                return `
+                                <article class="card">
+
+                                    <strong>
+                                        ${ELMS.esc(s ? s.name : a.subjectId)}
+                                    </strong>
+
+                                    <span>
+                                        Section
+                                        ${ELMS.esc(a.section)}
+                                    </span>
+
+                                    <small>
+                                        ${ELMS.esc(a.room)}
+                                    </small>
+
+                                    <small>
+                                        ${ELMS.esc(a.schoolYear)}
+                                        ·
+                                        ${ELMS.esc(a.semester)}
+                                    </small>
+
+                                </article>
+                            `;
+              })
+              .join("") || '<p class="empty">No teaching load assigned.</p>';
+
+          document.getElementById("assignmentSelect").innerHTML =
+            assignments
+              .map(function (a) {
+                var s = ELMS.subject(a.subjectId);
+
+                return `
+                                <option value="${a.id}">
+                                    ${ELMS.esc(s ? s.name : a.subjectId)}
+                                    · Section
+                                    ${ELMS.esc(a.section)}
+                                </option>
+                            `;
+              })
+              .join("") || '<option value="">No assignment</option>';
+
+          var subjectOptions = assignments
+            .map(function (a) {
+              var s = ELMS.subject(a.subjectId);
+
+              return `
+                                <option value="${s.id}">
+                                    ${ELMS.esc(s.name)}
+                                    · Section
+                                    ${ELMS.esc(a.section)}
+                                </option>
+                            `;
+            })
+            .join("");
+
+          document.getElementById("activitySubject").innerHTML = subjectOptions;
+
+          document.getElementById("quizSubject").innerHTML = subjectOptions;
+
+          document.getElementById("announcementAssignment").innerHTML =
+            assignments
+              .map(function (a) {
+                var s = ELMS.subject(a.subjectId);
+                return `
+                  <option value="${ELMS.esc(a.id)}">
+                    ${ELMS.esc(s ? s.name : a.subjectId)} · Section ${ELMS.esc(a.section)} · ${ELMS.esc(a.semester)}
+                  </option>
+                `;
+              })
+              .join("") || '<option value="">No assigned class</option>';
+
+          renderStudents();
+          renderSubmissions();
+
+          document.getElementById("announcementList").innerHTML =
+            ELMS.announcementHTML("teacher") ||
+            '<p class="empty">No announcements.</p>';
+        }
+
+        function renderStudents() {
+          var aid = document.getElementById("assignmentSelect").value;
+
+          var assignment = ELMS.assignments().find(function (a) {
+            return a.id === aid;
+          });
+
+          if (!assignment) {
+            document.getElementById("studentRows").innerHTML = `
+                            <tr>
+                                <td
+                                    colspan="9"
+                                    class="empty"
+                                >
+                                    Select a teaching assignment.
+                                </td>
+                            </tr>
+                        `;
+
+            return;
+          }
+
+          var students = ELMS.get("users").filter(function (u) {
+            return (
+              u.role === "student" &&
+              u.enrollmentStatus === "Officially Enrolled" &&
+              u.section === assignment.section &&
+              u.schoolYear === assignment.schoolYear
+            );
+          });
+
+          var grades = ELMS.get("grades");
+
+          document.getElementById("studentRows").innerHTML =
+            students
+              .map(function (s) {
+                var g =
+                  grades.find(function (x) {
+                    return (
+                      x.studentEmail === s.email &&
+                      x.subjectId === assignment.subjectId &&
+                      x.section === assignment.section &&
+                      x.schoolYear === sy.value &&
+                      x.semester === sem.value
+                    );
+                  }) || {};
+
+                return `
+                                <tr>
+
+                                    <td>
+
+                                        <strong>
+                                            ${ELMS.esc(s.fullName)}
+                                        </strong>
+
+                                        <small>
+                                            ${ELMS.esc(s.email)}
+                                        </small>
+
+                                    </td>
+
+                                    ${["prelim", "midterm", "prefinal", "final"].map(function (k) {
+                                        return `<td><input class="periodInput" data-period="${k}" data-email="${ELMS.esc(s.email)}" value="${ELMS.esc(g[k] === undefined ? "" : g[k])}" type="number" min="0" max="100" step="0.01" placeholder="—" aria-label="${k} grade"></td>`;
+                                    }).join("")}
+
+                                    <td>
+                                        <input
+                                            class="gradeInput"
+                                            data-email="${ELMS.esc(s.email)}"
+                                            value="${ELMS.esc(g.grade === undefined ? "" : g.grade)}"
+                                            type="number"
+                                            min="0"
+                                            max="100"
+                                            step="0.01"
+                                            placeholder="auto"
+                                            aria-label="Final grade"
+                                        >
+                                    </td>
+
+<td>
+
+                                        <input
+                                            class="commentInput"
+                                            data-email="${ELMS.esc(s.email)}"
+                                            value="${ELMS.esc(g.comment || "")}"
+                                        >
+
+                                    </td>
+
+                                    <td>
+
+                                        <button
+                                            type="button"
+                                            class="historyBtn"
+                                            data-email="${ELMS.esc(s.email)}"
+                                        >
+                                            VIEW
+                                        </button>
+
+                                    </td>
+
+                                    <td>
+
+                                        <button
+                                            type="button"
+                                            class="saveGrade"
+                                            data-email="${ELMS.esc(s.email)}"
+                                        >
+                                            SAVE GRADE
+                                        </button>
+
+                                    </td>
+
+                                </tr>
+                            `;
+              })
+              .join("") ||
+            `
+                        <tr>
+                            <td
+                                colspan="9"
+                                class="empty"
+                            >
+                                No officially enrolled students
+                                in this section.
+                            </td>
+                        </tr>
+                    `;
+
+          document.querySelectorAll(".saveGrade").forEach(function (btn) {
+            btn.onclick = function () {
+              var email = btn.dataset.email;
+
+              var grade = document.querySelector(
+                '.gradeInput[data-email="' + CSS.escape(email) + '"]',
+              ).value;
+
+              var comment = document.querySelector(
+                '.commentInput[data-email="' + CSS.escape(email) + '"]',
+              ).value;
+
+              var periods = {};
+              var entered = [];
+              var bad = false;
+
+              ["prelim", "midterm", "prefinal", "final"].forEach(function (k) {
+                var v = document.querySelector(
+                  '.periodInput[data-period="' + k + '"][data-email="' + CSS.escape(email) + '"]',
+                ).value;
+                if (v !== "") {
+                  if (Number(v) < 0 || Number(v) > 100) { bad = true; }
+                  entered.push(Number(v));
+                }
+                periods[k] = v;
+              });
+
+              if (bad || (grade !== "" && (Number(grade) < 0 || Number(grade) > 100))) {
+                alert("Grades must be between 0 and 100.");
+                return;
+              }
+
+              /* Final Grade left empty -> use the average of the grades entered */
+              if (grade === "" && entered.length) {
+                grade = String(
+                  Math.round(
+                    (entered.reduce(function (a, b) { return a + b; }, 0) / entered.length) * 100,
+                  ) / 100,
+                );
+              }
+
+              if (grade === "" && !entered.length) {
+                alert("Enter at least one grade before saving.");
+                return;
+              }
+
+              var list = ELMS.get("grades");
+
+              var history = ELMS.get("gradeHistory");
+
+              var old = list.find(function (x) {
+                return (
+                  x.studentEmail === email &&
+                  x.subjectId === assignment.subjectId &&
+                  x.section === assignment.section &&
+                  x.schoolYear === sy.value &&
+                  x.semester === sem.value
+                );
+              });
+
+              if (old) {
+                history.push({
+                  id: ELMS.id("GH"),
+                  studentEmail: email,
+                  subjectId: assignment.subjectId,
+                  section: assignment.section,
+                  grade: old.grade,
+                  prelim: old.prelim,
+                  midterm: old.midterm,
+                  prefinal: old.prefinal,
+                  final: old.final,
+                  comment: old.comment || "",
+                  teacherEmail: user.email,
+                  schoolYear: sy.value,
+                  semester: sem.value,
+                  changedAt: new Date().toLocaleString(),
+                });
+
+                old.grade = grade;
+                old.prelim = periods.prelim;
+                old.midterm = periods.midterm;
+                old.prefinal = periods.prefinal;
+                old.final = periods.final;
+                old.comment = comment;
+                old.updatedAt = new Date().toLocaleString();
+              } else {
+                list.push({
+                  id: ELMS.id("GR"),
+                  studentEmail: email,
+                  subjectId: assignment.subjectId,
+                  section: assignment.section,
+                  grade: grade,
+                  prelim: periods.prelim,
+                  midterm: periods.midterm,
+                  prefinal: periods.prefinal,
+                  final: periods.final,
+                  comment: comment,
+                  teacherEmail: user.email,
+                  schoolYear: sy.value,
+                  semester: sem.value,
+                  updatedAt: new Date().toLocaleString(),
+                });
+              }
+
+              ELMS.set("grades", list);
+
+              ELMS.set("gradeHistory", history);
+
+              localStorage.setItem("elmsGradesUpdatedAt", String(Date.now()));
+
+              alert("Grade saved and reflected on the student dashboard.");
+
+              renderStudents();
+            };
+          });
+
+          document.querySelectorAll(".historyBtn").forEach(function (btn) {
+            btn.onclick = function () {
+              var email = btn.dataset.email;
+
+              var h = ELMS.get("gradeHistory").filter(function (x) {
+                return (
+                  x.studentEmail === email &&
+                  x.subjectId === assignment.subjectId &&
+                  x.schoolYear === sy.value &&
+                  x.semester === sem.value
+                );
+              });
+
+              alert(
+                h.length
+                  ? h
+                      .map(function (x) {
+                        return (
+                          x.changedAt +
+                          " — Prelim " + (x.prelim || "—") +
+                          ", Midterm " + (x.midterm || "—") +
+                          ", Pre-Final " + (x.prefinal || "—") +
+                          ", Finals " + (x.final || "—") +
+                          " → Final Grade " + x.grade +
+                          " — " + (x.comment || "")
+                        );
+                      })
+                      .join("\n")
+                  : "No previous grade history.",
+              );
+            };
+          });
+        }
+
+        function renderSubmissions() {
+          var currentTeacher = String(user.email || "")
+            .toLowerCase()
+            .trim();
+
+          var submissions = ELMS.get("submissions").filter(function (s) {
+            if (String(s.status || "").toLowerCase() === "graded") {
+              return false;
+            }
+
+            var q = s.quizId
+              ? ELMS.get("quizzes").find(function (x) {
+                  return x.id === s.quizId;
+                })
+              : null;
+
+            var a = s.activityId
+              ? ELMS.get("activities").find(function (x) {
+                  return x.id === s.activityId;
+                })
+              : null;
+
+            var owner =
+              (q && q.teacherEmail) || (a && a.teacherEmail) || s.teacherEmail;
+
+            owner = String(owner || "")
+              .toLowerCase()
+              .trim();
+
+            if (owner === currentTeacher) {
+              return true;
+            }
+
+            if (q || a) {
+              var item = q || a;
+
+              return (
+                String(item.teacherEmail || "")
+                  .toLowerCase()
+                  .trim() === currentTeacher
+              );
+            }
+
+            return false;
+          });
+
+          document.getElementById("submissionList").innerHTML =
+            submissions
+              .map(function (s) {
+                var q = ELMS.get("quizzes").find(function (x) {
+                  return x.id === s.quizId;
+                });
+
+                var a = ELMS.get("activities").find(function (x) {
+                  return x.id === s.activityId;
+                });
+
+                var title = q ? q.title : a ? a.title : "Learning Task";
+
+                var student = ELMS.get("users").find(function (u) {
+                  return u.email === s.studentEmail;
+                });
+
+                var answers = s.answers
+                  ? s.answers
+                      .map(function (x, i) {
+                        return `
+                                                <div>
+                                                    <strong>
+                                                        Q${i + 1}:
+                                                    </strong>
+
+                                                    ${ELMS.esc(x.answer)}
+                                                </div>
+                                            `;
+                      })
+                      .join("")
+                  : `
+                                        <div>
+                                            ${ELMS.esc(s.answer || "")}
+                                        </div>
+                                    `;
+
+                return `
+                                <article class="submission">
+
+                                    <strong>
+                                        ${ELMS.esc(title)}
+                                    </strong>
+
+                                    <span>
+                                        ${ELMS.esc(
+                                          student
+                                            ? student.fullName
+                                            : s.studentEmail,
+                                        )}
+                                    </span>
+
+                                    <small>
+                                        ${ELMS.esc(s.submittedAt)}
+                                    </small>
+
+                                    ${answers}
+
+                                    ${
+                                      s.file && s.file.id
+                                        ? `
+                                                <button
+                                                    type="button"
+                                                    class="downloadSubmissionFile"
+                                                    data-file-id="${ELMS.esc(
+                                                      s.file.id,
+                                                    )}"
+                                                >
+                                                    DOWNLOAD
+                                                    ${ELMS.esc(s.file.name)}
+                                                </button>
+                                            `
+                                        : ""
+                                    }
+
+                                    <div>
+
+                                        <input
+                                            class="submissionScore"
+                                            type="number"
+                                            min="0"
+                                            max="100"
+                                            value="${ELMS.esc(
+                                              s.score == null ? "" : s.score,
+                                            )}"
+                                            placeholder="Score"
+                                        >
+
+                                        <button
+                                            type="button"
+                                            class="gradeSubmission"
+                                            data-id="${s.id}"
+                                        >
+                                            GRADE
+                                        </button>
+
+                                    </div>
+
+                                </article>
+                            `;
+              })
+              .join("") || '<p class="empty">No student submissions yet.</p>';
+
+          document.querySelectorAll(".gradeSubmission").forEach(function (btn) {
+            btn.onclick = function () {
+              var list = ELMS.get("submissions");
+
+              var item = list.find(function (x) {
+                return x.id === btn.dataset.id;
+              });
+
+              var input = btn.parentNode.querySelector(".submissionScore");
+
+              var score = input.value;
+
+              if (score === "" || Number(score) < 0 || Number(score) > 100) {
+                alert("Enter a score from 0 to 100.");
+
+                return;
+              }
+
+              item.score = Number(score);
+
+              item.status = "Graded";
+
+              item.gradedAt = new Date().toLocaleString();
+
+              var relatedQuiz = ELMS.get("quizzes").find(function (q) {
+                return q.id === item.quizId;
+              });
+
+              var relatedActivity = ELMS.get("activities").find(function (a) {
+                return a.id === item.activityId;
+              });
+
+              var relatedItem = relatedQuiz || relatedActivity;
+
+              if (relatedItem) {
+                item.assessmentType = relatedQuiz ? "Quiz" : "Performance Task";
+
+                item.assessmentTitle = relatedItem.title;
+
+                item.subjectId = relatedItem.subjectId;
+
+                item.section = relatedItem.section || "";
+
+                item.schoolYear = relatedItem.schoolYear || sy.value;
+
+                item.semester = relatedItem.semester || sem.value;
+
+                item.yearLevel = relatedItem.yearLevel || "";
+              }
+
+              ELMS.set("submissions", list);
+
+              localStorage.setItem("elmsGradesUpdatedAt", String(Date.now()));
+
+              localStorage.setItem(
+                "elmsAssessmentGradesUpdatedAt",
+                String(Date.now()),
+              );
+
+              alert(
+                "Submission graded and reflected on the student dashboard.",
+              );
+
+              renderSubmissions();
+            };
+          });
+        }
+
+        sy.onchange = render;
+
+        sem.onchange = render;
+
+        document.getElementById("assignmentSelect").onchange = renderStudents;
+
+        document.getElementById("activityForm").onsubmit = function (e) {
+          e.preventDefault();
+
+          var selected = document.getElementById("activitySubject").value;
+
+          var assignment = ELMS.assignments().find(function (a) {
+            return (
+              a.subjectId === selected &&
+              a.teacherEmail === user.email &&
+              a.schoolYear === sy.value &&
+              a.semester === sem.value
+            );
+          });
+
+          if (!assignment) {
+            alert("Select a subject you are assigned to for this term.");
+
+            return;
+          }
+
+          var activities = ELMS.get("activities");
+
+          var duplicate = activities.some(function (a) {
+            return (
+              a.teacherEmail === user.email &&
+              a.assignmentId === assignment.id &&
+              a.title.toLowerCase() ===
+                document
+                  .getElementById("activityTitle")
+                  .value.trim()
+                  .toLowerCase()
+            );
+          });
+
+          if (duplicate) {
+            alert("An activity with this title already exists for this class.");
+
+            return;
+          }
+
+          activities.push({
+            id: ELMS.id("ACT"),
+
+            assignmentId: assignment.id,
+
+            subjectId: selected,
+
+            teacherEmail: user.email,
+
+            title: document.getElementById("activityTitle").value.trim(),
+
+            description: document
+              .getElementById("activityDescription")
+              .value.trim(),
+
+            due: document.getElementById("activityDue").value,
+
+            schoolYear: sy.value,
+
+            semester: sem.value,
+
+            section: assignment.section,
+
+            yearLevel: assignment.yearLevel,
+          });
+
+          ELMS.set("activities", activities);
+
+          alert("Activity created. Students can answer it or upload a PDF.");
+
+          this.reset();
+
+          render();
+        };
+
+        document.getElementById("quizForm").onsubmit = function (e) {
+          e.preventDefault();
+
+          var nodes = [].slice.call(document.querySelectorAll(".questionItem"));
+
+          if (!nodes.length) {
+            alert("Add at least one question.");
+
+            return;
+          }
+
+          var selectedSubject = document.getElementById("quizSubject").value;
+
+          var quizAssignment = ELMS.assignments().find(function (a) {
+            return (
+              a.subjectId === selectedSubject &&
+              a.teacherEmail === user.email &&
+              a.schoolYear === sy.value &&
+              a.semester === sem.value
+            );
+          });
+
+          if (!quizAssignment) {
+            alert(
+              "Select a valid teaching assignment before creating the quiz.",
+            );
+
+            return;
+          }
+
+          var questions = nodes.map(function (n) {
+            return {
+              question: n.querySelector(".qText").value.trim(),
+
+              type: n.querySelector(".qType").value,
+
+              choices: n
+                .querySelector(".qChoices")
+                .value.split(",")
+                .map(function (x) {
+                  return x.trim();
+                })
+                .filter(Boolean),
+
+              answer: n.querySelector(".qAnswer").value.trim(),
+            };
+          });
+
+          var quizzes = ELMS.get("quizzes");
+
+          var quizTitle = document.getElementById("quizTitle").value.trim();
+
+          if (
+            quizzes.some(function (q) {
+              return (
+                q.teacherEmail === user.email &&
+                q.assignmentId === quizAssignment.id &&
+                q.title.toLowerCase() === quizTitle.toLowerCase()
+              );
+            })
+          ) {
+            alert("A quiz with this title already exists for this class.");
+
+            return;
+          }
+
+          quizzes.push({
+            id: ELMS.id("QUIZ"),
+
+            assignmentId: quizAssignment.id,
+
+            subjectId: selectedSubject,
+
+            teacherEmail: user.email,
+
+            title: quizTitle,
+
+            due: document.getElementById("quizDue").value,
+
+            schoolYear: sy.value,
+
+            semester: sem.value,
+
+            section: quizAssignment.section,
+
+            yearLevel: quizAssignment.yearLevel,
+
+            questions: questions,
+          });
+
+          ELMS.set("quizzes", quizzes);
+
+          alert(
+            "Quiz created with " +
+              questions.length +
+              " question(s). It is now available to students in " +
+              quizAssignment.section +
+              ".",
+          );
+
+          this.reset();
+
+          document.getElementById("questions").innerHTML = "";
+
+          questionCount = 0;
+
+          addQuestion();
+
+          render();
+        };
+
+        document.getElementById("teacherAnnouncementForm").onsubmit = function (
+          e,
+        ) {
+          e.preventDefault();
+
+          var assignment = ELMS.assignments().find(function (a) {
+            return (
+              a.id ===
+                document.getElementById("announcementAssignment").value &&
+              a.teacherEmail === user.email
+            );
+          });
+
+          if (!assignment) {
+            alert("Select one of your assigned classes.");
+            return;
+          }
+
+          var announcements = ELMS.get("announcements");
+          announcements.push({
+            id: ELMS.id("ANN"),
+            title: document
+              .getElementById("teacherAnnouncementTitle")
+              .value.trim(),
+            message: document
+              .getElementById("teacherAnnouncementMessage")
+              .value.trim(),
+            author: user.fullName,
+            createdAt: new Date().toISOString(),
+            announcementDate: new Date().toLocaleString(),
+            roles: ["student"],
+            audienceLabel:
+              "Teacher announcement · Section " + assignment.section,
+            audience: "teacher-students",
+            targetTeacherEmail: user.email,
+            targetSection: assignment.section,
+            targetYearLevel: assignment.yearLevel,
+            targetSchoolYear: assignment.schoolYear,
+            targetSemester: assignment.semester,
+            targetSubjectId: assignment.subjectId,
+          });
+
+          ELMS.set("announcements", announcements);
+          alert("Announcement sent to the students in this class.");
+          this.reset();
+          render();
+        };
+
+        document.getElementById("teacherProfileName").textContent =
+          user.fullName || "";
+
+        document.getElementById("teacherProfileEmail").textContent =
+          user.email || "";
+
+        document.querySelectorAll(".passwordToggle").forEach(function (btn) {
+          btn.onclick = function () {
+            var input = document.getElementById(btn.dataset.target);
+
+            var shown = input.type === "text";
+
+            input.type = shown ? "password" : "text";
+
+            btn.textContent = shown ? "👁" : "🙈";
+
+            btn.setAttribute(
+              "aria-label",
+              shown ? "Show password" : "Hide password",
+            );
+          };
+        });
+
+        document.getElementById("teacherPasswordForm").onsubmit = function (e) {
+          e.preventDefault();
+
+          var users = ELMS.get("users");
+
+          var account = users.find(function (u) {
+            return u.email === user.email;
+          });
+
+          var old = document.getElementById("teacherOldPassword").value;
+
+          var next = document.getElementById("teacherNewPassword").value;
+
+          var confirmPassword = document.getElementById(
+            "teacherConfirmPassword",
+          ).value;
+
+          if (!account || account.password !== old) {
+            alert("Current password is incorrect.");
+
+            return;
+          }
+
+          if (next.length < 6) {
+            alert("New password must be at least 6 characters.");
+
+            return;
+          }
+
+          if (next !== confirmPassword) {
+            alert("Passwords do not match.");
+
+            return;
+          }
+
+          account.password = next;
+
+          ELMS.set("users", users);
+
+          alert("Password changed successfully.");
+
+          this.reset();
+        };
+
+        render();
+      }
+    </script>
+    <script src="JAVA/sidenav.js"></script>
+  </body>
+</html>

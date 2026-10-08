@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Create Account | Cyber Nexus Academy
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="CSS/SignUp.css"
+    >
+    <link rel="stylesheet" href="CSS/auth-theme.css" />
+
+    <script src="JAVA/elms-data.js"></script>
+</head>
+
+<body>
+
+    <main class="signup-page">
+
+        <section class="signup-brand">
+
+            <a
+                href="AdminDashboard.html"
+                class="back-home"
+            >
+                ← Back to Admin
+            </a>
+
+            <div class="brand-content">
+
+                <img
+                    src="Vid,Aud,Pic/LOGOACADEMY.png"
+                    alt="Cyber Nexus Academy"
+                >
+
+                <p class="school-name">
+                    CYBER NEXUS ACADEMY
+                </p>
+
+                <h1>
+                    Account
+                    <br>
+                    Management.
+                </h1>
+
+                <p class="brand-text">
+                    Only an administrator can create student,
+                    teacher, or registrar accounts.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="signup-form-section">
+
+            <div class="signup-form-container">
+
+                <p class="form-label">
+                    ADMIN ACCOUNT CREATION
+                </p>
+
+                <h2>
+                    Create a user.
+                </h2>
+
+                <p
+                    class="form-description"
+                    id="guardMessage"
+                >
+                    Create credentials and assign the correct role.
+                </p>
+
+                <form id="signupForm">
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label>
+                                First Name
+                            </label>
+
+                            <input
+                                id="firstName"
+                                class="form-control"
+                                required
+                            >
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>
+                                Last Name
+                            </label>
+
+                            <input
+                                id="lastName"
+                                class="form-control"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+                            Email Address
+                        </label>
+
+                        <input
+                            id="email"
+                            type="email"
+                            class="form-control"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label>
+                                Account ID
+                            </label>
+
+                            <input
+                                id="studentId"
+                                class="form-control"
+                                required
+                            >
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>
+                                Role
+                            </label>
+
+                            <select
+                                id="role"
+                                class="form-control"
+                            >
+                                <option value="student">
+                                    Student
+                                </option>
+
+                                <option value="teacher">
+                                    Teacher
+                                </option>
+
+                                <option value="registrar">
+                                    Registrar
+                                </option>
+
+                                <option value="admin">
+                                    Admin
+                                </option>
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group" id="programGroup">
+
+                            <label id="programLabel">
+                                Program / Course
+                            </label>
+
+                            <select
+                                id="program"
+                                class="form-control"
+                                required
+                            >
+                                <option value="">Select Program / Course</option>
+                            </select>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>
+                                Contact Number
+                            </label>
+
+                            <input
+                                id="phone"
+                                class="form-control"
+                                type="tel"
+                                inputmode="numeric"
+                                maxlength="11"
+                                pattern="[0-9]{11}"
+                                placeholder="09XXXXXXXXX"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label>
+                                Temporary Password
+                            </label>
+
+                            <input
+                                id="password"
+                                type="text"
+                                class="form-control"
+                                required
+                            >
+
+                        </div>
+
+                        <div class="form-group studentOnly">
+
+                            <label>
+                                Section
+                            </label>
+
+                            <select id="section">
+
+                                <option>
+                                    A
+                                </option>
+
+                                <option>
+                                    B
+                                </option>
+
+                                <option>
+                                    C
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="form-group studentOnly">
+
+                            <label>
+                                School Year
+                            </label>
+
+                            <select
+                                id="schoolYear"
+                                class="form-control"
+                            >
+
+                                <option>
+                                    2026-2027
+                                </option>
+
+                                <option>
+                                    2027-2028
+                                </option>
+
+                                <option>
+                                    2028-2029
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="form-group studentOnly">
+
+                            <label>
+                                Year Level
+                            </label>
+
+                            <select
+                                id="yearLevel"
+                                class="form-control"
+                            >
+
+                                <option>
+                                    1st Year
+                                </option>
+
+                                <option>
+                                    2nd Year
+                                </option>
+
+                                <option>
+                                    3rd Year
+                                </option>
+
+                                <option>
+                                    4th Year
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="signup-button"
+                    >
+                        CREATE ACCOUNT
+                    </button>
+
+                </form>
+
+                <div
+                    id="credentialBox"
+                    class="credentialBox"
+                ></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script>
+        var admin = ELMS.protect('admin');
+
+        if (admin) {
+
+            var roleField =
+                document.getElementById('role');
+
+            var programGroup = document.getElementById('programGroup');
+            var programLabel = document.getElementById('programLabel');
+            var programField = document.getElementById('program');
+
+            var roleOptions = {
+                student: {
+                    label: 'Program / Course',
+                    placeholder: 'Select Program / Course',
+                    values: [
+                        'BS Information Technology',
+                        'BS Computer Science',
+                        'BS Information Systems',
+                        'Programming and Web Development',
+                        'Computer Technology'
+                    ]
+                },
+                teacher: {
+                    label: 'Department',
+                    placeholder: 'Select Department',
+                    values: ['Faculty']
+                },
+                registrar: {
+                    label: 'Department',
+                    placeholder: 'Select Department',
+                    values: ['Registrar']
+                },
+                admin: {
+                    label: '',
+                    placeholder: '',
+                    values: []
+                }
+            };
+
+            function syncRole() {
+                var role = roleField.value;
+                var config = roleOptions[role];
+                var isStudent = role === 'student';
+
+                document.querySelectorAll('.studentOnly').forEach(function (el) {
+                    el.style.display = isStudent ? 'block' : 'none';
+                });
+
+                programField.innerHTML = '';
+                programField.required = role !== 'admin';
+                programGroup.style.display = role === 'admin' ? 'none' : 'block';
+
+                if (role === 'admin') {
+                    programField.value = '';
+                    return;
+                }
+
+                var placeholder = document.createElement('option');
+                placeholder.value = '';
+                placeholder.textContent = config.placeholder;
+                placeholder.disabled = true;
+                placeholder.selected = true;
+                programField.appendChild(placeholder);
+                programLabel.textContent = config.label;
+
+                config.values.forEach(function (value) {
+                    var option = document.createElement('option');
+                    option.value = value;
+                    option.textContent = value;
+                    programField.appendChild(option);
+                });
+            }
+
+            roleField.onchange = syncRole;
+
+            syncRole();
+
+            document
+                .getElementById('signupForm')
+                .addEventListener(
+                    'submit',
+                    function (e) {
+
+                        e.preventDefault();
+
+                        var email =
+                            document
+                                .getElementById('email')
+                                .value
+                                .trim()
+                                .toLowerCase();
+
+                        var users =
+                            ELMS.get('users');
+
+                        if (
+                            users.some(function (u) {
+                                return (
+                                    u.email.toLowerCase() ===
+                                    email
+                                );
+                            })
+                        ) {
+
+                            alert(
+                                'Email already exists.'
+                            );
+
+                            return;
+                        }
+
+                        var first =
+                            document
+                                .getElementById('firstName')
+                                .value
+                                .trim();
+
+                        var last =
+                            document
+                                .getElementById('lastName')
+                                .value
+                                .trim();
+
+                        var role =
+                            document
+                                .getElementById('role')
+                                .value;
+
+                        var password =
+                            document
+                                .getElementById('password')
+                                .value;
+
+                        var phone =
+                            document
+                                .getElementById('phone')
+                                .value
+                                .replace(/\D/g, '');
+
+                        if (phone.length !== 11 || phone.charAt(0) !== '0') {
+                            alert('Enter a valid 11-digit Philippine mobile number starting with 0.');
+                            return;
+                        }
+
+                        var account = {
+
+                            fullName:
+                                first + ' ' + last,
+
+                            firstName:
+                                first,
+
+                            lastName:
+                                last,
+
+                            studentId:
+                                document
+                                    .getElementById(
+                                        'studentId'
+                                    )
+                                    .value
+                                    .trim(),
+
+                            email:
+                                email,
+
+                            program:
+                                role === 'admin'
+                                    ? ''
+                                    : programField.value.trim(),
+
+                            course:
+                                role === 'student'
+                                    ? programField.value.trim()
+                                    : '',
+
+
+                            phone:
+                                phone,
+
+                            password:
+                                password,
+
+                            role:
+                                role,
+
+                            schoolYear:
+                                role === 'student'
+                                    ? document
+                                        .getElementById(
+                                            'schoolYear'
+                                        )
+                                        .value
+                                    : '',
+
+                            semester:
+                                role === 'student'
+                                    ? '1st Semester'
+                                    : '',
+
+                            section:
+                                role === 'student'
+                                    ? document
+                                        .getElementById(
+                                            'section'
+                                        )
+                                        .value
+                                    : '',
+
+                            yearLevel:
+                                role === 'student'
+                                    ? document
+                                        .getElementById(
+                                            'yearLevel'
+                                        )
+                                        .value
+                                    : '',
+
+                            enrollmentStatus:
+                                role === 'student'
+                                    ? 'Pending Enrollment'
+                                    : ''
+                        };
+
+                        users.push(account);
+
+                        ELMS.set(
+                            'users',
+                            users
+                        );
+
+                        var loginLink =
+                            new URL(
+                                'Login.html',
+                                location.href
+                            ).href;
+
+                        var websiteLink =
+                            new URL(
+                                'LandingPage.html',
+                                location.href
+                            ).href;
+
+                        var subject =
+                            'Cyber Nexus Academy ELMS Account';
+
+                        var message =
+                            'Hello ' +
+                            first +
+                            ',\n\n' +
+                            'Your Cyber Nexus Academy ELMS account has been created.\n\n' +
+                            'Website: ' +
+                            websiteLink +
+                            '\n' +
+                            'Login Page: ' +
+                            loginLink +
+                            '\n' +
+                            'Email: ' +
+                            email +
+                            '\n' +
+                            'Temporary Password: ' +
+                            password +
+                            '\n' +
+                            'Role: ' +
+                            role +
+                            '\n' +
+                            'Contact Number: ' +
+                            phone +
+                            '\n\n' +
+                            'Please keep your credentials private and change your password after your first login.\n\n' +
+                            'Cyber Nexus Academy';
+
+                        var box =
+                            document.getElementById(
+                                'credentialBox'
+                            );
+
+                        box.innerHTML = `
+                            <strong>
+                                Account created.
+                            </strong>
+
+                            <p>
+                                The account email is ready.
+                                Use the email button to open
+                                your mail application with
+                                the recipient, subject,
+                                website link, login link,
+                                and credentials already
+                                filled in.
+                            </p>
+
+                            <textarea
+                                id="credentialText"
+                                readonly
+                            ></textarea>
+
+                            <div class="credentialActions">
+
+                                <button
+                                    type="button"
+                                    class="signup-button"
+                                    id="copyCredentials"
+                                >
+                                    COPY CREDENTIAL MESSAGE
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="signup-button email-button"
+                                    id="emailCredentials"
+                                >
+                                    EMAIL ACCOUNT DETAILS
+                                </button>
+
+                            </div>
+                        `;
+
+                        document.getElementById(
+                            'credentialText'
+                        ).value =
+                            message;
+
+                        document.getElementById(
+                            'copyCredentials'
+                        ).onclick = function () {
+
+                            if (navigator.clipboard) {
+
+                                navigator.clipboard
+                                    .writeText(message)
+                                    .then(function () {
+
+                                        alert(
+                                            'Credential message copied.'
+                                        );
+
+                                    });
+
+                            } else {
+
+                                document
+                                    .getElementById(
+                                        'credentialText'
+                                    )
+                                    .select();
+
+                                document.execCommand(
+                                    'copy'
+                                );
+
+                                alert(
+                                    'Credential message copied.'
+                                );
+                            }
+                        };
+
+                        document.getElementById(
+                            'emailCredentials'
+                        ).onclick = function () {
+
+                            var mailto =
+                                'mailto:' +
+                                encodeURIComponent(email) +
+                                '?subject=' +
+                                encodeURIComponent(subject) +
+                                '&body=' +
+                                encodeURIComponent(message);
+
+                            window.location.href =
+                                mailto;
+                        };
+
+                        this.reset();
+                        syncRole();
+
+                    }
+                );
+        }
+    </script>
+
+</body>
+
+</html>

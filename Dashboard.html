@@ -1,0 +1,1096 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Student Dashboard | Cyber Nexus Academy</title>
+    <link rel="stylesheet" href="CSS/Dashboard.css" />
+    <link rel="stylesheet" href="CSS/sidenav.css" />
+    <link rel="stylesheet" href="CSS/dashboard-theme.css" />
+    <script src="JAVA/elms-data.js"></script>
+  </head>
+
+  <body id="top">
+    <header class="topbar">
+      <a class="brand" href="LandingPage.html">
+        <img src="Vid,Aud,Pic/LOGOACADEMY.png" alt="Cyber Nexus Academy Logo" />
+        <span>
+          <strong>CYBER NEXUS</strong>
+          <small>ACADEMY</small>
+        </span>
+      </a>
+      <nav id="sideNav" aria-label="Main menu">
+        <a
+          href="LandingPage.html"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/HomeIconn.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Home
+        </a>
+
+        <a href="#updates" style="display: flex; align-items: center; gap: 8px">
+          <img
+            src="Assets/assets/icons/UpdateIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Latest Updates
+        </a>
+        <a
+          href="#subjects"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/SubjectIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          My Subjects
+        </a>
+        <a href="#grades" style="display: flex; align-items: center; gap: 8px">
+          <img
+            src="Assets/assets/icons/GradeIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          My Grades
+        </a>
+        <a
+          href="#assessmentGrades"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/QuizIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Quiz &amp; Task Grades
+        </a>
+        <a
+          href="#activities"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/ActivityIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Activities
+        </a>
+        <a href="#quizzes" style="display: flex; align-items: center; gap: 8px">
+          <img
+            src="Assets/assets/icons/QuizIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Quizzes
+        </a>
+        <a
+          href="LearningCenter.html"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/TeacherIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Learning Center
+        </a>
+        <a
+          href="#report-problem"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/AnswersIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Report a Problem
+        </a>
+
+        <a href="#profile" style="display: flex; align-items: center; gap: 8px">
+          <img
+            src="Assets/assets/icons/PasswordIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Profile &amp; Password
+        </a>
+        <a
+          href="Logout.html"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/LogoutIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Log Out
+        </a>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <section class="roleBanner">
+        <p>STUDENT PORTAL</p>
+        <h1 id="welcome">Student Dashboard</h1>
+        <div id="enrollmentInfo">
+          View grades, complete learning tasks, take quizzes, and track your
+          academic progress.
+        </div>
+      </section>
+
+      <section class="panel" id="updates">
+        <div class="panelHeader">
+          <div>
+            <p>SCHOOL ANNOUNCEMENTS</p>
+            <h2>Latest Updates</h2>
+          </div>
+        </div>
+        <div id="announcementList"></div>
+      </section>
+
+      <section class="filterBar">
+        <label
+          >School Year
+          <select id="schoolYear"></select>
+        </label>
+        <label
+          >Semester
+          <select id="semester"></select>
+        </label>
+        <button id="refresh">REFRESH</button>
+      </section>
+
+      <section class="stats">
+        <article>
+          <span>SUBJECTS</span><strong id="subjectCount">0</strong>
+        </article>
+        <article>
+          <span>AVERAGE GRADE</span><strong id="averageGrade">0%</strong>
+        </article>
+        <article>
+          <span>PENDING</span><strong id="pendingCount">0</strong>
+        </article>
+        <article><span>QUIZZES</span><strong id="quizCount">0</strong></article>
+      </section>
+
+      <section class="panel" id="subjects">
+        <div class="panelHeader">
+          <div>
+            <p>ACADEMICS</p>
+            <h2>My Subjects</h2>
+          </div>
+        </div>
+        <div id="subjectList" class="cardsGrid"></div>
+      </section>
+
+      <section class="panel" id="grades">
+        <div class="panelHeader">
+          <div>
+            <p>ACADEMIC RECORD</p>
+            <h2>My Grades</h2>
+          </div>
+        </div>
+        <div class="tableWrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Subject</th>
+                <th>Teacher</th>
+                <th>Section</th>
+                <th>Prelim</th>
+                <th>Midterm</th>
+                <th>Pre-Final</th>
+                <th>Finals</th>
+                <th>Final Grade</th>
+                <th>Teacher's Comment</th>
+              </tr>
+            </thead>
+            <tbody id="gradeRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel" id="assessmentGrades">
+        <div class="panelHeader">
+          <div>
+            <p>ASSESSMENT RECORD</p>
+            <h2>Quiz &amp; Performance Task Grades</h2>
+          </div>
+        </div>
+        <div class="tableWrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Title</th>
+                <th>Subject</th>
+                <th>Teacher</th>
+                <th>Grade</th>
+              </tr>
+            </thead>
+            <tbody id="assessmentGradeRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel" id="activities">
+        <div class="panelHeader">
+          <div>
+            <p>LEARNING TASKS</p>
+            <h2>Pending and Submitted Activities</h2>
+          </div>
+        </div>
+        <div id="activityList"></div>
+      </section>
+
+      <section class="panel" id="quizzes">
+        <div class="panelHeader">
+          <div>
+            <p>ASSESSMENT</p>
+            <h2>Quizzes</h2>
+          </div>
+        </div>
+        <div id="quizList"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panelHeader">
+          <div>
+            <p>LEARN MORE</p>
+            <h2>Cyber Nexus Learning Center</h2>
+          </div>
+          <a class="primary" href="LearningCenter.html">OPEN LEARNING CENTER</a>
+        </div>
+        <p>
+          Study HTML, CSS, and JavaScript, then practice Python, Java, C, C++,
+          C#, SQL, MySQL, and Excel with examples, tasks, and quizzes.
+        </p>
+      </section>
+
+      <section class="panel" id="report-problem">
+        <div class="panelHeader">
+          <div>
+            <p>HELP US IMPROVE</p>
+            <h2>Report a Problem</h2>
+          </div>
+        </div>
+        <p class="panelNote">
+          Found a bug or something that is not working? Tell the Administrator
+          and we will look into it.
+        </p>
+        <form id="bugForm" class="formGrid">
+          <select id="bugCategory" required aria-label="What kind of problem?">
+            <option value="">What kind of problem?</option>
+            <option>Something is broken (bug)</option>
+            <option>Wrong grade or information</option>
+            <option>Cannot open / submit a file</option>
+            <option>Display or design problem</option>
+            <option>Other</option>
+          </select>
+          <input id="bugTitle" placeholder="Short title (e.g. Quiz will not submit)" required />
+          <textarea id="bugDescription" placeholder="What happened? What did you click before the problem appeared?" required></textarea>
+          <button type="submit">SEND REPORT</button>
+        </form>
+        <h3 class="subHeading">My reports</h3>
+        <div id="myReports"></div>
+      </section>
+
+      <section class="panel" id="profile">
+        <div class="panelHeader">
+          <div>
+            <p>ACCOUNT</p>
+            <h2>Profile and Password</h2>
+          </div>
+        </div>
+        <div class="profileBox">
+          <div>
+            <strong id="profileName"></strong>
+            <span id="profileEmail"></span>
+            <span id="profileId"></span>
+            <span id="profileSection"></span>
+          </div>
+
+          <form id="passwordForm">
+            <div class="passwordField">
+              <input
+                id="oldPassword"
+                type="password"
+                placeholder="Current password"
+                required
+              />
+              <button
+                type="button"
+                class="passwordToggle"
+                data-target="oldPassword"
+                aria-label="Show current password"
+              >
+                👁
+              </button>
+            </div>
+            <div class="passwordField">
+              <input
+                id="newPassword"
+                type="password"
+                placeholder="New password"
+                required
+              />
+              <button
+                type="button"
+                class="passwordToggle"
+                data-target="newPassword"
+                aria-label="Show new password"
+              >
+                👁
+              </button>
+            </div>
+            <div class="passwordField">
+              <input
+                id="confirmPassword"
+                type="password"
+                placeholder="Confirm new password"
+                required
+              />
+              <button
+                type="button"
+                class="passwordToggle"
+                data-target="confirmPassword"
+                aria-label="Show confirm password"
+              >
+                👁
+              </button>
+            </div>
+            <button type="submit">CHANGE PASSWORD</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      var user = ELMS.protect("student");
+
+      if (user) {
+        function byId(id) {
+          return document.getElementById(id);
+        }
+
+        var selectedYear = byId("schoolYear");
+        var selectedSemester = byId("semester");
+
+        byId("welcome").textContent = "Welcome, " + user.fullName;
+        byId("profileName").textContent = user.fullName;
+        byId("profileEmail").textContent = user.email;
+        byId("profileId").textContent = user.studentId;
+        byId("profileSection").textContent =
+          "Year: " +
+          (user.yearLevel || "") +
+          " · Section: " +
+          (user.section || "Not assigned");
+
+        selectedYear.innerHTML = ELMS.optionYears(
+          user.schoolYear || "2026-2027",
+        );
+        selectedSemester.innerHTML = ELMS.optionSemesters(
+          user.semester || "1st Semester",
+        );
+
+        function currentStudent() {
+          /* always read the saved record, never the copy captured when the
+             page first loaded, so a Registrar change shows up correctly */
+          return ELMS.current() || user;
+        }
+
+        function getAssignments() {
+          var me = currentStudent();
+          var studentSection = me.section || "";
+          var studentYear = me.yearLevel || "";
+
+          /* a student with no section has no class subjects yet; before
+             this they were shown every section's subjects */
+          if (!studentSection) {
+            return [];
+          }
+
+          return ELMS.assignments().filter(function (a) {
+            return (
+              a.schoolYear === selectedYear.value &&
+              a.semester === selectedSemester.value &&
+              a.section === studentSection &&
+              (!studentYear || !a.yearLevel || a.yearLevel === studentYear)
+            );
+          });
+        }
+
+        function renderProfileSection() {
+          var me = currentStudent();
+          byId("profileSection").textContent =
+            "Year: " +
+            (me.yearLevel || "") +
+            " · Section: " +
+            (me.section || "Not assigned");
+        }
+
+        function getGrades() {
+          return ELMS.get("grades").filter(function (g) {
+            return (
+              g.studentEmail === user.email &&
+              g.schoolYear === selectedYear.value &&
+              g.semester === selectedSemester.value
+            );
+          });
+        }
+
+        function getSubmissions() {
+          return ELMS.get("submissions").filter(function (s) {
+            return s.studentEmail === user.email;
+          });
+        }
+
+        function getActivities(assignments) {
+          return ELMS.get("activities").filter(function (a) {
+            return (
+              a.schoolYear === selectedYear.value &&
+              a.semester === selectedSemester.value &&
+              assignments.some(function (x) {
+                var sameTarget = a.assignmentId
+                  ? x.id === a.assignmentId
+                  : x.subjectId === a.subjectId &&
+                    (!a.section || a.section === x.section);
+                return (
+                  sameTarget &&
+                  (!a.teacherEmail || x.teacherEmail === a.teacherEmail)
+                );
+              })
+            );
+          });
+        }
+
+        function getQuizzes(assignments) {
+          return ELMS.get("quizzes").filter(function (q) {
+            return (
+              q.schoolYear === selectedYear.value &&
+              q.semester === selectedSemester.value &&
+              assignments.some(function (x) {
+                var sameTarget = q.assignmentId
+                  ? x.id === q.assignmentId
+                  : x.subjectId === q.subjectId &&
+                    (!q.section || q.section === x.section);
+                return (
+                  sameTarget &&
+                  (!q.yearLevel ||
+                    !x.yearLevel ||
+                    q.yearLevel === x.yearLevel) &&
+                  (!q.teacherEmail || x.teacherEmail === q.teacherEmail)
+                );
+              })
+            );
+          });
+        }
+
+        function renderStats(
+          assignments,
+          grades,
+          activities,
+          quizzes,
+          submissions,
+        ) {
+          var avg = grades.length
+            ? Math.round(
+                grades.reduce(function (total, g) {
+                  return total + Number(g.grade || 0);
+                }, 0) / grades.length,
+              )
+            : 0;
+
+          var pending = activities.filter(function (a) {
+            return !submissions.some(function (s) {
+              return s.activityId === a.id && s.status !== "Graded";
+            });
+          }).length;
+
+          byId("subjectCount").textContent = assignments.length;
+          byId("averageGrade").textContent = avg + "%";
+          byId("pendingCount").textContent = pending;
+          byId("quizCount").textContent = quizzes.length;
+        }
+
+        function renderAnnouncements() {
+          byId("announcementList").innerHTML =
+            ELMS.announcementHTML("student", user) ||
+            '<p class="empty">No announcements.</p>';
+        }
+
+        function renderSubjects(assignments) {
+          byId("subjectList").innerHTML =
+            assignments
+              .map(function (a) {
+                var s = ELMS.subject(a.subjectId);
+                return (
+                  '<article class="card">' +
+                  "<strong>" +
+                  ELMS.esc(s ? s.name : a.subjectId) +
+                  "</strong>" +
+                  "<span>" +
+                  ELMS.esc(s ? s.code : "") +
+                  " · Section " +
+                  ELMS.esc(a.section) +
+                  "</span>" +
+                  "<small>" +
+                  ELMS.esc(a.room) +
+                  "</small>" +
+                  "</article>"
+                );
+              })
+              .join("") ||
+            (currentStudent().section
+              ? '<p class="empty">No subjects assigned for this term.</p>'
+              : '<p class="empty">You are not assigned to a section yet. Please contact the Registrar.</p>');
+        }
+
+        function gradeCell(v) {
+          return v === undefined || v === null || v === ""
+            ? '<span class="dash">—</span>'
+            : "<strong>" + ELMS.esc(v) + "</strong>";
+        }
+
+        function renderGrades(grades) {
+          byId("gradeRows").innerHTML =
+            grades
+              .map(function (g) {
+                var s = ELMS.subject(g.subjectId);
+                var teacher = ELMS.get("users").find(function (u) {
+                  return u.email === g.teacherEmail;
+                });
+                var barWidth = Math.max(0, Math.min(100, Number(g.grade || 0)));
+
+                return (
+                  "<tr>" +
+                  "<td>" + ELMS.esc(s ? s.name : g.subjectId) + "</td>" +
+                  "<td>" + ELMS.esc(teacher ? teacher.fullName : g.teacherEmail) + "</td>" +
+                  "<td>" + ELMS.esc(g.section) + "</td>" +
+                  "<td>" + gradeCell(g.prelim) + "</td>" +
+                  "<td>" + gradeCell(g.midterm) + "</td>" +
+                  "<td>" + gradeCell(g.prefinal) + "</td>" +
+                  "<td>" + gradeCell(g.final) + "</td>" +
+                  '<td class="finalGradeCell">' +
+                  gradeCell(g.grade) +
+                  '<div class="gradeBar"><span style="width:' + barWidth + '%"></span></div>' +
+                  "</td>" +
+                  "<td>" + ELMS.esc(g.comment || "") + "</td>" +
+                  "</tr>"
+                );
+              })
+              .join("") ||
+            '<tr><td colspan="9" class="empty">No grades posted yet.</td></tr>';
+        }
+
+        /* ---------- Report a problem -> Admin ---------- */
+        function renderMyReports() {
+          var mine = ELMS.get("bugReports").filter(function (b) {
+            return b.reporterEmail === user.email;
+          }).reverse();
+
+          byId("myReports").innerHTML =
+            mine.map(function (b) {
+              var st = b.status || "Open";
+              return (
+                '<article class="reportItem ' + st.replace(/\s+/g, "").toLowerCase() + '">' +
+                "<strong>" + ELMS.esc(b.title) + "</strong>" +
+                '<span class="reportStatus">' + ELMS.esc(st) + "</span>" +
+                "<small>" + ELMS.esc(b.category) + " · " + ELMS.esc(b.createdAt) + "</small>" +
+                "</article>"
+              );
+            }).join("") || '<p class="empty">You have not sent any reports.</p>';
+        }
+
+        byId("bugForm").onsubmit = function (e) {
+          e.preventDefault();
+
+          ELMS.save("bugReports", {
+            id: ELMS.id("BUG"),
+            category: byId("bugCategory").value,
+            title: byId("bugTitle").value.trim(),
+            description: byId("bugDescription").value.trim(),
+            reporterName: user.fullName,
+            reporterEmail: user.email,
+            page: "Student Dashboard",
+            status: "Open",
+            createdAt: new Date().toLocaleString(),
+          });
+
+          this.reset();
+          alert("Thank you! Your report was sent to the Administrator.");
+          renderMyReports();
+        };
+
+        function renderAssessmentGrades(submissions) {
+          var rows = submissions
+            .filter(function (s) {
+              return s.status === "Graded" && s.score != null;
+            })
+            .map(function (s) {
+              var quiz = ELMS.get("quizzes").find(function (x) {
+                return x.id === s.quizId;
+              });
+              var activity = ELMS.get("activities").find(function (x) {
+                return x.id === s.activityId;
+              });
+              var item = quiz || activity;
+              if (!item) return null;
+
+              var teacher = ELMS.get("users").find(function (u) {
+                return u.email === s.teacherEmail;
+              });
+
+              return {
+                type: quiz ? "Quiz" : "Performance Task",
+                title: item.title,
+                subject:
+                  (ELMS.subject(item.subjectId) || {}).name || item.subjectId,
+                teacher: teacher ? teacher.fullName : s.teacherEmail,
+                score: s.score,
+                submittedAt: s.submittedAt,
+              };
+            })
+            .filter(Boolean);
+
+          byId("assessmentGradeRows").innerHTML =
+            rows
+              .map(function (g) {
+                return (
+                  "<tr>" +
+                  "<td>" +
+                  ELMS.esc(g.type) +
+                  "</td>" +
+                  "<td>" +
+                  ELMS.esc(g.title) +
+                  "</td>" +
+                  "<td>" +
+                  ELMS.esc(g.subject) +
+                  "</td>" +
+                  "<td>" +
+                  ELMS.esc(g.teacher) +
+                  "</td>" +
+                  "<td><strong>" +
+                  ELMS.esc(g.score) +
+                  "</strong></td>" +
+                  "</tr>"
+                );
+              })
+              .join("") ||
+            '<tr><td colspan="5" class="empty">No quiz or performance task grades posted yet.</td></tr>';
+        }
+
+        /* =================================================================
+         RENDER: ACTIVITIES (performance tasks)
+         ================================================================= */
+
+        function renderActivities(activities, submissions) {
+          byId("activityList").innerHTML =
+            activities
+              .map(function (a) {
+                var submitted = submissions.find(function (s) {
+                  return s.activityId === a.id;
+                });
+                var graded = submissions.filter(function (s) {
+                  return (
+                    s.activityId === a.id &&
+                    String(s.status || "").toLowerCase() === "graded"
+                  );
+                });
+                var lastGraded = graded[graded.length - 1];
+
+                var html = '<article class="task"><div>';
+                html +=
+                  "<span>" +
+                  ELMS.esc((ELMS.subject(a.subjectId) || {}).name || "") +
+                  "</span>";
+                html += "<strong>" + ELMS.esc(a.title) + "</strong>";
+                html += "<small>Due " + ELMS.esc(a.due) + "</small>";
+                html += "<p>" + ELMS.esc(a.description || "") + "</p>";
+
+                if (submitted) {
+                  html +=
+                    '<small class="status">Submitted ' +
+                    ELMS.esc(submitted.submittedAt) +
+                    " · Awaiting teacher grade</small>";
+                }
+
+                if (graded.length) {
+                  html +=
+                    '<small class="status">Previous graded submission · Score ' +
+                    ELMS.esc(lastGraded.score) +
+                    " · " +
+                    ELMS.esc(lastGraded.gradedAt || "Graded") +
+                    "</small>";
+                }
+
+                if (!submitted) {
+                  html +=
+                    '<textarea class="activityAnswer" data-id="' +
+                    a.id +
+                    '" placeholder="Type your answer here"></textarea>';
+                  html +=
+                    '<input class="activityFile" data-id="' +
+                    a.id +
+                    '" type="file" accept=".pdf,application/pdf">';
+                }
+
+                html += "</div>";
+                html +=
+                  '<button class="submitActivity" data-id="' +
+                  a.id +
+                  '" ' +
+                  (submitted ? "disabled" : "") +
+                  ">" +
+                  (submitted ? "SUBMITTED" : "SUBMIT TASK") +
+                  "</button>";
+                html += "</article>";
+
+                return html;
+              })
+              .join("") || '<p class="empty">No activities for this term.</p>';
+
+          bindActivitySubmit(activities);
+        }
+
+        function bindActivitySubmit(activities) {
+          document.querySelectorAll(".submitActivity").forEach(function (btn) {
+            btn.onclick = function () {
+              var id = CSS.escape(btn.dataset.id);
+              var answer = document.querySelector(
+                '.activityAnswer[data-id="' + id + '"]',
+              );
+              var fileInput = document.querySelector(
+                '.activityFile[data-id="' + id + '"]',
+              );
+              var file = fileInput && fileInput.files[0];
+
+              if (!answer || (!answer.value.trim() && !file)) {
+                alert("Type an answer or upload a PDF before submitting.");
+                return;
+              }
+
+              ELMS.readFile(file, function (fileData) {
+                var activity = activities.find(function (x) {
+                  return x.id === btn.dataset.id;
+                });
+                var list = ELMS.get("submissions");
+
+                var alreadySubmitted = list.some(function (s) {
+                  return (
+                    s.activityId === activity.id &&
+                    s.studentEmail === user.email
+                  );
+                });
+                if (alreadySubmitted) {
+                  alert("You have already submitted this task.");
+                  return;
+                }
+
+                list.push({
+                  id: ELMS.id("SUBM"),
+                  activityId: activity.id,
+                  studentEmail: user.email,
+                  teacherEmail: activity.teacherEmail,
+                  submittedAt: new Date().toLocaleString(),
+                  answer: answer.value.trim(),
+                  file: fileData,
+                  status: "Submitted",
+                  category: "performance_task",
+                });
+
+                ELMS.set("submissions", list);
+                alert("Learning task submitted.");
+                render();
+              });
+            };
+          });
+        }
+
+        /* =================================================================
+         RENDER: QUIZZES
+         ================================================================= */
+
+        function renderQuestion(quiz, item, index) {
+          var html = '<div class="quizQuestion">';
+          html += "<strong>Question " + (index + 1) + "</strong>";
+          html += "<p>" + ELMS.esc(item.question) + "</p>";
+
+          if (item.type === "multiple" && item.choices.length) {
+            html += item.choices
+              .map(function (c) {
+                return (
+                  '<label><input type="radio" name="q_' +
+                  quiz.id +
+                  "_" +
+                  index +
+                  '" value="' +
+                  ELMS.esc(c) +
+                  '"> ' +
+                  ELMS.esc(c) +
+                  "</label>"
+                );
+              })
+              .join("");
+          } else {
+            html +=
+              '<input class="quizAnswer" data-index="' +
+              index +
+              '" placeholder="Your answer">';
+          }
+
+          html += "</div>";
+          return html;
+        }
+
+        function renderQuizzes(quizzes, submissions) {
+          byId("quizList").innerHTML =
+            quizzes
+              .map(function (q) {
+                var done = submissions.find(function (s) {
+                  return s.quizId === q.id && s.status !== "Graded";
+                });
+
+                var html = '<article class="quizCard">';
+                html += "<strong>" + ELMS.esc(q.title) + "</strong>";
+                html +=
+                  "<small>Due " +
+                  ELMS.esc(q.due) +
+                  " · " +
+                  q.questions.length +
+                  " question(s)</small>";
+
+                if (done) {
+                  html +=
+                    '<p class="status">Submitted ' +
+                    ELMS.esc(done.submittedAt) +
+                    " · Awaiting teacher grade</p>";
+                } else {
+                  html += '<div class="quizForm" data-id="' + q.id + '">';
+                  html += q.questions
+                    .map(function (item, i) {
+                      return renderQuestion(q, item, i);
+                    })
+                    .join("");
+                  html +=
+                    '<button type="button" class="submitQuiz" data-id="' +
+                    q.id +
+                    '">SUBMIT QUIZ</button>';
+                  html += "</div>";
+                }
+
+                html += "</article>";
+                return html;
+              })
+              .join("") || '<p class="empty">No quizzes for this term.</p>';
+
+          bindQuizSubmit(quizzes);
+        }
+
+        function bindQuizSubmit(quizzes) {
+          document.querySelectorAll(".submitQuiz").forEach(function (btn) {
+            btn.onclick = function () {
+              var quiz = quizzes.find(function (x) {
+                return x.id === btn.dataset.id;
+              });
+              var answers = [];
+              var correct = 0;
+
+              quiz.questions.forEach(function (item, i) {
+                var answer = "";
+
+                if (item.type === "multiple" && item.choices.length) {
+                  var checked = document.querySelector(
+                    'input[name="q_' + quiz.id + "_" + i + '"]:checked',
+                  );
+                  answer = checked ? checked.value : "";
+                } else {
+                  var input = document.querySelector(
+                    '.quizForm[data-id="' +
+                      quiz.id +
+                      '"] .quizAnswer[data-index="' +
+                      i +
+                      '"]',
+                  );
+                  answer = input ? input.value.trim() : "";
+                }
+
+                answers.push({ question: item.question, answer: answer });
+
+                if (
+                  answer.toLowerCase() === String(item.answer).toLowerCase()
+                ) {
+                  correct++;
+                }
+              });
+
+              var list = ELMS.get("submissions");
+
+              var alreadySubmitted = list.some(function (s) {
+                return s.quizId === quiz.id && s.studentEmail === user.email;
+              });
+              if (alreadySubmitted) {
+                alert("You have already submitted this quiz.");
+                return;
+              }
+
+              var autoScore = quiz.questions.length
+                ? Math.round((correct / quiz.questions.length) * 100)
+                : 0;
+
+              list.push({
+                id: ELMS.id("QUIZSUB"),
+                quizId: quiz.id,
+                studentEmail: user.email,
+                teacherEmail: quiz.teacherEmail,
+                submittedAt: new Date().toLocaleString(),
+                answers: answers,
+                autoScore: autoScore,
+                score: null,
+                status: "Submitted",
+                category: "quiz",
+              });
+
+              ELMS.set("submissions", list);
+              alert("Quiz submitted. Your teacher will check and grade it.");
+              render();
+            };
+          });
+        }
+
+        function render() {
+          var assignments = getAssignments();
+          var grades = getGrades();
+          var submissions = getSubmissions();
+          var activities = getActivities(assignments);
+          var quizzes = getQuizzes(assignments);
+
+          renderProfileSection();
+          renderStats(assignments, grades, activities, quizzes, submissions);
+          renderAnnouncements();
+          renderSubjects(assignments);
+          renderGrades(grades);
+          renderAssessmentGrades(submissions);
+          renderActivities(activities, submissions);
+          renderQuizzes(quizzes, submissions);
+          renderMyReports();
+        }
+
+        var lastDashboardState = "";
+
+        function dashboardState() {
+          return [
+            "users",
+            "assignments",
+            "grades",
+            "activities",
+            "quizzes",
+            "submissions",
+            "announcements",
+            "bugReports",
+            "elmsGradesUpdatedAt",
+            "elmsAssessmentGradesUpdatedAt",
+          ]
+            .map(function (k) {
+              return k + "=" + localStorage.getItem(k);
+            })
+            .join("|");
+        }
+
+        function refreshIfChanged() {
+          var state = dashboardState();
+          if (state !== lastDashboardState) {
+            lastDashboardState = state;
+            render();
+          }
+        }
+
+        selectedYear.onchange = render;
+        selectedSemester.onchange = render;
+
+        byId("refresh").onclick = function () {
+          lastDashboardState = "";
+          refreshIfChanged();
+        };
+
+        window.addEventListener("storage", refreshIfChanged);
+
+        lastDashboardState = dashboardState();
+        render();
+        setInterval(refreshIfChanged, 3000);
+
+        byId("passwordForm").onsubmit = function (e) {
+          e.preventDefault();
+
+          var users = ELMS.get("users");
+          var account = users.find(function (u) {
+            return u.email === user.email;
+          });
+          var oldPassword = byId("oldPassword").value;
+          var newPassword = byId("newPassword").value;
+
+          if (!account || account.password !== oldPassword) {
+            alert("Current password is incorrect.");
+            return;
+          }
+          if (newPassword.length < 6) {
+            alert("New password must be at least 6 characters.");
+            return;
+          }
+          if (newPassword !== byId("confirmPassword").value) {
+            alert("Passwords do not match.");
+            return;
+          }
+
+          account.password = newPassword;
+          ELMS.set("users", users);
+          alert("Password changed successfully.");
+          this.reset();
+        };
+
+        document.querySelectorAll(".passwordToggle").forEach(function (btn) {
+          btn.onclick = function () {
+            var input = byId(btn.dataset.target);
+            var shown = input.type === "text";
+
+            input.type = shown ? "password" : "text";
+            btn.textContent = shown ? "👁" : "🙈";
+            btn.setAttribute(
+              "aria-label",
+              shown ? "Show password" : "Hide password",
+            );
+          };
+        });
+      }
+    </script>
+    <script src="JAVA/sidenav.js"></script>
+  </body>
+</html>

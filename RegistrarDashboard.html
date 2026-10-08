@@ -1,0 +1,2656 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Registrar Dashboard | Cyber Nexus Academy
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="CSS/RegistrarDashboard.css"
+    >
+    <link rel="stylesheet" href="CSS/sidenav.css" />
+    <link rel="stylesheet" href="CSS/dashboard-theme.css" />
+
+    <script src="JAVA/elms-data.js"></script>
+</head>
+
+<body id="top">
+
+    <header class="topbar">
+
+        <a
+            class="brand"
+            href="LandingPage.html"
+        >
+            <img
+                src="Vid,Aud,Pic/LOGOACADEMY.png"
+                alt="Cyber Nexus Academy Logo"
+            >
+
+            <span>
+                <strong>
+                    CYBER NEXUS
+                </strong>
+
+                <small>
+                    ACADEMY
+                </small>
+            </span>
+        </a>
+
+        <nav id="sideNav" aria-label="Main menu">
+            <a href="LandingPage.html" 
+            style="display: flex; align-items: center; gap: 8px">
+          <img
+            src="Assets/assets/icons/HomeIconn.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+            Home
+            </a>
+            <a href="#top" style="display: flex; align-items: center; gap: 8px">
+          <img
+            src="Assets/assets/icons/OverviewIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Overview
+        </a>
+            <a href="#applicants" style="display: flex; align-items: center; gap: 8px">
+          <img
+            src="Assets/assets/icons/SubjectIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Applicant Records
+        </a>
+            <a href="#requirements" style="display: flex; align-items: center; gap: 8px">
+          <img
+            src="Assets/assets/icons/SubjectIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Enrollment Documents
+        </a>
+            <a href="#assign-teacher" style="display: flex; align-items: center; gap: 8px">
+          <img
+            src="Assets/assets/icons/SubjectIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Assign Subject to Teacher
+        </a>
+            <a href="#enrolled-students" style="display: flex; align-items: center; gap: 8px">
+          <img
+            src="Assets/assets/icons/StudentIcon.png"
+            alt=""
+            width="20"  
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Enrolled Students
+        </a>
+            <a href="#sections" style="display: flex; align-items: center; gap: 8px">
+          <img
+            src="Assets/assets/icons/SectionIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Enrollment by Section
+        </a>
+            <a href="#unassigned" style="display: flex; align-items: center; gap: 8px">
+          <img
+            src="Assets/assets/icons/StudentIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Unassigned Students
+        </a>
+            <a href="#semester-subjects" style="display: flex; align-items: center; gap: 8px">
+          <img
+            src="Assets/assets/icons/SubjectIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Semester Subjects
+        </a>
+            <a href="#admin-announcements" style="display: flex; align-items: center; gap: 8px">
+          <img
+            src="Assets/assets/icons/AdminIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Admin Announcements
+        </a>
+            <a href="Logout.html" style="display: flex; align-items: center; gap: 8px">
+          <img
+            src="Assets/assets/icons/LogoutIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Log Out
+        </a>
+        </nav>
+
+    </header>
+
+
+
+
+
+    <main class="layout">
+
+        <section class="roleBanner">
+
+            <p>
+                REGISTRAR AND RECORDS
+            </p>
+
+            <h1 id="welcome">
+                Registrar Dashboard
+            </h1>
+
+            <div>
+                Review applications, verify documents, officially enroll
+                students, manage sections, and maintain records.
+            </div>
+
+        </section>
+
+        <section class="stats">
+
+            <article>
+                <span>
+                    APPLICATIONS
+                </span>
+
+                <strong id="apps">
+                    0
+                </strong>
+            </article>
+
+            <article>
+                <span>
+                    FOR REVIEW
+                </span>
+
+                <strong id="review">
+                    0
+                </strong>
+            </article>
+
+            <article>
+                <span>
+                    OFFICIALLY ENROLLED
+                </span>
+
+                <strong id="enrolled">
+                    0
+                </strong>
+            </article>
+
+            <article>
+                <span>
+                    STUDENTS
+                </span>
+
+                <strong id="studentCount">
+                    0
+                </strong>
+            </article>
+
+        </section>
+
+        <section class="panel" id="applicants">
+
+            <div class="panelHeader">
+
+                <div>
+                    <p>
+                        REGISTRATION
+                    </p>
+
+                    <h2>
+                        Applicant Records
+                    </h2>
+                </div>
+
+            </div>
+
+            <div class="tableWrap">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>
+                                Applicant
+                            </th>
+
+                            <th>
+                                Application
+                            </th>
+
+                            <th>
+                                Year
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Files
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="rows"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <section class="panel" id="requirements">
+
+            <div class="panelHeader">
+
+                <div>
+                    <p>
+                        REQUIREMENTS
+                    </p>
+
+                    <h2>
+                        Official Enrollment Documents
+                    </h2>
+                </div>
+
+            </div>
+
+            <form
+                id="requirementForm"
+                class="formGrid"
+            >
+
+                <select id="applicationSelect"></select>
+
+                <label>
+                    Form 137
+
+                    <input
+                        type="file"
+                        id="form137"
+                        accept=".pdf,image/*"
+                    >
+                </label>
+
+                <label>
+                    Form 138
+
+                    <input
+                        type="file"
+                        id="form138"
+                        accept=".pdf,image/*"
+                    >
+                </label>
+
+                <label>
+                    Birth Certificate
+
+                    <input
+                        type="file"
+                        id="birthCert"
+                        accept=".pdf,image/*"
+                    >
+                </label>
+
+                <label>
+                    ID / Photo
+
+                    <input
+                        type="file"
+                        id="idPhoto"
+                        accept=".pdf,image/*"
+                    >
+                </label>
+
+                <input
+                    id="fileNote"
+                    placeholder="Additional document note"
+                >
+
+                <button>
+                    SAVE REQUIREMENTS
+                </button>
+
+            </form>
+
+            <p class="empty">
+                If you do not have these documents yet, you can still submit the application.
+                The applicant may come to the school and submit or complete the requirements
+                with the Registrar. The requirements must be completed before the applicant
+                can be marked Officially Enrolled.
+            </p>
+
+            <div id="requirementStatus"></div>
+
+        </section>
+
+        <section class="panel" id="assign-teacher">
+
+            <div class="panelHeader">
+
+                <div>
+                    <p>
+                        ACADEMICS
+                    </p>
+
+                    <h2>
+                        Assign Subject to Teacher
+                    </h2>
+                </div>
+
+            </div>
+
+            <form
+                id="assignmentForm"
+                class="formGrid"
+            >
+
+                <select
+                    id="teacherSelect"
+                    required
+                ></select>
+
+                <select
+                    id="subjectSelect"
+                    required
+                ></select>
+
+                <select
+                    id="yearLevel"
+                    required
+                >
+                    <option>
+                        1st Year
+                    </option>
+
+                    <option>
+                        2nd Year
+                    </option>
+
+                    <option>
+                        3rd Year
+                    </option>
+
+                    <option>
+                        4th Year
+                    </option>
+                </select>
+
+                <select id="section">
+                    <option>
+                        A
+                    </option>
+
+                    <option>
+                        B
+                    </option>
+
+                    <option>
+                        C
+                    </option>
+                </select>
+
+                <input
+                    id="room"
+                    placeholder="Building 2 Room 201"
+                    required
+                >
+
+                <select id="year"></select>
+
+                <select id="semester"></select>
+
+                <button>
+                    ASSIGN SUBJECT
+                </button>
+
+            </form>
+
+            <div id="assignmentRows"></div>
+
+        </section>
+
+        <section class="panel" id="enrolled-students">
+
+            <div class="panelHeader">
+
+                <div>
+                    <p>
+                        STUDENT RECORDS
+                    </p>
+
+                    <h2>
+                        Manage Officially Enrolled Students
+                    </h2>
+                </div>
+
+            </div>
+
+            <p class="accountNote">
+                The Registrar records the officially enrolled student here.
+                The <strong>Administrator creates the login account</strong> —
+                the student cannot sign in until the Admin has created it.
+            </p>
+
+            <form
+                id="studentForm"
+                class="formGrid"
+            >
+
+                <input
+                    id="studentFirst"
+                    placeholder="First name"
+                    required
+                >
+
+                <input
+                    id="studentLast"
+                    placeholder="Last name"
+                    required
+                >
+
+                <input
+                    id="studentEmail"
+                    type="email"
+                    placeholder="Email"
+                    required
+                >
+
+                <input
+                    id="studentId"
+                    placeholder="Student ID"
+                    required
+                >
+
+                <select
+                    id="studentProgram"
+                    required
+                    aria-label="Program"
+                ></select>
+
+                <select id="studentYearLevel">
+                    <option>
+                        1st Year
+                    </option>
+
+                    <option>
+                        2nd Year
+                    </option>
+
+                    <option>
+                        3rd Year
+                    </option>
+
+                    <option>
+                        4th Year
+                    </option>
+                </select>
+
+                <select id="studentSection">
+                    <option value="">
+                        Unassigned (assign later)
+                    </option>
+
+                    <option>
+                        A
+                    </option>
+
+                    <option>
+                        B
+                    </option>
+
+                    <option>
+                        C
+                    </option>
+                </select>
+<button>SUBMIT TO ADMIN</button>
+
+            </form>
+
+            <div class="tableWrap">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>
+                                Name
+                            </th>
+
+                            <th>
+                                Student ID
+                            </th>
+
+                            <th>
+                                Year / Section
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="studentRows"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <section class="panel" id="sections">
+
+            <div class="panelHeader">
+
+                <div>
+                    <p>
+                        SECTION MANAGEMENT
+                    </p>
+
+                    <h2>
+                        Official Enrollment by Section
+                    </h2>
+                </div>
+
+                <div class="filterBar">
+                    <label>
+                        Year Level
+                        <select id="sectionManagerYear">
+                            <option>1st Year</option>
+                            <option>2nd Year</option>
+                            <option>3rd Year</option>
+                            <option>4th Year</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        School Year
+                        <select id="sectionManagerSchoolYear"></select>
+                    </label>
+
+                    <label>
+                        Semester
+                        <select id="sectionManagerSemester"></select>
+                    </label>
+                </div>
+
+            </div>
+
+            <p class="registrarNotice">
+                Officially enrolled students are grouped into Sections A, B, and C.
+                Each section also lists its subjects for the selected semester and shows
+                whether a teacher is already assigned. Use the section controls to assign,
+                move, or de-assign a student.
+            </p>
+
+            <div id="sectionGroups" class="sectionGroups"></div>
+
+        </section>
+
+        <section class="panel" id="unassigned">
+
+            <div class="panelHeader">
+
+                <div>
+                    <p>
+                        SECTION MANAGEMENT
+                    </p>
+
+                    <h2>
+                        Unassigned Students
+                        <span class="countBadge" id="unassignedCount">0</span>
+                    </h2>
+                </div>
+
+            </div>
+
+            <p class="registrarNotice">
+                These officially enrolled students are not in any section yet.
+                Pick a section and press Assign to place them in a class.
+            </p>
+
+            <div class="tableWrap">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Student ID</th>
+                            <th>Program</th>
+                            <th>Year Level</th>
+                            <th>Assign to Section</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="unassignedRows"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <section class="panel" id="semester-subjects">
+
+            <div class="panelHeader">
+
+                <div>
+                    <p>
+                        ACADEMIC STRUCTURE
+                    </p>
+
+                    <h2>
+                        Semester Subject Management
+                    </h2>
+                </div>
+
+            </div>
+
+            <form id="subjectStructureForm" class="formGrid">
+
+                <input type="hidden" id="structureId">
+
+                <input
+                    id="structureCode"
+                    placeholder="Subject Code"
+                    required
+                >
+
+                <input
+                    id="structureName"
+                    placeholder="Subject Name"
+                    required
+                >
+
+                <select id="structureYearLevel">
+                    <option>1st Year</option>
+                    <option>2nd Year</option>
+                    <option>3rd Year</option>
+                    <option>4th Year</option>
+                </select>
+
+                <select id="structureSemester"></select>
+
+                <select id="structureSchoolYear"></select>
+
+                <button type="submit">SAVE SUBJECT</button>
+
+                <button type="button" id="cancelSubjectEdit">CLEAR / NEW SUBJECT</button>
+
+            </form>
+
+            <p class="registrarNotice">
+                Subjects can be added, edited, moved to another semester, or removed from
+                the academic structure without restricting the registrar to a fixed semester.
+            </p>
+
+            <div class="semesterTabs" id="semesterTabs" role="tablist"></div>
+
+            <div class="filterBar">
+                <label>
+                    School Year
+                    <select id="structureFilterYear"></select>
+                </label>
+
+                <label>
+                    Year Level
+                    <select id="structureFilterLevel">
+                        <option value="">All year levels</option>
+                        <option>1st Year</option>
+                        <option>2nd Year</option>
+                        <option>3rd Year</option>
+                        <option>4th Year</option>
+                    </select>
+                </label>
+            </div>
+
+            <div id="subjectStructureList" class="subjectStructureList"></div>
+
+        </section>
+
+        <section class="panel" id="admin-announcements">
+
+            <div class="panelHeader">
+
+                <div>
+                    <p>
+                        ANNOUNCEMENTS
+                    </p>
+
+                    <h2>
+                        From Admin
+                    </h2>
+                </div>
+
+            </div>
+
+            <div id="announcementList"></div>
+
+        </section>
+
+    </main>
+
+    <script>
+        var user = ELMS.protect('registrar');
+
+        if (user) {
+
+            document.getElementById('welcome').textContent =
+                'Welcome, ' + user.fullName;
+
+            document.getElementById('year').innerHTML =
+                ELMS.optionYears('2026-2027');
+
+            document.getElementById('semester').innerHTML =
+                ELMS.optionSemesters('1st Semester');
+
+            document.getElementById('structureSemester').innerHTML =
+                ELMS.optionSemesters('1st Semester');
+
+            document.getElementById('structureSchoolYear').innerHTML =
+                ELMS.optionYears('2026-2027');
+
+            document.getElementById('sectionManagerSchoolYear').innerHTML =
+                ELMS.optionYears('2026-2027');
+
+            document.getElementById('sectionManagerSemester').innerHTML =
+                ELMS.optionSemesters('1st Semester');
+
+            document.getElementById('structureFilterYear').innerHTML =
+                ELMS.optionYears('2026-2027');
+
+            document.getElementById('studentProgram').innerHTML =
+                '<option value="" disabled selected>Select Program</option>' +
+                ELMS.programs.map(function (p) {
+                    return '<option>' + ELMS.esc(p) + '</option>';
+                }).join('');
+
+            var structureTab = '1st Semester';
+
+            function activeSemester() {
+                return structureTab;
+            }
+
+                        /* Files the applicant uploaded on the registration form */
+            var FILE_LABELS = [
+                ['form137File', 'Form 137'],
+                ['form138File', 'Form 138'],
+                ['birthCertFile', 'Birth Cert.'],
+                ['idPhotoFile', 'ID / Photo']
+            ];
+
+            function appFilesHTML(a) {
+                var r = a.requirements || {};
+                var found = FILE_LABELS.filter(function (f) {
+                    return r[f[0]] && r[f[0]].id;
+                });
+
+                if (!found.length) {
+                    return '<span class="fileNone">No files yet</span>';
+                }
+
+                return (
+                    '<div class="fileChips">' +
+                    found.map(function (f) {
+                        var meta = r[f[0]];
+                        return (
+                            '<span class="fileChip">' +
+                            '<b>' + f[1] + '</b>' +
+                            '<button type="button" class="viewAppFile" data-file-id="' + ELMS.esc(meta.id) + '">VIEW</button>' +
+                            '<button type="button" class="downloadAppFile" data-file-id="' + ELMS.esc(meta.id) + '">SAVE</button>' +
+                            '</span>'
+                        );
+                    }).join('') +
+                    '</div>'
+                );
+            }
+
+            document.addEventListener('click', function (e) {
+                var v = e.target.closest('.viewAppFile');
+                var d = e.target.closest('.downloadAppFile');
+
+                if (v) {
+                    ELMS.viewFile(v.dataset.fileId);
+                } else if (d) {
+                    ELMS.downloadFile(d.dataset.fileId);
+                }
+            });
+
+            function sectionCounts(yearLevel, year) {
+
+                var users =
+                    ELMS.get('users').filter(function (u) {
+
+                        return (
+                            u.role === 'student' &&
+                            u.enrollmentStatus === 'Officially Enrolled' &&
+                            u.yearLevel === yearLevel &&
+                            u.schoolYear === year
+                        );
+
+                    });
+
+                return {
+                    A: users.filter(function (u) {
+                        return u.section === 'A';
+                    }).length,
+
+                    B: users.filter(function (u) {
+                        return u.section === 'B';
+                    }).length,
+
+                    C: users.filter(function (u) {
+                        return u.section === 'C';
+                    }).length
+                };
+            }
+
+            function nextSection(yearLevel, year) {
+
+                var c = sectionCounts(
+                    yearLevel,
+                    year
+                );
+
+                if (c.A < 40) {
+                    return 'A';
+                }
+
+                if (c.B < 40) {
+                    return 'B';
+                }
+
+                if (c.C < 40) {
+                    return 'C';
+                }
+
+                return '';
+            }
+
+            function sectionSubjectsHTML(section, yearLevel, schoolYear, semester) {
+                var structures = ELMS.get('subjectStructures').filter(function (x) {
+                    return (
+                        x.yearLevel === yearLevel &&
+                        x.schoolYear === schoolYear &&
+                        x.semester === semester
+                    );
+                });
+
+                var assignments = ELMS.assignments();
+                var teachers = ELMS.get('users');
+                var assignedCount = 0;
+
+                var rows = structures.map(function (st) {
+                    var subject = ELMS.subject(st.subjectId);
+                    var a = assignments.find(function (x) {
+                        return (
+                            x.subjectId === st.subjectId &&
+                            x.yearLevel === yearLevel &&
+                            x.section === section &&
+                            x.schoolYear === schoolYear &&
+                            x.semester === semester
+                        );
+                    });
+                    var teacher = a
+                        ? teachers.find(function (u) {
+                            return u.email === a.teacherEmail;
+                        })
+                        : null;
+
+                    if (a) {
+                        assignedCount++;
+                    }
+
+                    return `
+                        <div class="subjectSlot ${a ? 'assigned' : 'unfilled'}">
+                            <div class="slotSubject">
+                                <strong>${ELMS.esc(subject ? subject.code : st.subjectId)}</strong>
+                                <small>${ELMS.esc(subject ? subject.name : '')}</small>
+                            </div>
+                            <div class="slotTeacher">
+                                ${a
+                                    ? `<span class="slotStatus ok">&#10003; Teacher assigned</span>
+                                       <b>${ELMS.esc(teacher ? teacher.fullName : a.teacherEmail)}</b>
+                                       <small>${ELMS.esc(a.room || '')}</small>`
+                                    : `<span class="slotStatus warn">&#9888; No teacher assigned</span>
+                                       <button type="button" class="quickAssign"
+                                           data-subject="${ELMS.esc(st.subjectId)}"
+                                           data-section="${ELMS.esc(section)}"
+                                           data-level="${ELMS.esc(yearLevel)}"
+                                           data-year="${ELMS.esc(schoolYear)}"
+                                           data-semester="${ELMS.esc(semester)}">ASSIGN TEACHER</button>`}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                return `
+                    <div class="sectionSubjects">
+                        <div class="sectionSubjectsHead">
+                            <strong>Subjects &middot; ${ELMS.esc(semester)}</strong>
+                            <span class="coverage ${structures.length && assignedCount === structures.length ? 'ok' : 'warn'}">
+                                ${assignedCount}/${structures.length} with teacher
+                            </span>
+                        </div>
+                        ${rows || '<p class="empty">No subjects configured for this semester.</p>'}
+                    </div>
+                `;
+            }
+
+            function renderSectionGroups() {
+                var selectedYear = document.getElementById('sectionManagerYear').value;
+                var selectedSchoolYear = document.getElementById('sectionManagerSchoolYear').value;
+                var selectedSemester = document.getElementById('sectionManagerSemester').value;
+                var users = ELMS.get('users').filter(function (u) {
+                    return (
+                        u.role === 'student' &&
+                        u.enrollmentStatus === 'Officially Enrolled' &&
+                        u.yearLevel === selectedYear
+                    );
+                });
+
+                document.getElementById('sectionGroups').innerHTML =
+                    ['A', 'B', 'C'].map(function (section) {
+                        var list = users.filter(function (u) {
+                            return u.section === section;
+                        });
+
+                        return `
+                            <article class="sectionCard">
+                                <div class="sectionCardHeader">
+                                    <strong>Section ${section}</strong>
+                                    <span>${list.length} student(s)</span>
+                                </div>
+                                ${sectionSubjectsHTML(section, selectedYear, selectedSchoolYear, selectedSemester)}
+                                <div class="sectionStudents">
+                                    ${list.map(function (student) {
+                                        return `
+                                            <div class="sectionStudent">
+                                                <strong>${ELMS.esc(student.fullName)}</strong>
+                                                <small>${ELMS.esc(student.studentId)} · ${ELMS.esc(student.email)}</small>
+                                                <div class="sectionStudentActions">
+                                                    ${['A', 'B', 'C'].map(function (target) {
+                                                        return `
+                                                            <button type="button" class="moveStudent" data-email="${ELMS.esc(student.email)}" data-section="${target}">
+                                                                ${student.section === target ? 'SECTION ' + target : 'MOVE TO ' + target}
+                                                            </button>
+                                                        `;
+                                                    }).join('')}
+                                                    <button type="button" class="deassignStudent" data-email="${ELMS.esc(student.email)}">DE-ASSIGN</button>
+                                                </div>
+                                            </div>
+                                        `;
+                                    }).join('') || '<p class="empty">No students in this section.</p>'}
+                                </div>
+                            </article>
+                        `;
+                    }).join('');
+            }
+
+            function renderUnassigned() {
+                var list = ELMS.get('users').filter(function (u) {
+                    return (
+                        u.role === 'student' &&
+                        u.enrollmentStatus === 'Officially Enrolled' &&
+                        !u.section
+                    );
+                });
+
+                document.getElementById('unassignedCount').textContent = list.length;
+
+                document.getElementById('unassignedRows').innerHTML =
+                    list.map(function (s) {
+                        return `
+                            <tr>
+                                <td>
+                                    ${ELMS.esc(s.fullName)}
+                                    <small>${ELMS.esc(s.email)}</small>
+                                </td>
+                                <td>${ELMS.esc(s.studentId)}</td>
+                                <td>${ELMS.esc(s.program || '')}</td>
+                                <td>${ELMS.esc(s.yearLevel || '')}</td>
+                                <td>
+                                    <div class="inlineAssign">
+                                        <select class="unassignedTarget" data-email="${ELMS.esc(s.email)}">
+                                            <option>A</option>
+                                            <option>B</option>
+                                            <option>C</option>
+                                        </select>
+                                        <button type="button" class="assignUnassigned" data-email="${ELMS.esc(s.email)}">ASSIGN</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        `;
+                    }).join('') ||
+                    '<tr><td colspan="5" class="empty">Every officially enrolled student is assigned to a section.</td></tr>';
+            }
+
+            function renderSubjectStructure() {
+                var all = ELMS.get('subjectStructures');
+                var filterYear = document.getElementById('structureFilterYear').value;
+                var filterLevel = document.getElementById('structureFilterLevel').value;
+
+                var inYear = all.filter(function (x) {
+                    return x.schoolYear === filterYear;
+                });
+
+                document.getElementById('semesterTabs').innerHTML =
+                    ELMS.semesters.map(function (sem) {
+                        var n = inYear.filter(function (x) {
+                            return x.semester === sem;
+                        }).length;
+
+                        return `
+                            <button type="button" role="tab"
+                                class="semesterTab ${sem === structureTab ? 'active' : ''}"
+                                aria-selected="${sem === structureTab}"
+                                data-semester="${ELMS.esc(sem)}">
+                                ${ELMS.esc(sem)} <span>${n}</span>
+                            </button>
+                        `;
+                    }).join('');
+
+                var visible = inYear.filter(function (x) {
+                    return (
+                        x.semester === structureTab &&
+                        (!filterLevel || x.yearLevel === filterLevel)
+                    );
+                });
+
+                var html = ELMS.yearLevels.map(function (level) {
+                    var group = visible.filter(function (x) {
+                        return x.yearLevel === level;
+                    }).sort(function (a, b) {
+                        var sa = ELMS.subject(a.subjectId);
+                        var sb = ELMS.subject(b.subjectId);
+                        return String(sa ? sa.code : a.subjectId)
+                            .localeCompare(String(sb ? sb.code : b.subjectId));
+                    });
+
+                    if (!group.length) {
+                        return '';
+                    }
+
+                    return `
+                        <div class="yearGroup">
+                            <h3>${ELMS.esc(level)} <span>${group.length} subject(s)</span></h3>
+                            ${group.map(function (item) {
+                                var subject = ELMS.subject(item.subjectId);
+
+                                return `
+                                    <div class="subjectStructureLine">
+                                        <strong>${ELMS.esc(subject ? subject.code : item.subjectId)}</strong>
+                                        <span>${ELMS.esc(subject ? subject.name : item.subjectId)}</span>
+                                        <span>${ELMS.esc(item.yearLevel)}</span>
+                                        <span>${ELMS.esc(item.semester)}</span>
+                                        <small>${ELMS.esc(item.schoolYear)}</small>
+                                        <div class="subjectStructureActions">
+                                            <button type="button" class="editStructure" data-id="${ELMS.esc(item.id)}">EDIT / MOVE</button>
+                                            <button type="button" class="deleteStructure" data-id="${ELMS.esc(item.id)}">REMOVE</button>
+                                        </div>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                    `;
+                }).join('');
+
+                document.getElementById('subjectStructureList').innerHTML =
+                    html ||
+                    '<p class="empty">No subjects configured for ' +
+                    ELMS.esc(structureTab) + ' ' + ELMS.esc(filterYear) +
+                    (filterLevel ? ' (' + ELMS.esc(filterLevel) + ')' : '') + '.</p>';
+            }
+
+            function resetSubjectStructureForm() {
+                document.getElementById('structureId').value = '';
+                document.getElementById('structureCode').value = '';
+                document.getElementById('structureName').value = '';
+                document.getElementById('structureYearLevel').value =
+                    document.getElementById('structureFilterLevel').value || '1st Year';
+                document.getElementById('structureSemester').value = structureTab;
+                document.getElementById('structureSchoolYear').value =
+                    document.getElementById('structureFilterYear').value;
+            }
+
+            function render() {
+
+                var apps = ELMS.get('applications');
+                var users = ELMS.get('users');
+
+                document.getElementById('apps').textContent =
+                    apps.length;
+
+                document.getElementById('review').textContent =
+                    apps.filter(function (a) {
+                        return a.status === 'For Review';
+                    }).length;
+
+                document.getElementById('enrolled').textContent =
+                    users.filter(function (u) {
+                        return (
+                            u.role === 'student' &&
+                            u.enrollmentStatus === 'Officially Enrolled'
+                        );
+                    }).length;
+
+                document.getElementById('studentCount').textContent =
+                    users.filter(function (u) {
+                        return (
+                            u.role === 'student' &&
+                            u.enrollmentStatus === 'Officially Enrolled'
+                        );
+                    }).length;
+
+                document.getElementById('rows').innerHTML =
+                    apps.map(function (a, i) {
+
+                        return `
+                            <tr>
+                                <td>
+                                    ${ELMS.esc(a.firstName + ' ' + a.lastName)}
+                                </td>
+
+                                <td>
+                                    ${ELMS.esc(a.applicationId)}
+                                </td>
+
+                                <td>
+                                    ${ELMS.esc(a.year)}
+                                </td>
+
+                                <td>
+                                    ${ELMS.esc(a.status)}
+                                </td>
+
+                                <td>
+                                    ${appFilesHTML(a)}
+                                </td>
+
+                                <td>
+                                    <button
+                                        class="approve"
+                                        data-index="${i}"
+                                    >
+                                        APPROVE
+                                    </button>
+
+                                    <button
+                                        class="reject"
+                                        data-index="${i}"
+                                    >
+                                        REJECT
+                                    </button>
+
+                                    <button
+                                        class="enroll"
+                                        data-index="${i}"
+                                    >
+                                        OFFICIALLY ENROLL
+                                    </button>
+                                </td>
+                            </tr>
+                        `;
+
+                    }).join('') ||
+                    `
+                        <tr>
+                            <td
+                                colspan="6"
+                                class="empty"
+                            >
+                                No applications yet.
+                            </td>
+                        </tr>
+                    `;
+
+                document
+                    .querySelectorAll('.approve')
+                    .forEach(function (b) {
+
+                        b.onclick = function () {
+
+                            var list =
+                                ELMS.get('applications');
+
+                            var applicant =
+                                list[Number(b.dataset.index)];
+
+                            if (!applicant) {
+                                alert('Applicant record not found.');
+                                return;
+                            }
+
+                            applicant.status = 'Approved';
+                            applicant.approvedAt = new Date().toLocaleString();
+
+                            ELMS.set(
+                                'applications',
+                                list
+                            );
+
+                            alert('Applicant approved. Complete the requirements before official enrollment.');
+                            render();
+                        };
+                    });
+
+                document
+                    .querySelectorAll('.reject')
+                    .forEach(function (b) {
+
+                        b.onclick = function () {
+
+                            var list =
+                                ELMS.get('applications');
+
+                            if (
+                                confirm(
+                                    'Reject and remove this applicant?'
+                                )
+                            ) {
+
+                                list.splice(
+                                    Number(b.dataset.index),
+                                    1
+                                );
+
+                                ELMS.set(
+                                    'applications',
+                                    list
+                                );
+
+                                render();
+                            }
+                        };
+                    });
+
+                document
+                    .querySelectorAll('.enroll')
+                    .forEach(function (b) {
+
+                        b.onclick = function () {
+
+                            var list =
+                                ELMS.get('applications');
+
+                            var a =
+                                list[b.dataset.index];
+
+                            var r =
+                                a.requirements || {};
+
+                            if (a.status !== 'Approved') {
+
+                                alert(
+                                    'Approve the application first before official enrollment.'
+                                );
+
+                                return;
+                            }
+
+                            if (
+                                !r.form137 ||
+                                !r.form138 ||
+                                !r.birthCert ||
+                                !r.idPhoto
+                            ) {
+
+                                alert(
+                                    'Form 137, Form 138, Birth Certificate, and ID / Photo are required before official enrollment.'
+                                );
+
+                                return;
+                            }
+
+                            var users =
+                                ELMS.get('users');
+
+                            var email =
+                                a.email.toLowerCase();
+
+                            var section =
+                                nextSection(
+                                    a.year,
+                                    '2026-2027'
+                                );
+
+                            if (!section) {
+
+                                alert(
+                                    'Sections A, B, and C are full for this year level. Create another section in the next system update.'
+                                );
+
+                                return;
+                            }
+
+                            var existing =
+                                users.find(function (u) {
+                                    return u.email === email;
+                                });
+
+                            if (existing) {
+
+                                existing.enrollmentStatus =
+                                    'Officially Enrolled';
+
+                                existing.yearLevel =
+                                    a.year;
+
+                                existing.schoolYear =
+                                    '2026-2027';
+
+                                existing.section =
+                                    section;
+
+                                existing.program =
+                                    a.course;
+
+                            } else {
+
+                                users.push({
+                                    fullName:
+                                        a.firstName +
+                                        ' ' +
+                                        a.lastName,
+
+                                    firstName:
+                                        a.firstName,
+
+                                    lastName:
+                                        a.lastName,
+
+                                    studentId:
+                                        a.applicationId,
+
+                                    email:
+                                        email,
+
+                                    program:
+                                        a.course,
+
+                                    password:
+                                        '',
+
+                                    accountStatus:
+                                        'Pending Admin',
+
+                                    requestedAt:
+                                        new Date().toLocaleString(),
+
+                                    requestedBy:
+                                        user.fullName,
+
+                                    role:
+                                        'student',
+
+                                    enrollmentStatus:
+                                        'Officially Enrolled',
+
+                                    yearLevel:
+                                        a.year,
+
+                                    schoolYear:
+                                        '2026-2027',
+
+                                    semester:
+                                        '1st Semester',
+
+                                    section:
+                                        section
+                                });
+                            }
+
+                            ELMS.set(
+                                'users',
+                                users
+                            );
+
+                            a.status =
+                                'Officially Enrolled';
+
+                            a.enrolledAt =
+                                new Date().toLocaleString();
+
+                            a.assignedSection =
+                                section;
+
+                            ELMS.set(
+                                'applications',
+                                list
+                            );
+
+                            alert(
+                                a.firstName +
+                                ' is officially enrolled in Section ' +
+                                section +
+                                '. The record was sent to the Admin, who will create the login account.'
+                            );
+
+                            render();
+                        };
+                    });
+
+                var select =
+                    document.getElementById(
+                        'applicationSelect'
+                    );
+
+                select.innerHTML =
+                    apps.map(function (a, i) {
+
+                        return `
+                            <option value="${i}">
+                                ${ELMS.esc(
+                                    a.firstName +
+                                    ' ' +
+                                    a.lastName
+                                )}
+                                ·
+                                ${ELMS.esc(
+                                    a.applicationId
+                                )}
+                            </option>
+                        `;
+
+                    }).join('') ||
+                    '<option value="">No applications</option>';
+
+                var teachers =
+                    users.filter(function (u) {
+                        return u.role === 'teacher';
+                    });
+
+                document.getElementById(
+                    'teacherSelect'
+                ).innerHTML =
+                    teachers.map(function (t) {
+
+                        return `
+                            <option value="${ELMS.esc(t.email)}">
+                                ${ELMS.esc(t.fullName)}
+                            </option>
+                        `;
+
+                    }).join('') ||
+                    '<option>No teachers</option>';
+
+                document.getElementById(
+                    'subjectSelect'
+                ).innerHTML =
+                    ELMS.subjects()
+                        .map(function (s) {
+
+                            return `
+                                <option value="${s.id}">
+                                    ${ELMS.esc(
+                                        s.code +
+                                        ' - ' +
+                                        s.name
+                                    )}
+                                </option>
+                            `;
+
+                        })
+                        .join('');
+
+                document.getElementById(
+                    'assignmentRows'
+                ).innerHTML =
+                    ELMS.assignments()
+                        .map(function (a) {
+
+                            var s =
+                                ELMS.subject(
+                                    a.subjectId
+                                );
+
+                            var t =
+                                users.find(function (u) {
+                                    return (
+                                        u.email ===
+                                        a.teacherEmail
+                                    );
+                                });
+
+                            return `
+                                <div class="assignmentLine">
+
+                                    <strong>
+                                        ${ELMS.esc(
+                                            s
+                                                ? s.name
+                                                : a.subjectId
+                                        )}
+                                    </strong>
+
+                                    <span>
+                                        ${ELMS.esc(
+                                            t
+                                                ? t.fullName
+                                                : a.teacherEmail
+                                        )}
+                                    </span>
+
+                                    <span>
+                                        ${ELMS.esc(
+                                            a.yearLevel
+                                        )}
+                                        · Section
+                                        ${ELMS.esc(
+                                            a.section
+                                        )}
+                                    </span>
+
+                                    <span>
+                                        ${ELMS.esc(
+                                            a.room
+                                        )}
+                                    </span>
+
+                                    <span>
+                                        ${ELMS.esc(
+                                            a.schoolYear
+                                        )}
+                                        ·
+                                        ${ELMS.esc(
+                                            a.semester
+                                        )}
+                                    </span>
+
+                                    <button
+                                        type="button"
+                                        class="reject deleteAssignment"
+                                        data-id="${ELMS.esc(a.id)}"
+                                    >
+                                        DEASSIGN
+                                    </button>
+
+                                </div>
+                            `;
+
+                        })
+                        .join('') ||
+                    '<p class="empty">No assignments.</p>';
+
+                document.getElementById(
+                    'studentRows'
+                ).innerHTML =
+                    users
+                        .filter(function (u) {
+
+                            return (
+                                u.role === 'student' &&
+                                u.enrollmentStatus ===
+                                    'Officially Enrolled'
+                            );
+
+                        })
+                        .map(function (s) {
+
+                            return `
+                                <tr>
+
+                                    <td>
+                                        ${ELMS.esc(s.fullName)}
+
+                                        <small>
+                                            ${ELMS.esc(s.email)}
+                                        </small>
+                                    </td>
+
+                                    <td>
+                                        ${ELMS.esc(s.studentId)}
+                                    </td>
+
+                                    <td>
+                                        ${ELMS.esc(
+                                            s.yearLevel || ''
+                                        )}
+                                        ·
+                                        ${s.section
+                                            ? 'Section ' + ELMS.esc(s.section)
+                                            : '<em>Unassigned</em>'}
+                                    </td>
+
+                                    <td>
+                                        ${ELMS.esc(
+                                            s.enrollmentStatus
+                                        )}
+                                    <br>
+                                        <span class="acctBadge ${s.accountStatus === 'Pending Admin' ? 'pending' : 'active'}">
+                                            ${s.accountStatus === 'Pending Admin'
+                                                ? 'Account: waiting for Admin'
+                                                : 'Account: active'}
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button
+                                            class="deleteStudent"
+                                            data-email="${ELMS.esc(s.email)}"
+                                        >
+                                            DROP / DELETE
+                                        </button>
+                                    </td>
+
+                                </tr>
+                            `;
+
+                        })
+                        .join('') ||
+                    `
+                        <tr>
+                            <td
+                                colspan="5"
+                                class="empty"
+                            >
+                                No officially enrolled students.
+                            </td>
+                        </tr>
+                    `;
+
+                document.getElementById(
+                    'announcementList'
+                ).innerHTML =
+                    ELMS.announcementHTML(
+                        'registrar'
+                    ) ||
+                    '<p class="empty">No announcements.</p>';
+
+                renderSectionGroups();
+                renderUnassigned();
+                renderSubjectStructure();
+
+                document
+                    .getElementById(
+                        'applicationSelect'
+                    )
+                    .dispatchEvent(
+                        new Event('change')
+                    );
+            }
+
+            document.getElementById(
+                'applicationSelect'
+            ).onchange = function () {
+
+                var list =
+                    ELMS.get('applications');
+
+                var a =
+                    list[this.value];
+
+                var r =
+                    a && a.requirements
+                        ? a.requirements
+                        : {};
+
+                document.getElementById(
+                    'requirementStatus'
+                ).innerHTML = a
+                    ? `
+                        <p>
+                            Selected:
+                            <strong>
+                                ${ELMS.esc(
+                                    a.firstName +
+                                    ' ' +
+                                    a.lastName
+                                )}
+                            </strong>
+                        </p>
+
+                        <p>
+                            Form 137:
+                            ${r.form137 ? '✓' : 'Missing'}
+                            · Form 138:
+                            ${r.form138 ? '✓' : 'Missing'}
+                            · Birth Certificate:
+                            ${r.birthCert ? '✓' : 'Missing'}
+                            · ID/Photo:
+                            ${r.idPhoto ? '✓' : 'Missing'}
+                        </p>
+
+                        <p>
+                            ${
+                                r.form137File &&
+                                r.form137File.id
+                                    ? `
+                                        <button
+                                            type="button"
+                                            class="downloadAppFile"
+                                            data-file-id="${r.form137File.id}"
+                                        >
+                                            Form 137
+                                        </button>
+                                    `
+                                    : ''
+                            }
+
+                            ${
+                                r.form138File &&
+                                r.form138File.id
+                                    ? `
+                                        <button
+                                            type="button"
+                                            class="downloadAppFile"
+                                            data-file-id="${r.form138File.id}"
+                                        >
+                                            Form 138
+                                        </button>
+                                    `
+                                    : ''
+                            }
+
+                            ${
+                                r.birthCertFile &&
+                                r.birthCertFile.id
+                                    ? `
+                                        <button
+                                            type="button"
+                                            class="downloadAppFile"
+                                            data-file-id="${r.birthCertFile.id}"
+                                        >
+                                            Birth Certificate
+                                        </button>
+                                    `
+                                    : ''
+                            }
+
+                            ${
+                                r.idPhotoFile &&
+                                r.idPhotoFile.id
+                                    ? `
+                                        <button
+                                            type="button"
+                                            class="downloadAppFile"
+                                            data-file-id="${r.idPhotoFile.id}"
+                                        >
+                                            ID / Photo
+                                        </button>
+                                    `
+                                    : ''
+                            }
+                        </p>
+                    `
+                    : '';
+            };
+
+            document.getElementById(
+                'requirementForm'
+            ).onsubmit = function (e) {
+
+                e.preventDefault();
+
+                var index =
+                    document.getElementById(
+                        'applicationSelect'
+                    ).value;
+
+                var list =
+                    ELMS.get('applications');
+
+                var a =
+                    list[index];
+
+                if (!a) {
+
+                    alert(
+                        'Select an applicant.'
+                    );
+
+                    return;
+                }
+
+                var old =
+                    a.requirements || {};
+
+                var files = {};
+
+                ELMS.readFile(
+                    document.getElementById(
+                        'form137'
+                    ).files[0],
+                    function (f137) {
+
+                        files.form137File =
+                            f137;
+
+                        ELMS.readFile(
+                            document.getElementById(
+                                'form138'
+                            ).files[0],
+                            function (f138) {
+
+                                files.form138File =
+                                    f138;
+
+                                ELMS.readFile(
+                                    document.getElementById(
+                                        'birthCert'
+                                    ).files[0],
+                                    function (birth) {
+
+                                        files.birthCertFile =
+                                            birth;
+
+                                        ELMS.readFile(
+                                            document.getElementById(
+                                                'idPhoto'
+                                            ).files[0],
+                                            function (photo) {
+
+                                                files.idPhotoFile =
+                                                    photo;
+
+                                                a.requirements = {
+                                                    form137:
+                                                        !!(
+                                                            files.form137File ||
+                                                            old.form137
+                                                        ),
+
+                                                    form138:
+                                                        !!(
+                                                            files.form138File ||
+                                                            old.form138
+                                                        ),
+
+                                                    birthCert:
+                                                        !!(
+                                                            files.birthCertFile ||
+                                                            old.birthCert
+                                                        ),
+
+                                                    idPhoto:
+                                                        !!(
+                                                            files.idPhotoFile ||
+                                                            old.idPhoto
+                                                        ),
+
+                                                    fileNote:
+                                                        document
+                                                            .getElementById(
+                                                                'fileNote'
+                                                            )
+                                                            .value
+                                                            .trim(),
+
+                                                    form137File:
+                                                        files.form137File ||
+                                                        old.form137File,
+
+                                                    form138File:
+                                                        files.form138File ||
+                                                        old.form138File,
+
+                                                    birthCertFile:
+                                                        files.birthCertFile ||
+                                                        old.birthCertFile,
+
+                                                    idPhotoFile:
+                                                        files.idPhotoFile ||
+                                                        old.idPhotoFile
+                                                };
+
+                                                ELMS.set(
+                                                    'applications',
+                                                    list
+                                                );
+
+                                                alert(
+                                                    'Registrar documents saved.'
+                                                );
+
+                                                render();
+                                            }
+                                        );
+                                    }
+                                );
+                            }
+                        );
+                    }
+                );
+            };
+
+            document.getElementById('sectionManagerYear').onchange = renderSectionGroups;
+            document.getElementById('sectionManagerSchoolYear').onchange = renderSectionGroups;
+            document.getElementById('sectionManagerSemester').onchange = renderSectionGroups;
+            document.getElementById('structureFilterYear').onchange = function () {
+                if (!document.getElementById('structureId').value) {
+                    resetSubjectStructureForm();
+                }
+                renderSubjectStructure();
+            };
+            document.getElementById('structureFilterLevel').onchange = function () {
+                if (!document.getElementById('structureId').value) {
+                    resetSubjectStructureForm();
+                }
+                renderSubjectStructure();
+            };
+
+            document.addEventListener('click', function (e) {
+                var tab = e.target.closest ? e.target.closest('.semesterTab') : null;
+
+                if (tab) {
+                    structureTab = tab.dataset.semester;
+
+                    if (!document.getElementById('structureId').value) {
+                        resetSubjectStructureForm();
+                    }
+
+                    renderSubjectStructure();
+                    return;
+                }
+
+                if (e.target.classList.contains('quickAssign')) {
+                    var d = e.target.dataset;
+
+                    document.getElementById('subjectSelect').value = d.subject;
+                    document.getElementById('yearLevel').value = d.level;
+                    document.getElementById('section').value = d.section;
+                    document.getElementById('year').value = d.year;
+                    document.getElementById('semester').value = d.semester;
+
+                    var form = document.getElementById('assignmentForm');
+                    form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    document.getElementById('teacherSelect').focus();
+                    return;
+                }
+
+                if (e.target.classList.contains('assignUnassigned')) {
+                    var mail = e.target.dataset.email;
+                    var users = ELMS.get('users');
+                    var student = users.find(function (u) {
+                        return u.email === mail;
+                    });
+
+                    if (!student) {
+                        return;
+                    }
+
+                    var pick = Array.prototype.find.call(
+                        document.querySelectorAll('.unassignedTarget'),
+                        function (el) {
+                            return el.dataset.email === mail;
+                        }
+                    );
+                    var target = pick ? pick.value : 'A';
+                    var counts = sectionCounts(
+                        student.yearLevel,
+                        student.schoolYear || '2026-2027'
+                    );
+
+                    if (counts[target] >= 40) {
+                        alert('Section ' + target + ' is full (40 students). Choose another section.');
+                        return;
+                    }
+
+                    student.section = target;
+                    ELMS.set('users', users);
+                    alert(student.fullName + ' is now assigned to Section ' + target + '.');
+                    render();
+                }
+            });
+
+            document.addEventListener('click', function (e) {
+                if (e.target.classList.contains('moveStudent')) {
+                    var email = e.target.dataset.email;
+                    var section = e.target.dataset.section;
+                    var users = ELMS.get('users');
+                    var student = users.find(function (u) {
+                        return u.email === email;
+                    });
+
+                    if (!student) {
+                        return;
+                    }
+
+                    if (
+                        student.section !== section &&
+                        sectionCounts(student.yearLevel, student.schoolYear || '2026-2027')[section] >= 40
+                    ) {
+                        alert('Section ' + section + ' is full (40 students).');
+                        return;
+                    }
+
+                    student.section = section;
+                    ELMS.set('users', users);
+                    alert(student.fullName + ' is now assigned to Section ' + section + '.');
+                    render();
+                    return;
+                }
+
+                if (e.target.classList.contains('deassignStudent')) {
+                    var email = e.target.dataset.email;
+                    var users = ELMS.get('users');
+                    var student = users.find(function (u) {
+                        return u.email === email;
+                    });
+
+                    if (!student) {
+                        return;
+                    }
+
+                    if (confirm('De-assign this student from their section?')) {
+                        student.section = '';
+                        ELMS.set('users', users);
+                        alert(student.fullName + ' is now unassigned from a section.');
+                        render();
+                    }
+                    return;
+                }
+
+                if (e.target.classList.contains('editStructure')) {
+                    var structure = ELMS.get('subjectStructures').find(function (x) {
+                        return x.id === e.target.dataset.id;
+                    });
+
+                    if (!structure) {
+                        return;
+                    }
+
+                    var subject = ELMS.subject(structure.subjectId);
+                    document.getElementById('structureId').value = structure.id;
+                    document.getElementById('structureCode').value = subject ? subject.code : '';
+                    document.getElementById('structureName').value = subject ? subject.name : '';
+                    document.getElementById('structureYearLevel').value = structure.yearLevel;
+                    document.getElementById('structureSemester').value = structure.semester;
+                    document.getElementById('structureSchoolYear').value = structure.schoolYear;
+                    window.scrollTo({ top: document.getElementById('subjectStructureForm').offsetTop - 100, behavior: 'smooth' });
+                    return;
+                }
+
+                if (e.target.classList.contains('deleteStructure')) {
+                    var doomed = ELMS.get('subjectStructures').find(function (x) {
+                        return x.id === e.target.dataset.id;
+                    });
+
+                    if (!doomed) {
+                        return;
+                    }
+
+                    function sameSlot(a) {
+                        return (
+                            a.subjectId === doomed.subjectId &&
+                            a.yearLevel === doomed.yearLevel &&
+                            a.schoolYear === doomed.schoolYear &&
+                            a.semester === doomed.semester
+                        );
+                    }
+
+                    var affected = ELMS.get('assignments').filter(sameSlot).length;
+
+                    if (confirm(
+                        'Remove this subject from the semester structure?' +
+                        (affected
+                            ? '\n\nIts ' + affected + ' teacher assignment(s) for this semester will also be removed so students no longer see it.'
+                            : '')
+                    )) {
+                        ELMS.set(
+                            'subjectStructures',
+                            ELMS.get('subjectStructures').filter(function (x) {
+                                return x.id !== doomed.id;
+                            })
+                        );
+                        ELMS.set(
+                            'assignments',
+                            ELMS.get('assignments').filter(function (a) {
+                                return !sameSlot(a);
+                            })
+                        );
+                        alert('Subject removed from the academic structure.');
+                        render();
+                    }
+                }
+            });
+
+            document.getElementById('cancelSubjectEdit').onclick = function () {
+                resetSubjectStructureForm();
+            };
+
+            document.getElementById('subjectStructureForm').onsubmit = function (e) {
+                e.preventDefault();
+
+                var structures = ELMS.get('subjectStructures');
+                var subjects = ELMS.get('subjects');
+                var structureId = document.getElementById('structureId').value;
+                var code = document.getElementById('structureCode').value.trim();
+                var name = document.getElementById('structureName').value.trim();
+                var yearLevel = document.getElementById('structureYearLevel').value;
+                var semester = document.getElementById('structureSemester').value;
+                var schoolYear = document.getElementById('structureSchoolYear').value;
+
+                if (!code || !name) {
+                    alert('Enter the subject code and subject name.');
+                    return;
+                }
+
+                if (structureId) {
+                    var existingStructure = structures.find(function (x) {
+                        return x.id === structureId;
+                    });
+
+                    if (!existingStructure) {
+                        return;
+                    }
+
+                    var existingSubject = subjects.find(function (x) {
+                        return x.id === existingStructure.subjectId;
+                    });
+
+                    if (existingSubject) {
+                        existingSubject.code = code;
+                        existingSubject.name = name;
+                    }
+
+                    var conflict = structures.some(function (x) {
+                        return (
+                            x.id !== structureId &&
+                            x.subjectId === existingStructure.subjectId &&
+                            x.yearLevel === yearLevel &&
+                            x.schoolYear === schoolYear &&
+                            x.semester === semester
+                        );
+                    });
+
+                    if (conflict) {
+                        alert('That subject is already in this semester and year level.');
+                        return;
+                    }
+
+                    var oldLevel = existingStructure.yearLevel;
+                    var oldSem = existingStructure.semester;
+                    var oldYear = existingStructure.schoolYear;
+
+                    if (
+                        oldLevel !== yearLevel ||
+                        oldSem !== semester ||
+                        oldYear !== schoolYear
+                    ) {
+                        var carried = ELMS.get('assignments');
+
+                        carried.forEach(function (a) {
+                            if (
+                                a.subjectId === existingStructure.subjectId &&
+                                a.yearLevel === oldLevel &&
+                                a.schoolYear === oldYear &&
+                                a.semester === oldSem
+                            ) {
+                                a.yearLevel = yearLevel;
+                                a.schoolYear = schoolYear;
+                                a.semester = semester;
+                            }
+                        });
+
+                        ELMS.set('assignments', carried);
+                        structureTab = semester;
+                        document.getElementById('structureFilterYear').value = schoolYear;
+                    }
+
+                    existingStructure.yearLevel = yearLevel;
+                    existingStructure.semester = semester;
+                    existingStructure.schoolYear = schoolYear;
+                    ELMS.set('subjects', subjects);
+                    ELMS.set('subjectStructures', structures);
+                    alert('Subject updated and moved successfully.');
+                } else {
+                    var subjectId = ELMS.id('SUB');
+                    var subject = subjects.find(function (x) {
+                        return x.code.toLowerCase() === code.toLowerCase();
+                    });
+
+                    if (!subject) {
+                        subject = {
+                            id: subjectId,
+                            code: code,
+                            name: name
+                        };
+                        subjects.push(subject);
+                    } else {
+                        subject.name = name;
+                        subjectId = subject.id;
+                    }
+
+                    var duplicate = structures.some(function (x) {
+                        return (
+                            x.subjectId === subjectId &&
+                            x.yearLevel === yearLevel &&
+                            x.schoolYear === schoolYear &&
+                            x.semester === semester
+                        );
+                    });
+
+                    if (duplicate) {
+                        alert('That subject is already configured for this semester and year level.');
+                        return;
+                    }
+
+                    structures.push({
+                        id: ELMS.id('SS'),
+                        subjectId: subjectId,
+                        yearLevel: yearLevel,
+                        schoolYear: schoolYear,
+                        semester: semester
+                    });
+
+                    ELMS.set('subjects', subjects);
+                    ELMS.set('subjectStructures', structures);
+                    structureTab = semester;
+                    document.getElementById('structureFilterYear').value = schoolYear;
+                    alert('Subject added to the academic structure.');
+                }
+
+                resetSubjectStructureForm();
+                render();
+            };
+
+            document.getElementById(
+                'assignmentForm'
+            ).onsubmit = function (e) {
+
+                e.preventDefault();
+
+                var teacherEmail =
+                    document.getElementById(
+                        'teacherSelect'
+                    ).value;
+
+                var subjectId =
+                    document.getElementById(
+                        'subjectSelect'
+                    ).value;
+
+                var yearLevel =
+                    document.getElementById(
+                        'yearLevel'
+                    ).value;
+
+                var section =
+                    document.getElementById(
+                        'section'
+                    ).value;
+
+                var schoolYear =
+                    document.getElementById(
+                        'year'
+                    ).value;
+
+                var semester =
+                    document.getElementById(
+                        'semester'
+                    ).value;
+
+                var assignments =
+                    ELMS.get('assignments');
+
+                var duplicate =
+                    assignments.some(
+                        function (a) {
+
+                            return (
+                                a.subjectId ===
+                                    subjectId &&
+                                a.yearLevel ===
+                                    yearLevel &&
+                                a.section ===
+                                    section &&
+                                a.schoolYear ===
+                                    schoolYear &&
+                                a.semester ===
+                                    semester
+                            );
+                        }
+                    );
+
+                if (duplicate) {
+
+                    alert(
+                        'This subject, year level, section, school year, and semester already has a teacher assigned. Deassign the current teacher first.'
+                    );
+
+                    return;
+                }
+
+                assignments.push({
+
+                    id:
+                        ELMS.id('AS'),
+
+                    teacherEmail:
+                        teacherEmail,
+
+                    subjectId:
+                        subjectId,
+
+                    yearLevel:
+                        yearLevel,
+
+                    section:
+                        section,
+
+                    room:
+                        document
+                            .getElementById(
+                                'room'
+                            )
+                            .value
+                            .trim(),
+
+                    schoolYear:
+                        schoolYear,
+
+                    semester:
+                        semester
+                });
+
+                ELMS.set(
+                    'assignments',
+                    assignments
+                );
+
+                var structuresNow = ELMS.get('subjectStructures');
+
+                if (!structuresNow.some(function (x) {
+                    return (
+                        x.subjectId === subjectId &&
+                        x.yearLevel === yearLevel &&
+                        x.schoolYear === schoolYear &&
+                        x.semester === semester
+                    );
+                })) {
+                    structuresNow.push({
+                        id: ELMS.id('SS'),
+                        subjectId: subjectId,
+                        yearLevel: yearLevel,
+                        schoolYear: schoolYear,
+                        semester: semester
+                    });
+                    ELMS.set('subjectStructures', structuresNow);
+                }
+
+                alert(
+                    'Subject assigned to teacher.'
+                );
+
+                render();
+            };
+
+            document.addEventListener('click', function (e) {
+
+                if (!e.target.classList.contains('deleteAssignment')) {
+                    return;
+                }
+
+                var id = e.target.dataset.id;
+
+                if (confirm('Deassign this subject from the teacher?')) {
+
+                    ELMS.set(
+                        'assignments',
+                        ELMS.get('assignments').filter(function (a) {
+                            return a.id !== id;
+                        })
+                    );
+
+                    alert('Subject deassigned.');
+                    render();
+                }
+            });
+
+            document.getElementById(
+                'studentForm'
+            ).onsubmit = function (e) {
+
+                e.preventDefault();
+
+                var users =
+                    ELMS.get('users');
+
+                var email =
+                    document.getElementById(
+                        'studentEmail'
+                    )
+                    .value
+                    .trim()
+                    .toLowerCase();
+
+                if (
+                    users.some(function (u) {
+                        return u.email === email;
+                    })
+                ) {
+
+                    alert(
+                        'That email already exists.'
+                    );
+
+                    return;
+                }
+
+                users.push({
+
+                    fullName:
+                        document.getElementById(
+                            'studentFirst'
+                        )
+                        .value
+                        .trim() +
+                        ' ' +
+                        document.getElementById(
+                            'studentLast'
+                        )
+                        .value
+                        .trim(),
+
+                    firstName:
+                        document.getElementById(
+                            'studentFirst'
+                        )
+                        .value
+                        .trim(),
+
+                    lastName:
+                        document.getElementById(
+                            'studentLast'
+                        )
+                        .value
+                        .trim(),
+
+                    email:
+                        email,
+
+                    studentId:
+                        document.getElementById(
+                            'studentId'
+                        )
+                        .value
+                        .trim(),
+
+                    program:
+                        document.getElementById(
+                            'studentProgram'
+                        )
+                        .value
+                        .trim(),
+
+                    password: '',
+
+                    accountStatus: 'Pending Admin',
+
+                    requestedAt: new Date().toLocaleString(),
+
+                    requestedBy: user.fullName,
+
+                    role:
+                        'student',
+
+                    enrollmentStatus:
+                        'Officially Enrolled',
+
+                    yearLevel:
+                        document.getElementById(
+                            'studentYearLevel'
+                        ).value,
+
+                    section:
+                        document.getElementById(
+                            'studentSection'
+                        ).value,
+
+                    schoolYear:
+                        '2026-2027',
+
+                    semester:
+                        '1st Semester'
+                });
+
+                ELMS.set(
+                    'users',
+                    users
+                );
+
+                alert('Student recorded as Officially Enrolled and sent to the Admin. The Admin will create the account.');
+
+                this.reset();
+
+                document.getElementById('studentProgram').selectedIndex = 0;
+
+                render();
+            };
+
+            document.addEventListener(
+                'click',
+                function (e) {
+
+                    if (
+                        e.target.classList.contains(
+                            'deleteStudent'
+                        )
+                    ) {
+
+                        var email =
+                            e.target.dataset.email;
+
+                        if (
+                            confirm(
+                                'Delete this student record?'
+                            )
+                        ) {
+
+                            var submissions =
+                                ELMS
+                                    .get('submissions')
+                                    .filter(
+                                        function (x) {
+
+                                            if (
+                                                x.studentEmail ===
+                                                email
+                                            ) {
+
+                                                if (
+                                                    x.file &&
+                                                    x.file.id
+                                                ) {
+
+                                                    ELMS.deleteFile(
+                                                        x.file.id
+                                                    );
+                                                }
+
+                                                return false;
+                                            }
+
+                                            return true;
+                                        }
+                                    );
+
+                            ELMS.set(
+                                'submissions',
+                                submissions
+                            );
+
+                            ELMS.set(
+                                'users',
+                                ELMS
+                                    .get('users')
+                                    .filter(
+                                        function (u) {
+                                            return (
+                                                u.email !==
+                                                email
+                                            );
+                                        }
+                                    )
+                            );
+
+                            render();
+                        }
+                    }
+                }
+            );
+
+            render();
+        }
+    </script>
+
+    <script src="JAVA/sidenav.js"></script>
+  </body>
+
+</html>

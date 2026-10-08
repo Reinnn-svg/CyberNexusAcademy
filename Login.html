@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Log In | Cyber Nexus Academy
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="CSS/Login.css"
+    >
+    <link rel="stylesheet" href="CSS/auth-theme.css" />
+
+    <script src="JAVA/elms-data.js"></script>
+</head>
+
+<body>
+
+    <main class="login-page">
+
+        <section class="login-brand">
+
+            <a
+                href="LandingPage.html"
+                class="back-home"
+            >
+                ← Back to Home
+            </a>
+
+            <div class="brand-content">
+
+                <img
+                    src="Vid,Aud,Pic/LOGOACADEMY.png"
+                    alt="Cyber Nexus Academy Logo"
+                >
+
+                <p class="school-name">
+                    CYBER NEXUS ACADEMY
+                </p>
+
+                <h1>
+                    Your journey
+                    <br>
+                    starts here.
+                </h1>
+
+                <p class="brand-text">
+                    Learn, create, and prepare for a future powered by
+                    technology and innovation.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="login-form-section">
+
+            <div class="login-form-container">
+
+                <p class="form-label">
+                    CYBER NEXUS ELMS
+                </p>
+
+                <h2>
+                    Welcome back.
+                </h2>
+
+                <p class="form-description">
+                    Sign in to access your student, teacher, registrar,
+                    or admin portal.
+                </p>
+
+                <form id="loginForm">
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            class="form-control"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="passwordWrap">
+
+                            <input
+                                type="password"
+                                id="password"
+                                class="form-control"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="showPassword"
+                                id="showPassword"
+                                aria-label="Show password"
+                            >
+                                ◉
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="remember">
+
+                        <input
+                            type="checkbox"
+                            id="remember"
+                        >
+
+                        <label for="remember">
+                            Remember me
+                        </label>
+
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="login-button"
+                    >
+                        SIGN IN
+                    </button>
+
+                </form>
+
+                <a
+                    href="LandingPage.html"
+                    class="home-link"
+                >
+                    Return to Cyber Nexus Academy
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script>
+        document
+            .getElementById('showPassword')
+            .addEventListener(
+                'click',
+                function () {
+
+                    var input =
+                        document.getElementById(
+                            'password'
+                        );
+
+                    input.type =
+                        input.type === 'password'
+                            ? 'text'
+                            : 'password';
+
+                    this.textContent =
+                        input.type === 'password'
+                            ? '◉'
+                            : '●';
+                }
+            );
+
+        document
+            .getElementById('loginForm')
+            .addEventListener(
+                'submit',
+                function (e) {
+
+                    e.preventDefault();
+
+                    var email =
+                        document
+                            .getElementById('email')
+                            .value
+                            .trim()
+                            .toLowerCase();
+
+                    var password =
+                        document
+                            .getElementById('password')
+                            .value;
+
+                    var users =
+                        ELMS.get('users');
+
+                    var user =
+                        users.find(
+                            function (u) {
+
+                                return (
+                                    u.email
+                                        .toLowerCase() ===
+                                    email &&
+                                    u.password ===
+                                    password
+                                );
+
+                            }
+                        );
+
+                    var pendingUser =
+                        users.find(function (u) {
+                            return (
+                                u.email.toLowerCase() === email &&
+                                ELMS.isPendingAccount(u)
+                            );
+                        });
+
+                    if (pendingUser) {
+
+                        alert(
+                            'Your enrollment is recorded, but your account has not been created yet. ' +
+                            'The Administrator will create it soon. Please check back later.'
+                        );
+
+                        return;
+                    }
+
+                    if (!user) {
+
+                        alert(
+                            'Invalid email or password.'
+                        );
+
+                        return;
+                    }
+
+                    var session = {
+                        fullName: user.fullName,
+                        role: user.role,
+                        firstName: user.firstName,
+                        lastName: user.lastName,
+                        studentId: user.studentId,
+                        email: user.email,
+                        program: user.program,
+                        enrollmentStatus:
+                            user.enrollmentStatus || '',
+                        yearLevel:
+                            user.yearLevel || '',
+                        section:
+                            user.section || '',
+                        schoolYear:
+                            user.schoolYear ||
+                            '2026-2027',
+                        semester:
+                            user.semester ||
+                            '1st Semester'
+                    };
+
+                    if (
+                        document
+                            .getElementById(
+                                'remember'
+                            )
+                            .checked
+                    ) {
+
+                        localStorage.setItem(
+                            'loggedInUser',
+                            JSON.stringify(session)
+                        );
+
+                        localStorage.setItem(
+                            'rememberMe',
+                            'true'
+                        );
+
+                        sessionStorage.removeItem(
+                            'loggedInUser'
+                        );
+
+                    } else {
+
+                        sessionStorage.setItem(
+                            'loggedInUser',
+                            JSON.stringify(session)
+                        );
+
+                        localStorage.removeItem(
+                            'loggedInUser'
+                        );
+
+                        localStorage.removeItem(
+                            'rememberMe'
+                        );
+                    }
+
+                    if (user.role === 'admin') {
+
+                        location.href =
+                            'AdminDashboard.html';
+
+                    } else if (
+                        user.role === 'teacher'
+                    ) {
+
+                        location.href =
+                            'TeacherDashboard.html';
+
+                    } else if (
+                        user.role === 'registrar'
+                    ) {
+
+                        location.href =
+                            'RegistrarDashboard.html';
+
+                    } else {
+
+                        location.href =
+                            'Dashboard.html';
+                    }
+
+                }
+            );
+    </script>
+
+</body>
+
+</html>

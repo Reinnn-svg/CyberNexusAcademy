@@ -1,0 +1,1331 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Learning Center | Cyber Nexus Academy</title>
+
+    <link rel="stylesheet" href="CSS/Dashboard.css" />
+    <link rel="stylesheet" href="CSS/sidenav.css" />
+    <link rel="stylesheet" href="CSS/dashboard-theme.css" />
+    <link rel="stylesheet" href="CSS/LearningCenter.css" />
+
+  </head>
+
+  <body id="top">
+    <header class="topbar">
+      <a class="brand" href="Dashboard.html">
+        <img src="Vid,Aud,Pic/LOGOACADEMY.png" alt="Cyber Nexus Academy Logo" />
+
+        <span>
+          <strong>CYBER NEXUS</strong>
+          <small>ACADEMY</small>
+        </span>
+      </a>
+
+      <nav id="sideNav" aria-label="Main menu">
+        <a
+          href="Dashboard.html"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/HomeIconn.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Dashboard
+        </a>
+        <a
+          href="#html"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/SubjectIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          HTML Lessons
+        </a>
+        <a
+          href="#css"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/SubjectIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          CSS Lessons
+        </a>
+        <a
+          href="#javascript"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/SubjectIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          JavaScript Lessons
+        </a>
+        <a
+          href="#languages"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/ActivityIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Practice Languages
+        </a>
+        <a
+          href="#quiz"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/QuizIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Fun Quiz
+        </a>
+        <a
+          href="Logout.html"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/LogoutIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Log Out
+        </a>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <section class="roleBanner">
+        <p>STUDENT LEARNING CENTER</p>
+
+        <h1>Learn it. Practice it. Quiz yourself.</h1>
+
+        <div>
+          Original Cyber Nexus lessons with worked examples for web
+          development, plus practice tasks and quizzes for HTML, CSS,
+          JavaScript, Python, Java, C, C++, C#, SQL, MySQL, and Excel.
+        </div>
+
+        <div class="topicNav">
+          <a href="#html">HTML</a>
+          <a href="#css">CSS</a>
+          <a href="#javascript">JavaScript</a>
+          <a href="#languages">Python · Java · C · C++ · C# · SQL · MySQL · Excel</a>
+          <a href="#quiz">Fun Quiz</a>
+        </div>
+      </section>
+
+      <section class="stats" id="lcStats">
+        <article><span>TOPICS</span><strong id="statTopics">0</strong></article>
+        <article><span>LESSONS</span><strong id="statLessons">0</strong></article>
+        <article><span>PRACTICE TASKS</span><strong id="statPractice">0</strong></article>
+        <article><span>QUIZ QUESTIONS</span><strong id="statQuiz">0</strong></article>
+      </section>
+
+      <section class="panel" id="html">
+        <div class="panelHeader">
+          <div>
+            <p>HTML</p>
+            <h2>Build the structure of a web page</h2>
+          </div>
+        </div>
+
+        <div class="cardsGrid">
+          <article class="card lesson">
+            <strong>1. Document structure</strong>
+
+            <p>HTML describes the structure and meaning of page content. A normal document has a doctype, html, head, and body.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    Hello
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> The title shows on the browser tab. Everything inside body is what visitors see on the page.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>2. Headings and paragraphs</strong>
+
+            <p>Use headings to organize content and paragraphs for normal text. Keep the heading order meaningful.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>&lt;h1&gt;Cyber Nexus Academy&lt;/h1&gt;
+&lt;h2&gt;My Subjects&lt;/h2&gt;
+&lt;p&gt;Welcome to the learning center.&lt;/p&gt;</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> Use one h1 for the page title, then h2 for sections and h3 for sub-sections. Don't skip levels just to make text bigger.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>3. Links and images</strong>
+
+            <p>Links move users to another page or section. Images add visual content and should have useful alt text.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>&lt;a href="Dashboard.html"&gt;Dashboard&lt;/a&gt;
+&lt;img src="Vid,Aud,Pic/LOGOACADEMY.png"
+     alt="Cyber Nexus Academy Logo"&gt;</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> href is where the link goes. alt is the text read aloud by screen readers and shown if the image fails to load.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>4. Lists</strong>
+
+            <p>Use unordered lists for grouped items and ordered lists when sequence matters.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>&lt;ul&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+  &lt;li&gt;CSS&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Plan&lt;/li&gt;
+  &lt;li&gt;Build&lt;/li&gt;
+  &lt;li&gt;Test&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> ul shows bullet points. ol shows numbers 1, 2, 3 automatically.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>5. Forms</strong>
+
+            <p>Forms collect information. Labels, inputs, selects, textareas, and required validation make forms easier to use.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>&lt;form&gt;
+  &lt;label for="email"&gt;Email&lt;/label&gt;
+  &lt;input id="email" type="email" required&gt;
+
+  &lt;label for="year"&gt;Year Level&lt;/label&gt;
+  &lt;select id="year"&gt;
+    &lt;option&gt;1st Year&lt;/option&gt;
+    &lt;option&gt;2nd Year&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;button type="submit"&gt;Send&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> The label's for must match the input's id. required stops the form from being sent while the field is empty.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>6. Tables</strong>
+
+            <p>Tables are useful for structured data such as gradebooks. Use table headers for column labels.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Subject&lt;/th&gt;
+    &lt;th&gt;Grade&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Web Technology&lt;/td&gt;
+    &lt;td&gt;95&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> th is a column heading, td is a normal cell, and each tr is one row.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>7. Semantic HTML</strong>
+
+            <p>Semantic elements communicate purpose. Common examples include header, nav, main, section, article, and footer.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>&lt;header&gt;Cyber Nexus Academy&lt;/header&gt;
+
+&lt;nav&gt;
+  &lt;a href="Dashboard.html"&gt;Dashboard&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;main&gt;
+  &lt;section&gt;
+    &lt;h2&gt;My Subjects&lt;/h2&gt;
+    &lt;article&gt;Web Technology&lt;/article&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;2026 Cyber Nexus Academy&lt;/footer&gt;</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> Compare with &lt;div&gt;&lt;div&gt;&lt;div&gt;: the semantic tags tell browsers and screen readers what each part is for.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>8. Attributes</strong>
+
+            <p>Attributes provide extra information to an element. Examples include id, class, href, src, alt, and type.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>&lt;button class="primary" type="button"&gt;Save&lt;/button&gt;
+
+&lt;a href="Dashboard.html" target="_blank"&gt;Open in a new tab&lt;/a&gt;
+
+&lt;input id="studentName" type="text" placeholder="Full name"&gt;</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> Attributes always go inside the opening tag, written as name="value".</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>9. Accessibility basics</strong>
+
+            <p>Use labels for form fields, meaningful link text, alt text for informative images, and a logical heading structure.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>&lt;!-- Better --&gt;
+&lt;label for="name"&gt;Full name&lt;/label&gt;
+&lt;input id="name" type="text"&gt;
+&lt;img src="logo.png" alt="Cyber Nexus Academy logo"&gt;
+&lt;a href="grades.html"&gt;View my grades&lt;/a&gt;
+
+&lt;!-- Avoid --&gt;
+&lt;input type="text"&gt;
+&lt;img src="logo.png"&gt;
+&lt;a href="grades.html"&gt;Click here&lt;/a&gt;</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> A screen reader user hears "Click here" with no clue where it goes, but "View my grades" makes sense on its own.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>10. HTML debugging</strong>
+
+            <p>When a page looks wrong, inspect the element in the browser and check whether tags are closed and attributes are spelled correctly.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>&lt;!-- Broken: the quote after "card is missing
+     and the p tag is never closed --&gt;
+&lt;div class="card&gt;
+  &lt;p&gt;Hello
+&lt;/div&gt;
+
+&lt;!-- Fixed --&gt;
+&lt;div class="card"&gt;
+  &lt;p&gt;Hello&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> Right-click the page and choose Inspect. If an element looks wrong in the Elements panel, the problem is usually just above it.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>11. Page sections</strong>
+
+            <p>Use sections to group related content such as announcements, subjects, grades, and activities.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>&lt;a href="#subjects"&gt;Jump to subjects&lt;/a&gt;
+
+&lt;section id="announcements"&gt;
+  &lt;h2&gt;Announcements&lt;/h2&gt;
+&lt;/section&gt;
+
+&lt;section id="subjects"&gt;
+  &lt;h2&gt;My Subjects&lt;/h2&gt;
+&lt;/section&gt;</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> Giving a section an id lets a link such as href="#subjects" scroll straight to it.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>12. Student challenge</strong>
+
+            <p>Create a small student profile page with a heading, photo, list of subjects, and a contact form.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>&lt;h1&gt;Andrew Zamora&lt;/h1&gt;
+&lt;img src="photo.jpg" alt="Photo of Andrew"&gt;
+
+&lt;h2&gt;My Subjects&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Web Technology&lt;/li&gt;
+  &lt;li&gt;Programming&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Contact Me&lt;/h2&gt;
+&lt;form&gt;
+  &lt;label for="msg"&gt;Message&lt;/label&gt;
+  &lt;textarea id="msg"&gt;&lt;/textarea&gt;
+  &lt;button type="submit"&gt;Send&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> This is one possible answer. Try it first, then compare, and change the content so it describes you.</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" id="css">
+        <div class="panelHeader">
+          <div>
+            <p>CSS</p>
+            <h2>Style and arrange your interface</h2>
+          </div>
+        </div>
+
+        <div class="cardsGrid">
+          <article class="card lesson">
+            <strong>1. Selectors</strong>
+
+            <p>Selectors choose which HTML elements receive styles.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>body        { font-family: Arial; }   /* every body element */
+#mainTitle  { font-size: 32px; }      /* the element with id="mainTitle" */
+.card       { border-radius: 12px; }  /* every element with class="card" */</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> Use element names for broad rules, classes for repeated styles, and ids for one unique element.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>2. Colors and typography</strong>
+
+            <p>Set readable text, spacing, and contrast. Use a small consistent type scale across a school dashboard.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #1d2433;
+  background: #f4f7fa;
+}
+
+h1 { font-size: 32px; color: #080670; }
+h2 { font-size: 24px; }</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> Dark text on a light background (or the reverse) keeps the page easy to read. A line-height around 1.5 makes paragraphs comfortable.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>3. Box model</strong>
+
+            <p>Every element has content, padding, border, and margin. Understanding these makes spacing easier to control.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>.card {
+  padding: 20px;              /* space INSIDE the border */
+  border: 1px solid #ddd;     /* the edge */
+  margin: 12px;               /* space OUTSIDE the border */
+}</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> Think of a framed photo: the photo is the content, the matting is the padding, the frame is the border, and the gap to the next frame is the margin.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>4. Flexbox</strong>
+
+            <p>Flexbox is useful for navigation bars, rows, columns, and aligning dashboard cards.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>&lt;div class="row"&gt;
+  &lt;div&gt;One&lt;/div&gt;
+  &lt;div&gt;Two&lt;/div&gt;
+  &lt;div&gt;Three&lt;/div&gt;
+&lt;/div&gt;
+
+.row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> The three boxes now sit side by side with 16px between them, centered vertically.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>5. Grid</strong>
+
+            <p>CSS Grid is useful when you need rows and columns for dashboards and learning cards.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> repeat(3, 1fr) means three equal columns. Six cards would fill two rows of three.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>6. Responsive design</strong>
+
+            <p>Use flexible widths and media queries so pages work on phones, tablets, and desktops.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> On screens 700px wide or smaller, the three columns become a single column.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>7. Buttons and states</strong>
+
+            <p>Style buttons for clear actions and provide hover or focus states so users know what is interactive.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>button {
+  background: #080670;
+  color: #fff;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover          { background: #1261a0; }
+button:focus-visible  { outline: 3px solid #f5b301; }
+button:disabled       { opacity: 0.5; cursor: not-allowed; }</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> hover is when the mouse is over it, focus-visible is when it is reached with the keyboard, and disabled is when it can't be used.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>8. Positioning</strong>
+
+            <p>Normal flow, relative, absolute, fixed, and sticky positioning solve different layout problems. Start with normal flow when possible.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>.topbar { position: sticky; top: 0; }        /* stays at the top while scrolling */
+
+.card { position: relative; }                 /* anchor for the badge */
+.card .badge {
+  position: absolute;                         /* placed inside the card */
+  top: 8px;
+  right: 8px;
+}</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> An absolute element is positioned against the nearest ancestor that has position set, which is why the card needs position: relative.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>9. Reusable classes</strong>
+
+            <p>Keep repeated styles in classes instead of adding the same inline style to many elements.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>&lt;!-- Avoid: the same style repeated --&gt;
+&lt;p style="color: red; font-weight: bold;"&gt;Late&lt;/p&gt;
+&lt;p style="color: red; font-weight: bold;"&gt;Missing&lt;/p&gt;
+
+&lt;!-- Better: one class, reused --&gt;
+&lt;p class="warning"&gt;Late&lt;/p&gt;
+&lt;p class="warning"&gt;Missing&lt;/p&gt;
+
+.warning { color: red; font-weight: bold; }</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> To change the warning color later you edit one rule instead of every paragraph.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>10. CSS variables</strong>
+
+            <p>Variables can store repeated values such as a brand color, radius, or spacing unit.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>:root {
+  --brand: #1261a0;
+  --radius: 12px;
+}
+
+.card   { border-radius: var(--radius); }
+button  { background: var(--brand); }</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> Change --brand once in :root and every rule that uses var(--brand) updates.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>11. Forms and focus</strong>
+
+            <p>Inputs should have enough padding and a visible focus state so students can tell where they are typing.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>input {
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+input:focus {
+  outline: 3px solid #1261a0;
+  border-color: #1261a0;
+}</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> Never remove the focus outline without giving a clear replacement, because keyboard users rely on it.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>12. CSS challenge</strong>
+
+            <p>Build a three-card subject layout and make it change to one column on a small screen.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>&lt;div class="subjects"&gt;
+  &lt;div class="subject"&gt;Web Technology&lt;/div&gt;
+  &lt;div class="subject"&gt;Programming&lt;/div&gt;
+  &lt;div class="subject"&gt;Databases&lt;/div&gt;
+&lt;/div&gt;
+
+.subjects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.subject { padding: 20px; border: 1px solid #ddd; border-radius: 12px; }
+
+@media (max-width: 600px) {
+  .subjects { grid-template-columns: 1fr; }
+}</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> This is one possible answer. Resize your browser window to see the cards stack.</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" id="javascript">
+        <div class="panelHeader">
+          <div>
+            <p>JAVASCRIPT</p>
+            <h2>Make the page interactive</h2>
+          </div>
+        </div>
+
+        <div class="cardsGrid">
+          <article class="card lesson">
+            <strong>1. Variables</strong>
+
+            <p>Use let for values that change and const for values that should not be reassigned.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>const school = "Cyber Nexus";
+let score = 0;
+
+score = score + 10;
+console.log(score);   // 10
+
+// school = "Other";  // Error: const cannot be reassigned</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> Default to const, and switch to let only when the value really has to change.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>2. Data types</strong>
+
+            <p>Common values include strings, numbers, booleans, arrays, objects, and null.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>const name = "Andrew";                // string
+const age = 19;                       // number
+const isEnrolled = true;              // boolean
+const subjects = ["HTML", "CSS"];     // array
+const student = { name: "Andrew" };   // object
+const middleName = null;              // null (intentionally empty)
+
+console.log(typeof age);              // "number"</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> typeof tells you what kind of value a variable holds.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>3. Conditions</strong>
+
+            <p>Use if, else if, and else when different actions are needed for different conditions.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>let score = 82;
+let message;
+
+if (score &gt;= 90) {
+  message = "Excellent";
+} else if (score &gt;= 75) {
+  message = "Passed";
+} else {
+  message = "Keep practicing";
+}
+
+console.log(message);   // "Passed"</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> JavaScript checks each condition from the top and runs only the first block that is true.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>4. Loops</strong>
+
+            <p>Loops repeat work. for loops and array methods are common tools for rendering lists of students or subjects.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>const subjects = ["HTML", "CSS", "JavaScript"];
+
+for (let i = 0; i &lt; subjects.length; i++) {
+  console.log(subjects[i]);
+}
+
+subjects.forEach(function (subject) {
+  console.log(subject);
+});
+// Both print: HTML, CSS, JavaScript</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> forEach is shorter and avoids counter mistakes, while a for loop gives you more control.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>5. Functions</strong>
+
+            <p>Functions package reusable behavior and can receive values through parameters.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>function greet(name) {
+  return "Hello " + name;
+}
+
+console.log(greet("Andrew"));   // "Hello Andrew"
+console.log(greet("Louis"));    // "Hello Louis"</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> Write the function once, then call it with different values as often as you need.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>6. DOM</strong>
+
+            <p>JavaScript can find HTML elements, change their text, respond to clicks, and build interactive forms.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>&lt;h1 id="title"&gt;Welcome&lt;/h1&gt;
+
+&lt;script&gt;
+  document.getElementById("title").textContent = "Updated";
+&lt;/script&gt;</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> After the script runs, the heading on the page reads Updated instead of Welcome.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>7. Events</strong>
+
+            <p>Events let your code react to user actions such as clicks, typing, submitting forms, and changing a select box.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>&lt;button id="saveBtn"&gt;Save&lt;/button&gt;
+
+&lt;script&gt;
+  const button = document.getElementById("saveBtn");
+
+  button.addEventListener("click", function () {
+    alert("Saved");
+  });
+&lt;/script&gt;</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> Clicking the button shows the Saved message. The first value is the event name and the second is the function to run.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>8. Arrays</strong>
+
+            <p>Arrays store lists such as subjects or students. map, filter, find, and reduce are useful for dashboard data.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>const grades = [85, 92, 74, 98];
+
+const passed = grades.filter(g =&gt; g &gt;= 75);              // [85, 92, 98]
+const curved = grades.map(g =&gt; g + 2);                   // [87, 94, 76, 100]
+const first  = grades.find(g =&gt; g &gt; 90);                 // 92
+const total  = grades.reduce((sum, g) =&gt; sum + g, 0);    // 349</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> filter keeps matching items, map changes every item, find returns the first match, and reduce combines everything into one value.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>9. Objects</strong>
+
+            <p>Objects group related values. A student object can contain a name, email, section, and program.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>const student = {
+  name: "Andrew",
+  section: "A"
+};
+
+console.log(student.name);       // "Andrew"
+student.section = "B";           // change a value
+console.log(student.section);    // "B"</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> Use a dot and the property name to read or change a value inside an object.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>10. Local storage</strong>
+
+            <p>Browser localStorage can keep prototype data between page loads. Real school systems should use a secure backend database.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>localStorage.setItem("lastSubject", "Web Technology");
+
+const last = localStorage.getItem("lastSubject");
+console.log(last);   // "Web Technology"
+
+// Objects must be saved as text
+localStorage.setItem("student", JSON.stringify({ name: "Andrew" }));
+const saved = JSON.parse(localStorage.getItem("student"));</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> The value is still there after you refresh the page. localStorage only stores text, so use JSON.stringify and JSON.parse for objects.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>11. Debugging</strong>
+
+            <p>Use the browser console to inspect errors and test small pieces of JavaScript before connecting them to a larger project.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>let score = 10;
+console.log("score is", score);      // check a value
+console.error("Something went wrong");
+
+// Typical error message:
+// ReferenceError: scroe is not defined
+// Fix: the variable is spelled "score", not "scroe"</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> Press F12 and open the Console tab. The error message names the file and line number where the problem happened.</div>
+          </article>
+
+          <article class="card lesson">
+            <strong>12. JavaScript challenge</strong>
+
+            <p>Create a button that increases a displayed score by one every time it is clicked.</p>
+
+            <span class="exLabel">Example</span>
+            <pre class="codebox"><code>&lt;p&gt;Score: &lt;span id="score"&gt;0&lt;/span&gt;&lt;/p&gt;
+&lt;button id="plus"&gt;+1&lt;/button&gt;
+
+&lt;script&gt;
+  let score = 0;
+
+  document.getElementById("plus").addEventListener("click", function () {
+    score = score + 1;
+    document.getElementById("score").textContent = score;
+  });
+&lt;/script&gt;</code></pre>
+
+            <div class="tip"><strong>What this shows:</strong> This is one possible answer. Try adding a reset button as an extra challenge.</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" id="languages">
+        <div class="panelHeader">
+          <div>
+            <p>PRACTICE LANGUAGES</p>
+            <h2>Pick a language and start practicing</h2>
+          </div>
+        </div>
+
+        <div class="langTabs" id="langTabs" role="tablist" aria-label="Programming languages"></div>
+        <div id="langPane" class="langPane" role="tabpanel"></div>
+      </section>
+
+      <section class="panel" id="quiz">
+        <div class="panelHeader">
+          <div>
+            <p>FUN QUIZ · <span id="webQuizCount">12</span> QUESTIONS</p>
+            <h2>Test your fundamentals</h2>
+          </div>
+        </div>
+
+        <form id="funQuiz" class="miniQuiz">
+          <div class="quizItem">
+            <strong>1. Which language structures a web page?</strong>
+            <label><input type="radio" name="q1" value="HTML" />HTML</label>
+            <label><input type="radio" name="q1" value="CSS" />CSS</label>
+            <label
+              ><input
+                type="radio"
+                name="q1"
+                value="JavaScript"
+              />JavaScript</label
+            >
+          </div>
+
+          <div class="quizItem">
+            <strong
+              >2. Which CSS feature is useful for one-dimensional
+              alignment?</strong
+            >
+            <label
+              ><input type="radio" name="q2" value="Flexbox" />Flexbox</label
+            >
+            <label><input type="radio" name="q2" value="SQL" />SQL</label>
+            <label><input type="radio" name="q2" value="HTML" />HTML</label>
+          </div>
+
+          <div class="quizItem">
+            <strong
+              >3. Which JavaScript keyword creates a variable that can be
+              reassigned?</strong
+            >
+            <label><input type="radio" name="q3" value="let" />let</label>
+            <label
+              ><input type="radio" name="q3" value="doctype" />doctype</label
+            >
+            <label><input type="radio" name="q3" value="style" />style</label>
+          </div>
+
+          <div class="quizItem">
+            <strong
+              >4. Which HTML element is normally used for the main page
+              heading?</strong
+            >
+            <label><input type="radio" name="q4" value="h1" />h1</label>
+            <label><input type="radio" name="q4" value="p" />p</label>
+            <label><input type="radio" name="q4" value="div" />div</label>
+          </div>
+
+          <div class="quizItem">
+            <strong
+              >5. Which HTML attribute gives an image alternative text?</strong
+            >
+            <label><input type="radio" name="q5" value="alt" />alt</label>
+            <label><input type="radio" name="q5" value="src" />src</label>
+            <label><input type="radio" name="q5" value="href" />href</label>
+          </div>
+
+          <div class="quizItem">
+            <strong
+              >6. Which CSS layout system is designed for rows and
+              columns?</strong
+            >
+            <label><input type="radio" name="q6" value="Grid" />Grid</label>
+            <label><input type="radio" name="q6" value="Alert" />Alert</label>
+            <label><input type="radio" name="q6" value="Form" />Form</label>
+          </div>
+
+          <div class="quizItem">
+            <strong
+              >7. Which JavaScript method finds the first matching array
+              item?</strong
+            >
+            <label><input type="radio" name="q7" value="find" />find</label>
+            <label><input type="radio" name="q7" value="style" />style</label>
+            <label><input type="radio" name="q7" value="href" />href</label>
+          </div>
+
+          <div class="quizItem">
+            <strong>8. Which HTML element is used for a paragraph?</strong>
+            <label><input type="radio" name="q8" value="p" />p</label>
+            <label><input type="radio" name="q8" value="h1" />h1</label>
+            <label><input type="radio" name="q8" value="nav" />nav</label>
+          </div>
+
+          <div class="quizItem">
+            <strong
+              >9. Which CSS property changes the space inside an
+              element?</strong
+            >
+            <label
+              ><input type="radio" name="q9" value="padding" />padding</label
+            >
+            <label><input type="radio" name="q9" value="margin" />margin</label>
+            <label
+              ><input type="radio" name="q9" value="display" />display</label
+            >
+          </div>
+
+          <div class="quizItem">
+            <strong
+              >10. Which JavaScript object lets a prototype store data in the
+              browser?</strong
+            >
+            <label
+              ><input
+                type="radio"
+                name="q10"
+                value="localStorage"
+              />localStorage</label
+            >
+            <label
+              ><input type="radio" name="q10" value="document" />document</label
+            >
+            <label
+              ><input type="radio" name="q10" value="console" />console</label
+            >
+          </div>
+
+          <div class="quizItem">
+            <strong
+              >11. Which event commonly runs when a form is submitted?</strong
+            >
+            <label
+              ><input type="radio" name="q11" value="submit" />submit</label
+            >
+            <label><input type="radio" name="q11" value="hover" />hover</label>
+            <label
+              ><input type="radio" name="q11" value="loadrow" />loadrow</label
+            >
+          </div>
+
+          <div class="quizItem">
+            <strong
+              >12. Which semantic element is commonly used for the main page
+              content?</strong
+            >
+            <label><input type="radio" name="q12" value="main" />main</label>
+            <label><input type="radio" name="q12" value="small" />small</label>
+            <label><input type="radio" name="q12" value="br" />br</label>
+          </div>
+
+          <button class="primary" type="submit">CHECK ANSWERS</button>
+
+          <div id="quizResult" class="result"></div>
+        </form>
+      </section>
+    </main>
+
+    <script src="JAVA/elms-data.js"></script>
+    <script src="JAVA/sidenav.js"></script>
+    <script src="JAVA/learning-data.js"></script>
+
+    <script>
+      var learningUser = ELMS.protect("student");
+
+      /* Each question has its answer plus a short worked example. */
+      var quizKey = {
+        q1: {
+          answer: "HTML",
+          example: '<h1>Welcome</h1>\n<p>HTML marks up the headings, paragraphs, and links.</p>',
+        },
+        q2: {
+          answer: "Flexbox",
+          example: ".row { display: flex; gap: 16px; }\n/* the children now line up in one row */",
+        },
+        q3: {
+          answer: "let",
+          example: "let score = 0;\nscore = score + 1;   // allowed\n// const would throw an error here",
+        },
+        q4: {
+          answer: "h1",
+          example: "<h1>Cyber Nexus Academy</h1>",
+        },
+        q5: {
+          answer: "alt",
+          example: '<img src="logo.png" alt="Cyber Nexus Academy logo">',
+        },
+        q6: {
+          answer: "Grid",
+          example: ".grid {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n}",
+        },
+        q7: {
+          answer: "find",
+          example: "[85, 92, 74].find(g => g > 90);   // 92",
+        },
+        q8: {
+          answer: "p",
+          example: "<p>Welcome to the learning center.</p>",
+        },
+        q9: {
+          answer: "padding",
+          example: ".card { padding: 20px; }   /* space inside */\n.card { margin: 20px; }    /* space outside */",
+        },
+        q10: {
+          answer: "localStorage",
+          example: 'localStorage.setItem("name", "Andrew");\nlocalStorage.getItem("name");   // "Andrew"',
+        },
+        q11: {
+          answer: "submit",
+          example: 'form.addEventListener("submit", function (e) {\n  e.preventDefault();\n});',
+        },
+        q12: {
+          answer: "main",
+          example: "<main>\n  <h1>Dashboard</h1>\n</main>",
+        },
+      };
+
+      /* The right answer used to be the first choice every time, so shuffle
+         the choices each time the page loads. */
+      document.querySelectorAll("#funQuiz .quizItem").forEach(function (item) {
+        var labels = Array.prototype.slice.call(item.querySelectorAll("label"));
+
+        for (var i = labels.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var tmp = labels[i];
+          labels[i] = labels[j];
+          labels[j] = tmp;
+        }
+
+        labels.forEach(function (label) {
+          item.appendChild(label);
+        });
+      });
+
+      document.getElementById("funQuiz").onsubmit = function (e) {
+        e.preventDefault();
+
+        var score = 0;
+        var total = Object.keys(quizKey).length;
+
+        Object.keys(quizKey).forEach(function (k) {
+          var item = document
+            .querySelector('input[name="' + k + '"]')
+            .closest(".quizItem");
+          var old = item.querySelector(".quizFeedback");
+
+          if (old) {
+            old.remove();
+          }
+
+          var picked = document.querySelector('input[name="' + k + '"]:checked');
+          var key = quizKey[k];
+          var box = document.createElement("div");
+          box.className = "quizFeedback";
+
+          var code = document.createElement("code");
+          code.textContent = key.example;
+
+          var head = document.createElement("strong");
+
+          if (!picked) {
+            box.className += " skipped";
+            head.textContent = "Not answered. The answer is " + key.answer + ".";
+          } else if (picked.value === key.answer) {
+            score++;
+            head.textContent = "Correct!";
+          } else {
+            box.className += " wrong";
+            head.textContent = "Not quite. The answer is " + key.answer + ".";
+          }
+
+          var label = document.createElement("div");
+          label.textContent = "Example:";
+
+          box.appendChild(head);
+          box.appendChild(label);
+          box.appendChild(code);
+          item.appendChild(box);
+        });
+
+        var result = document.getElementById("quizResult");
+
+        result.textContent =
+          "You scored " +
+          score +
+          "/" +
+          total +
+          ". " +
+          (score === total
+            ? "Excellent work!"
+            : score >= 9
+              ? "Great job! Review any missed lessons and try again."
+              : score >= 6
+                ? "Good progress. Review the lessons and try again."
+                : "Keep practicing and try the quiz again.");
+
+        result.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      };
+
+      /* ---------- Practice languages ---------- */
+      (function () {
+        var langs = window.LEARNING_LANGS || [];
+        var tabs = document.getElementById("langTabs");
+        var pane = document.getElementById("langPane");
+        var active = langs.length ? langs[0].id : "";
+
+        function el(tag, cls, text) {
+          var n = document.createElement(tag);
+          if (cls) { n.className = cls; }
+          if (text !== undefined) { n.textContent = text; }
+          return n;
+        }
+
+        function shuffle(arr) {
+          for (var i = arr.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+          }
+          return arr;
+        }
+
+        function renderTabs() {
+          tabs.innerHTML = "";
+          langs.forEach(function (l) {
+            var b = el("button", "langTab" + (l.id === active ? " active" : ""));
+            b.type = "button";
+            b.setAttribute("role", "tab");
+            b.setAttribute("aria-selected", l.id === active ? "true" : "false");
+            b.appendChild(el("span", "langName", l.name));
+            b.appendChild(el("span", "langCount", l.quiz.length + " quiz questions"));
+            b.onclick = function () { active = l.id; renderTabs(); renderPane(); };
+            tabs.appendChild(b);
+          });
+        }
+
+        function renderPane() {
+          var l = langs.filter(function (x) { return x.id === active; })[0];
+          if (!l) { return; }
+          pane.innerHTML = "";
+
+          var head = el("div", "langHead");
+          head.appendChild(el("h3", "", l.name));
+          head.appendChild(el("span", "langTag", l.tag));
+          head.appendChild(el("p", "", l.intro));
+          pane.appendChild(head);
+
+          /* lessons */
+          pane.appendChild(el("h4", "subHeading", "Lessons with examples"));
+          var grid = el("div", "cardsGrid lessonGrid");
+          l.lessons.forEach(function (ls) {
+            var card = el("article", "card");
+            card.appendChild(el("strong", "", ls.title));
+            card.appendChild(el("p", "", ls.text));
+            card.appendChild(el("span", "exLabel", "EXAMPLE"));
+            var pre = el("pre", "codebox");
+            pre.appendChild(el("code", "", ls.code));
+            card.appendChild(pre);
+            var tip = el("div", "tip");
+            tip.appendChild(el("strong", "", "What this shows:"));
+            tip.appendChild(document.createTextNode(" " + ls.tip));
+            card.appendChild(tip);
+            grid.appendChild(card);
+          });
+          pane.appendChild(grid);
+
+          /* practice */
+          pane.appendChild(el("h4", "subHeading", "Try it yourself (" + l.practice.length + " tasks)"));
+          var plist = el("div", "practiceList");
+          l.practice.forEach(function (p, i) {
+            var d = el("details", "practiceItem");
+            var sm = el("summary", "");
+            sm.appendChild(el("b", "", "Task " + (i + 1) + ". "));
+            sm.appendChild(document.createTextNode(p.task));
+            d.appendChild(sm);
+            d.appendChild(el("div", "exLabel", "ONE POSSIBLE SOLUTION"));
+            var pre = el("pre", "codebox");
+            pre.appendChild(el("code", "", p.solution));
+            d.appendChild(pre);
+            plist.appendChild(d);
+          });
+          pane.appendChild(plist);
+
+          /* quiz */
+          pane.appendChild(el("h4", "subHeading", l.name + " quiz (" + l.quiz.length + " questions)"));
+          var form = el("form", "miniQuiz langQuiz");
+          var order = shuffle(l.quiz.map(function (_, i) { return i; }));
+
+          order.forEach(function (qi, n) {
+            var q = l.quiz[qi];
+            var item = el("div", "quizItem");
+            item.appendChild(el("strong", "", (n + 1) + ". " + q.q));
+            shuffle(q.c.map(function (text, idx) { return { text: text, idx: idx }; })).forEach(function (ch) {
+              var lab = el("label");
+              var r = document.createElement("input");
+              r.type = "radio";
+              r.name = "lq" + qi;
+              r.value = String(ch.idx);
+              lab.appendChild(r);
+              lab.appendChild(document.createTextNode(ch.text));
+              item.appendChild(lab);
+            });
+            item.dataset.q = qi;
+            form.appendChild(item);
+          });
+
+          var btn = el("button", "primary", "CHECK ANSWERS");
+          btn.type = "submit";
+          var result = el("div", "result");
+          form.appendChild(btn);
+          form.appendChild(result);
+
+          form.onsubmit = function (e) {
+            e.preventDefault();
+            var score = 0;
+            form.querySelectorAll(".quizItem").forEach(function (item) {
+              var q = l.quiz[Number(item.dataset.q)];
+              var old = item.querySelector(".quizFeedback");
+              if (old) { old.remove(); }
+              var picked = item.querySelector("input:checked");
+              var box = el("div", "quizFeedback");
+              var head = el("strong");
+              if (!picked) {
+                box.className += " skipped";
+                head.textContent = "Not answered. The answer is: " + q.c[q.a];
+              } else if (Number(picked.value) === q.a) {
+                score++;
+                head.textContent = "Correct!";
+              } else {
+                box.className += " wrong";
+                head.textContent = "Not quite. The answer is: " + q.c[q.a];
+              }
+              box.appendChild(head);
+              box.appendChild(el("div", "", q.why));
+              item.appendChild(box);
+            });
+            var total = l.quiz.length;
+            result.textContent =
+              "You scored " + score + "/" + total + ". " +
+              (score === total ? "Excellent work!" : score >= total - 1 ? "Great job! Review the one you missed." : score >= total / 2 ? "Good progress. Review the lessons and try again." : "Keep practicing and try again.");
+            result.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          };
+
+          pane.appendChild(form);
+        }
+
+        /* header numbers */
+        var langLessons = 0, langPractice = 0, langQuiz = 0;
+        langs.forEach(function (l) {
+          langLessons += l.lessons.length;
+          langPractice += l.practice.length;
+          langQuiz += l.quiz.length;
+        });
+        var webLessons = document.querySelectorAll("#html .card, #css .card, #javascript .card").length;
+        var webQuiz = document.querySelectorAll("#funQuiz .quizItem").length;
+        document.getElementById("statTopics").textContent = langs.length;
+        document.getElementById("statLessons").textContent = webLessons + langLessons;
+        document.getElementById("statPractice").textContent = langPractice;
+        document.getElementById("statQuiz").textContent = webQuiz + langQuiz;
+        document.getElementById("webQuizCount").textContent = webQuiz;
+
+        renderTabs();
+        renderPane();
+      })();
+    </script>
+  </body>
+</html>

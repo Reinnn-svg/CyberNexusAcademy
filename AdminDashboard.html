@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard | Cyber Nexus Academy</title>
+    <link rel="stylesheet" href="CSS/AdminDashboard.css" />
+    <link rel="stylesheet" href="CSS/sidenav.css" />
+    <link rel="stylesheet" href="CSS/dashboard-theme.css" />
+    <script src="JAVA/elms-data.js"></script>
+  </head>
+  <body id="top">
+    <header class="topbar">
+      <a class="brand" href="LandingPage.html">
+        <img src="Vid,Aud,Pic/LOGOACADEMY.png" alt="Cyber Nexus Academy" />
+        <div>
+          <strong>CYBER NEXUS</strong>
+          <small>ACADEMY</small>
+        </div>
+      </a>
+      <nav id="sideNav" aria-label="Main menu">
+        <a
+          href="LandingPage.html"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/HomeIconn.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Home
+        </a>
+
+        <a href="#top" style="display: flex; align-items: center; gap: 8px">
+          <img
+            src="Assets/assets/icons/OverviewIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Overview
+        </a>
+
+
+        <a
+          href="#account-requests"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/StudentIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Account Requests
+        </a>
+
+        <a
+          href="#post-announcement"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/AnnouncementIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Announcement
+        </a>
+
+        <a
+          href="#accounts"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/AdminIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Accounts
+        </a>
+
+
+        <a
+          href="#messages"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/AnswersIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Messages
+        </a>
+
+        <a
+          href="#bug-reports"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/ActivityIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Bug Reports
+        </a>
+
+        <a
+          href="#announcement-list"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/PostedIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Posted Announcements
+        </a>
+
+        <a
+          href="SignUp.html"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/CreateIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Create Account
+        </a>
+
+        <a
+          href="Logout.html"
+          style="display: flex; align-items: center; gap: 8px"
+        >
+          <img
+            src="Assets/assets/icons/LogoutIcon.png"
+            alt=""
+            width="20"
+            height="20"
+            style="display: block; flex-shrink: 0"
+          />
+          Logout
+        </a>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <section class="roleBanner">
+        <p>ADMINISTRATION</p>
+        <h1 id="welcome">Admin Dashboard</h1>
+        <div>
+          Create accounts, assign teaching loads, and publish announcements.
+        </div>
+      </section>
+
+      <section class="stats">
+        <article>
+          <span>TOTAL ACCOUNTS</span><strong id="users">0</strong>
+        </article>
+        <article><span>TEACHERS</span><strong id="teachers">0</strong></article>
+        <article>
+          <span>REGISTRARS</span><strong id="registrars">0</strong>
+        </article>
+        <article>
+          <span>SUBJECT ASSIGNMENTS</span><strong id="assignments">0</strong>
+        </article>
+      </section>
+
+      <section class="panel" id="post-announcement">
+        <div class="panelHeader">
+          <div>
+            <p>SCHOOL NEWS</p>
+            <h2>Post an announcement</h2>
+          </div>
+        </div>
+        <form id="announcementForm" class="formGrid">
+          <input
+            id="announcementTitle"
+            placeholder="Announcement title"
+            required
+          />
+          <select id="announcementAudience" required>
+            <option value="all">All staff and students</option>
+            <option value="student">Students only</option>
+            <option value="teacher">Teachers only</option>
+            <option value="registrar">Registrar only</option>
+            <option value="landing">Landing page only (public)</option>
+          </select>
+          <label class="checkLine">
+            <input type="checkbox" id="announcementLanding" />
+            Also show on the public Landing Page
+          </label>
+          <textarea
+            id="announcementMessage"
+            placeholder="Announcement message"
+            required
+          ></textarea>
+          <button type="submit">POST ANNOUNCEMENT</button>
+        </form>
+        <div id="announcementList"></div>
+      </section>
+
+      <section class="panel" id="account-requests">
+        <div class="panelHeader">
+          <div>
+            <p>FROM THE REGISTRAR</p>
+            <h2>Student Account Requests <span class="countBadge" id="requestCount">0</span></h2>
+          </div>
+        </div>
+        <p class="panelNote">
+          Students listed here were officially enrolled by the Registrar and are
+          waiting for a login account. Create the account to let them sign in.
+        </p>
+        <div id="credentialResult"></div>
+        <div class="tableWrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Student</th>
+                <th>Student ID</th>
+                <th>Program</th>
+                <th>Year / Section</th>
+                <th>Sent by Registrar</th>
+                <th>Temporary password</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="requestRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel" id="accounts">
+        <div class="panelHeader">
+          <div>
+            <p>USER MANAGEMENT</p>
+            <h2>Accounts</h2>
+          </div>
+          <a class="primary" href="SignUp.html">+ Create Account</a>
+        </div>
+        <div class="tableWrap">
+          <table class="userTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>ID</th>
+                <th>Course / Department</th>
+                <th>Contact</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="userRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel" id="messages">
+        <div class="panelHeader">
+          <div>
+            <p>CONTACT US INBOX</p>
+            <h2>Messages <span class="countBadge" id="messageCount">0</span></h2>
+          </div>
+        </div>
+        <p class="panelNote">
+          Messages sent from the Contact Us form on the landing page.
+        </p>
+        <div id="messageList"></div>
+      </section>
+
+      <section class="panel" id="bug-reports">
+        <div class="panelHeader">
+          <div>
+            <p>STUDENT REPORTS</p>
+            <h2>Bug Reports <span class="countBadge" id="bugCount">0</span></h2>
+          </div>
+        </div>
+        <p class="panelNote">
+          Problems reported by students from their dashboard.
+        </p>
+        <div id="bugList"></div>
+      </section>
+
+      <section class="panel" id="announcement-list">
+        <div class="panelHeader">
+          <div>
+            <p>SCHOOL NEWS</p>
+            <h2>Announcements visible to staff and students</h2>
+          </div>
+        </div>
+        <div id="dashboardAnnouncements"></div>
+      </section>
+    </main>
+
+    <script>
+      var user = ELMS.protect("admin");
+
+      if (user) {
+        document.getElementById("welcome").textContent =
+          "Welcome, " + user.fullName;
+
+        function render() {
+          var users = ELMS.get("users").filter(function (u) {
+            return !ELMS.isPendingAccount(u);
+          });
+
+          document.getElementById("users").textContent = users.length;
+          document.getElementById("teachers").textContent = users.filter(
+            function (u) {
+              return u.role === "teacher";
+            },
+          ).length;
+          document.getElementById("registrars").textContent = users.filter(
+            function (u) {
+              return u.role === "registrar";
+            },
+          ).length;
+          document.getElementById("assignments").textContent =
+            ELMS.assignments().length;
+
+          document.getElementById("userRows").innerHTML = users
+            .map(function (u) {
+              var courseDepartment = u.course || u.program || "";
+              var action =
+                u.email === user.email
+                  ? "<span>Protected</span>"
+                  : '<button type="button" class="deleteUser" data-email="' +
+                    ELMS.esc(u.email) +
+                    '">DELETE</button>';
+
+              return (
+                "<tr>" +
+                "<td>" +
+                ELMS.esc(u.fullName) +
+                "</td>" +
+                "<td>" +
+                ELMS.esc(u.email) +
+                "</td>" +
+                "<td>" +
+                ELMS.esc(u.role) +
+                "</td>" +
+                "<td>" +
+                ELMS.esc(u.studentId || "") +
+                "</td>" +
+                "<td>" +
+                ELMS.esc(courseDepartment) +
+                "</td>" +
+                "<td>" +
+                ELMS.esc(u.phone || "") +
+                "</td>" +
+                "<td>" +
+                action +
+                "</td>" +
+                "</tr>"
+              );
+            })
+            .join("");
+
+          document.getElementById("announcementList").innerHTML =
+            ELMS.get("announcements")
+              .map(function (a) {
+                return (
+                  '<article class="announcement">' +
+                  "<span>Announced " +
+                  ELMS.esc(a.announcementDate || a.createdAt) +
+                  "</span>" +
+                  "<strong>" +
+                  ELMS.esc(a.title) +
+                  "</strong>" +
+                  "<p>" +
+                  ELMS.esc(a.message) +
+                  "</p>" +
+                  "<small>" +
+                  ELMS.esc(a.audienceLabel) +
+                  "</small>" +
+                  '<button type="button" class="deleteAnnouncement" data-id="' +
+                  ELMS.esc(a.id) +
+                  '">DELETE</button>' +
+                  "</article>"
+                );
+              })
+              .join("") || '<p class="empty">No announcements yet.</p>';
+
+          document.getElementById("dashboardAnnouncements").innerHTML =
+            ELMS.announcementHTML("student") ||
+            '<p class="empty">No announcements yet.</p>';
+
+          renderRequests();
+          renderMessages();
+          renderBugs();
+        }
+
+        document.getElementById("announcementForm").onsubmit = function (e) {
+          e.preventDefault();
+
+          var audience = document.getElementById("announcementAudience").value;
+          var alsoLanding = document.getElementById("announcementLanding").checked;
+          var onLanding = alsoLanding || audience === "landing";
+          var roles =
+            audience === "all"
+              ? ["student", "teacher", "registrar"]
+              : audience === "landing"
+                ? []
+                : [audience];
+          var labels = {
+            all: "Students, Teachers and Registrar",
+            student: "Students only",
+            teacher: "Teachers only",
+            registrar: "Registrar only",
+            landing: "Landing page only",
+          };
+
+          ELMS.save("announcements", {
+            id: ELMS.id("ANN"),
+            title: document.getElementById("announcementTitle").value.trim(),
+            message: document
+              .getElementById("announcementMessage")
+              .value.trim(),
+            roles: roles,
+            audienceLabel:
+              labels[audience] +
+              (alsoLanding && audience !== "landing" ? " + Landing page" : ""),
+            landing: onLanding,
+            author: user.fullName,
+            createdAt: new Date().toLocaleString(),
+            announcementDate: new Date().toLocaleString(),
+          });
+
+          this.reset();
+          alert("Announcement posted.");
+          render();
+        };
+
+        document.addEventListener("click", function (e) {
+          if (e.target.classList.contains("deleteUser")) {
+            var email = e.target.dataset.email;
+
+            if (email === user.email) {
+              return;
+            }
+
+            if (confirm("Delete this account?")) {
+              var deleted = ELMS.get("users").find(function (u) {
+                return u.email === email;
+              });
+
+              ELMS.set(
+                "users",
+                ELMS.get("users").filter(function (u) {
+                  return u.email !== email;
+                }),
+              );
+
+              if (deleted && deleted.role === "teacher") {
+                ELMS.set(
+                  "assignments",
+                  ELMS.get("assignments").filter(function (a) {
+                    return a.teacherEmail !== email;
+                  }),
+                );
+                ELMS.set(
+                  "activities",
+                  ELMS.get("activities").filter(function (a) {
+                    return a.teacherEmail !== email;
+                  }),
+                );
+                ELMS.set(
+                  "quizzes",
+                  ELMS.get("quizzes").filter(function (q) {
+                    return q.teacherEmail !== email;
+                  }),
+                );
+                ELMS.set(
+                  "submissions",
+                  ELMS.get("submissions").filter(function (s) {
+                    return s.teacherEmail !== email;
+                  }),
+                );
+                ELMS.set(
+                  "grades",
+                  ELMS.get("grades").filter(function (g) {
+                    return g.teacherEmail !== email;
+                  }),
+                );
+              } else if (deleted && deleted.role === "student") {
+                ELMS.set(
+                  "grades",
+                  ELMS.get("grades").filter(function (g) {
+                    return g.studentEmail !== email;
+                  }),
+                );
+                ELMS.set(
+                  "gradeHistory",
+                  ELMS.get("gradeHistory").filter(function (g) {
+                    return g.studentEmail !== email;
+                  }),
+                );
+                ELMS.set(
+                  "submissions",
+                  ELMS.get("submissions").filter(function (s) {
+                    return s.studentEmail !== email;
+                  }),
+                );
+              }
+
+              render();
+            }
+          }
+
+          if (e.target.classList.contains("deleteAnnouncement")) {
+            if (confirm("Delete this announcement?")) {
+              ELMS.set(
+                "announcements",
+                ELMS.get("announcements").filter(function (a) {
+                  return a.id !== e.target.dataset.id;
+                }),
+              );
+              render();
+            }
+          }
+        });
+
+        /* ---------- Student account requests (from the Registrar) ---------- */
+        function renderRequests() {
+          var pending = ELMS.get("users").filter(ELMS.isPendingAccount);
+
+          document.getElementById("requestCount").textContent = pending.length;
+
+          document.getElementById("requestRows").innerHTML =
+            pending
+              .map(function (u) {
+                return (
+                  "<tr>" +
+                  "<td><strong>" + ELMS.esc(u.fullName) + "</strong><small>" + ELMS.esc(u.email) + "</small></td>" +
+                  "<td>" + ELMS.esc(u.studentId || "") + "</td>" +
+                  "<td>" + ELMS.esc(u.program || "") + "</td>" +
+                  "<td>" + ELMS.esc(u.yearLevel || "") + " · " + (u.section ? "Section " + ELMS.esc(u.section) : "<em>Unassigned</em>") + "</td>" +
+                  "<td>" + ELMS.esc(u.requestedBy || "Registrar") + "<small>" + ELMS.esc(u.requestedAt || "") + "</small></td>" +
+                  '<td><input class="tempPw" data-email="' + ELMS.esc(u.email) + '" value="' + ELMS.esc(ELMS.tempPassword()) + '" aria-label="Temporary password" /></td>' +
+                  '<td><button type="button" class="createAccount" data-email="' + ELMS.esc(u.email) + '">CREATE ACCOUNT</button></td>' +
+                  "</tr>"
+                );
+              })
+              .join("") ||
+            '<tr><td colspan="7" class="empty">No student accounts are waiting. When the Registrar officially enrolls a student, the request shows up here.</td></tr>';
+        }
+
+        /* ---------- Contact Us messages from the landing page ---------- */
+        function renderMessages() {
+          var list = ELMS.get("messages").slice().reverse();
+          var unread = list.filter(function (m) { return !m.read; }).length;
+
+          document.getElementById("messageCount").textContent =
+            unread ? unread + " new" : list.length;
+
+          document.getElementById("messageList").innerHTML =
+            list
+              .map(function (m) {
+                var subject = encodeURIComponent("Re: your message to Cyber Nexus Academy");
+                return (
+                  '<article class="inboxItem' + (m.read ? "" : " unread") + '">' +
+                  '<div class="inboxTop">' +
+                  "<strong>" + ELMS.esc(m.name || "Anonymous") + "</strong>" +
+                  (m.read ? "" : '<em class="newTag">NEW</em>') +
+                  "<span>" + ELMS.esc(m.createdAt || "") + "</span>" +
+                  "</div>" +
+                  '<a class="inboxMail" href="mailto:' + ELMS.esc(m.email || "") + "?subject=" + subject + '">' + ELMS.esc(m.email || "no email given") + "</a>" +
+                  "<p>" + ELMS.esc(m.message) + "</p>" +
+                  '<div class="inboxActions">' +
+                  (m.read ? "" : '<button type="button" class="readMessage" data-id="' + ELMS.esc(m.id) + '">MARK AS READ</button>') +
+                  (m.email ? '<a class="replyBtn" href="mailto:' + ELMS.esc(m.email) + "?subject=" + subject + '">REPLY</a>' : "") +
+                  '<button type="button" class="deleteMessage danger" data-id="' + ELMS.esc(m.id) + '">DELETE</button>' +
+                  "</div>" +
+                  "</article>"
+                );
+              })
+              .join("") || '<p class="empty">No messages yet.</p>';
+        }
+
+        /* ---------- Bug reports from students ---------- */
+        function renderBugs() {
+          var list = ELMS.get("bugReports").slice().reverse();
+          var open = list.filter(function (b) { return b.status !== "Resolved"; }).length;
+
+          document.getElementById("bugCount").textContent =
+            open ? open + " open" : list.length;
+
+          document.getElementById("bugList").innerHTML =
+            list
+              .map(function (b) {
+                var st = b.status || "Open";
+                return (
+                  '<article class="inboxItem bug ' + st.replace(/\s+/g, "").toLowerCase() + '">' +
+                  '<div class="inboxTop">' +
+                  "<strong>" + ELMS.esc(b.title) + "</strong>" +
+                  '<em class="newTag ' + st.replace(/\s+/g, "").toLowerCase() + '">' + ELMS.esc(st.toUpperCase()) + "</em>" +
+                  "<span>" + ELMS.esc(b.createdAt || "") + "</span>" +
+                  "</div>" +
+                  '<div class="inboxMeta">' + ELMS.esc(b.category || "General") + " · " + ELMS.esc(b.reporterName || "") + " (" + ELMS.esc(b.reporterEmail || "") + ")" + (b.page ? " · Page: " + ELMS.esc(b.page) : "") + "</div>" +
+                  "<p>" + ELMS.esc(b.description) + "</p>" +
+                  '<div class="inboxActions">' +
+                  '<label>Status <select class="bugStatus" data-id="' + ELMS.esc(b.id) + '">' +
+                  ["Open", "In Progress", "Resolved"].map(function (x) {
+                    return "<option" + (x === st ? " selected" : "") + ">" + x + "</option>";
+                  }).join("") +
+                  "</select></label>" +
+                  '<button type="button" class="deleteBug danger" data-id="' + ELMS.esc(b.id) + '">DELETE</button>' +
+                  "</div>" +
+                  "</article>"
+                );
+              })
+              .join("") || '<p class="empty">No bug reports. 🎉</p>';
+        }
+
+        document.addEventListener("change", function (e) {
+          if (e.target.classList.contains("bugStatus")) {
+            var list = ELMS.get("bugReports");
+            var b = list.find(function (x) { return x.id === e.target.dataset.id; });
+            if (b) {
+              b.status = e.target.value;
+              b.updatedAt = new Date().toLocaleString();
+              ELMS.set("bugReports", list);
+              render();
+            }
+          }
+        });
+
+        document.addEventListener("click", function (e) {
+          var t = e.target;
+
+          if (t.classList.contains("createAccount")) {
+            var email = t.dataset.email;
+            var pwInput = document.querySelector('.tempPw[data-email="' + CSS.escape(email) + '"]');
+            var pw = pwInput ? pwInput.value.trim() : "";
+
+            if (pw.length < 6) {
+              alert("Use a temporary password with at least 6 characters.");
+              return;
+            }
+
+            var all = ELMS.get("users");
+            var u = all.find(function (x) { return x.email === email; });
+            if (!u) { return; }
+
+            u.password = pw;
+            u.accountStatus = "Active";
+            u.accountCreatedAt = new Date().toLocaleString();
+            u.accountCreatedBy = user.fullName;
+            ELMS.set("users", all);
+
+            document.getElementById("credentialResult").innerHTML =
+              '<div class="credentialBox">' +
+              "<strong>Account created for " + ELMS.esc(u.fullName) + "</strong>" +
+              "<p>Give these login details to the student:</p>" +
+              "<code>Email: " + ELMS.esc(u.email) + "\nPassword: " + ELMS.esc(pw) + "</code>" +
+              '<button type="button" class="copyCred" data-text="Email: ' + ELMS.esc(u.email) + "&#10;Password: " + ELMS.esc(pw) + '">COPY</button>' +
+              "</div>";
+
+            render();
+            document.getElementById("credentialResult").scrollIntoView({ behavior: "smooth", block: "center" });
+          }
+
+          if (t.classList.contains("copyCred")) {
+            var text = t.dataset.text.replace(/&#10;/g, "\n");
+            if (navigator.clipboard) {
+              navigator.clipboard.writeText(text).then(function () { t.textContent = "COPIED ✓"; });
+            } else {
+              t.textContent = "Select and copy the text above";
+            }
+          }
+
+          if (t.classList.contains("readMessage")) {
+            var msgs = ELMS.get("messages");
+            var m = msgs.find(function (x) { return x.id === t.dataset.id; });
+            if (m) { m.read = true; ELMS.set("messages", msgs); render(); }
+          }
+
+          if (t.classList.contains("deleteMessage")) {
+            if (confirm("Delete this message?")) {
+              ELMS.set("messages", ELMS.get("messages").filter(function (x) { return x.id !== t.dataset.id; }));
+              render();
+            }
+          }
+
+          if (t.classList.contains("deleteBug")) {
+            if (confirm("Delete this bug report?")) {
+              ELMS.set("bugReports", ELMS.get("bugReports").filter(function (x) { return x.id !== t.dataset.id; }));
+              render();
+            }
+          }
+        });
+
+        /* update live if another tab (landing page / student) adds something */
+        window.addEventListener("storage", function (e) {
+          if (e.key === "messages" || e.key === "bugReports" || e.key === "users") { render(); }
+        });
+
+        render();
+      }
+    </script>
+    <script src="JAVA/sidenav.js"></script>
+  </body>
+</html>
