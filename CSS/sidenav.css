@@ -1,0 +1,73 @@
+/* Shared hamburger side menu for all dashboards (overrides the old hover-only menu) */
+.topbar { position: sticky; top: 0; z-index: 1000; }
+
+.topbar nav.sideNav {
+  position: fixed; top: 0; right: 0; height: 100vh; height: 100dvh;
+  width: min(300px, 86vw);
+  display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start;
+  flex-wrap: nowrap; gap: 0; padding: 0 0 24px;
+  background: linear-gradient(180deg, #080670 0%, #0b2a6e 100%);
+  overflow-y: auto; overflow-x: hidden; z-index: 1200;
+  transform: translateX(105%); visibility: hidden;
+  box-shadow: none;
+  transition: transform .3s ease, visibility 0s linear .3s;
+}
+.topbar nav.sideNav::before { display: none; }
+.topbar nav.sideNav:hover,
+.topbar nav.sideNav:focus-within { transform: translateX(105%); box-shadow: none; }
+.topbar nav.sideNav.open,
+.topbar nav.sideNav.open:hover,
+.topbar nav.sideNav.open:focus-within {
+  transform: translateX(0); visibility: visible;
+  box-shadow: -12px 0 40px rgba(0,0,0,.35);
+  transition: transform .3s ease, visibility 0s;
+}
+
+.sideNavTitle {
+  padding: 28px 24px 14px; font-family: "Bebas Neue", Arial, sans-serif;
+  font-size: 13px; letter-spacing: 4px; color: #72b5eb;
+  border-bottom: 1px solid rgba(255,255,255,.15); margin-bottom: 6px;
+}
+.topbar nav.sideNav a {
+  display: block; padding: 14px 24px; font-size: 16px; letter-spacing: .5px;
+  color: #fff; text-decoration: none; white-space: normal;
+  border-bottom: 0; border-left: 4px solid transparent;
+  transition: background .2s, border-color .2s, padding .2s;
+}
+.topbar nav.sideNav a:hover { background: rgba(255,255,255,.1); font-size: 16px; padding-left: 28px; }
+.topbar nav.sideNav a.current { background: rgba(255,255,255,.12); border-left-color: #72b5eb; }
+.topbar nav.sideNav a:last-child { margin-top: auto; border-top: 1px solid rgba(255,255,255,.15); color: #ffd6dc; }
+
+.menuToggle {
+  position: relative; width: 46px; height: 46px; padding: 0; flex-shrink: 0;
+  border: 1px solid rgba(255,255,255,.4); border-radius: 10px;
+  background: rgba(255,255,255,.08); cursor: pointer; letter-spacing: 0;
+  transition: background .2s;
+}
+.menuToggle:hover { background: rgba(255,255,255,.2); }
+.menuToggle:focus-visible { outline: 3px solid #f5b301; outline-offset: 2px; }
+.menuToggle span {
+  position: absolute; left: 12px; right: 12px; height: 2px; background: #fff; border-radius: 2px;
+  transition: transform .25s, opacity .2s, top .25s;
+}
+.menuToggle span:nth-child(1) { top: 15px; }
+.menuToggle span:nth-child(2) { top: 22px; }
+.menuToggle span:nth-child(3) { top: 29px; }
+.menuToggle.active { position: fixed; top: 22px; right: 18px; z-index: 1300; }
+.menuToggle.active span:nth-child(1) { top: 22px; transform: rotate(45deg); }
+.menuToggle.active span:nth-child(2) { opacity: 0; }
+.menuToggle.active span:nth-child(3) { top: 22px; transform: rotate(-45deg); }
+
+.menuBackdrop {
+  position: fixed; inset: 0; background: rgba(8,10,40,.55); opacity: 0;
+  pointer-events: none; transition: opacity .3s; z-index: 1100;
+}
+.topbar nav.sideNav { pointer-events: auto; }
+.menuBackdrop.show { opacity: 1; pointer-events: auto; }
+body.menuOpen { overflow: hidden; }
+
+.panel[id], section[id] { scroll-margin-top: 110px; }
+
+@media (max-width: 900px) {
+  .topbar { flex-direction: row !important; align-items: center; gap: 12px; }
+}
