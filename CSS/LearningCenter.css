@@ -1,0 +1,109 @@
+/* Learning Center: only the lesson-specific parts.
+   The top bar, banner, stats, panels and fonts come from Dashboard.css + dashboard-theme.css,
+   so this page looks exactly like the other dashboards. */
+
+.topicNav { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
+.topicNav a {
+  padding: 9px 20px; border-radius: 999px; text-decoration: none;
+  background: rgba(255, 255, 255, .14); color: #fff; font-weight: 600; font-size: 13px;
+  border: 1px solid rgba(255, 255, 255, .3); transition: .2s; font-family: "Poppins", sans-serif;
+}
+.topicNav a:hover { background: var(--gold); color: var(--navy-dark); border-color: var(--gold); }
+.roleBanner > div:not(.topicNav) { max-width: 680px; line-height: 1.8; opacity: .92; }
+
+.panel { scroll-margin-top: 100px; }
+
+/* ---------- lesson cards ---------- */
+.cardsGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: stretch; }
+.panel .cardsGrid .card { display: flex; flex-direction: column; gap: 10px; min-width: 0; padding: 22px; }
+.panel .cardsGrid .card > strong {
+  font-family: "Bebas Neue", Arial, sans-serif; font-size: 25px; font-weight: 400;
+  letter-spacing: 1px; color: var(--navy); line-height: 1.1; margin: 0;
+}
+.panel .cardsGrid .card > p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+
+.exLabel {
+  display: inline-block; margin: 6px 0 0; font-size: 11px; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--blue);
+}
+
+/* code blocks */
+.codebox, pre.codebox {
+  display: block; margin: 0; padding: 16px 18px; border-radius: 12px;
+  background: #0f172a; color: #e6edf7; text-align: left; text-indent: 0;
+  font-family: "JetBrains Mono", "Share Tech Mono", Consolas, monospace;
+  font-size: 12.5px; line-height: 1.75; overflow-x: auto; white-space: pre; tab-size: 2; max-width: 100%;
+  border: 1px solid #1e293b;
+}
+pre.codebox code { font-family: inherit; background: none; color: inherit; }
+.codebox::-webkit-scrollbar { height: 8px; }
+.codebox::-webkit-scrollbar-thumb { background: #334155; border-radius: 8px; }
+
+.tip {
+  margin-top: auto; padding: 12px 14px; border-radius: 10px; background: #eaf3fd;
+  border-left: 4px solid var(--blue); color: #29405c; font-size: 13px; line-height: 1.65;
+}
+.tip strong { font-family: "Poppins", sans-serif !important; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--navy); }
+
+/* ---------- practice languages ---------- */
+.langTabs { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 26px; }
+.langTab {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 2px; padding: 12px 20px; min-width: 130px;
+  border: 1.5px solid var(--line); background: #fff; color: var(--navy); border-radius: 12px; cursor: pointer; transition: .2s;
+  text-align: left;
+}
+.langTab:hover { border-color: var(--blue); transform: translateY(-2px); }
+.langTab.active { background: var(--navy); color: #fff; border-color: var(--navy); box-shadow: 0 10px 22px rgba(8, 6, 112, .25); }
+.langName { font-family: "Bebas Neue", Arial, sans-serif; font-size: 24px; letter-spacing: 1.5px; line-height: 1; }
+.langCount { font-family: "Poppins", sans-serif; font-size: 11px; letter-spacing: .3px; opacity: .8; }
+.langTab.active .langCount { color: var(--gold); opacity: 1; }
+
+.langHead { margin-bottom: 8px; }
+.langHead h3 { display: inline-block; margin: 0 12px 0 0; font-size: 40px; font-weight: 400; color: var(--navy); line-height: 1; }
+.langTag {
+  display: inline-block; padding: 4px 14px; border-radius: 999px; background: #fff4cc; color: #7a5800;
+  border: 1px solid #f0d36b; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; vertical-align: middle;
+}
+.langHead p { margin: 10px 0 0; color: var(--muted); max-width: 760px; line-height: 1.8; }
+
+.subHeading {
+  margin: 30px 0 14px; padding-bottom: 8px; border-bottom: 2px solid var(--bg);
+  font-family: "Bebas Neue", Arial, sans-serif; font-weight: 400; font-size: 26px; letter-spacing: 1px; color: var(--navy);
+}
+
+.practiceList { display: grid; gap: 12px; }
+.practiceItem { border: 1px solid var(--line); border-left: 5px solid var(--gold); border-radius: 12px; background: #fafcff; padding: 4px 18px; }
+.practiceItem summary { cursor: pointer; padding: 14px 0; font-weight: 500; color: var(--ink); list-style: none; }
+.practiceItem summary::-webkit-details-marker { display: none; }
+.practiceItem summary::before { content: "▸"; display: inline-block; margin-right: 10px; color: var(--blue); transition: transform .2s; }
+.practiceItem[open] summary::before { transform: rotate(90deg); }
+.practiceItem .codebox { margin: 6px 0 16px; }
+
+/* ---------- quizzes ---------- */
+.miniQuiz { display: grid; gap: 16px; }
+.miniQuiz .quizItem { padding: 22px; border: 1px solid var(--line); border-radius: 14px; background: #fafcff; }
+.miniQuiz .quizItem > strong { display: block; font-size: 15.5px; font-weight: 600; color: var(--navy); margin-bottom: 8px; line-height: 1.5; font-family: "Poppins", sans-serif !important; }
+.miniQuiz label {
+  display: flex; align-items: center; justify-content: flex-start; gap: 12px; padding: 12px 14px; margin-top: 8px;
+  background: #fff; border: 1.5px solid var(--line); border-radius: 10px; cursor: pointer; transition: .15s;
+}
+.miniQuiz label:hover { background: #eef5fd; border-color: var(--blue); }
+.miniQuiz label:has(input:checked) { background: #e3efff; border-color: var(--navy); box-shadow: 0 0 0 3px rgba(8, 6, 112, .1); }
+.miniQuiz input[type="radio"] { width: auto; padding: 0; margin: 0; flex-shrink: 0; accent-color: var(--navy); box-shadow: none; }
+
+.quizFeedback { margin-top: 14px; padding: 12px 14px; border-radius: 10px; line-height: 1.6; border-left: 4px solid #146c2e; background: #e6f6ec; font-size: 14px; }
+.quizFeedback.wrong { border-left-color: #b42318; background: #fdecea; }
+.quizFeedback.skipped { border-left-color: #9a4b00; background: #fff1e0; }
+.quizFeedback code {
+  display: block; margin-top: 8px; padding: 10px 12px; border-radius: 8px; background: #0f172a; color: #fff;
+  white-space: pre-wrap; font-family: "JetBrains Mono", Consolas, monospace; font-size: 12.5px;
+}
+.result { font-weight: 700; font-size: 16px; color: var(--navy); }
+.miniQuiz > button { width: fit-content; padding: 14px 30px; font-size: 16px; }
+
+@media (max-width: 1000px) { .cardsGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) {
+  .cardsGrid { grid-template-columns: 1fr; }
+  .langTab { min-width: calc(50% - 5px); }
+  .langHead h3 { font-size: 34px; }
+}
